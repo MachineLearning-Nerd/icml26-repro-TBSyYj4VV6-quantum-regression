@@ -1,6 +1,6 @@
 # STATUS — TBSyYj4VV6
 
-**State: LOCAL GATE PASSED — public handoff next.**
+**State: PUBLIC + QUEUED — awaiting shared HF Space drain.**
 
 - Six anchored claims / twelve possible points, all tied to explicit theorem or
   corollary complexity statements.
@@ -15,5 +15,7 @@
   pages, Methods, Negative controls, executed verifier/gate runs, and a pinned
   Conclusion. Secret scan found only bundled Trackio JavaScript identifiers,
   not credentials.
-- Next: push the public GitHub repository, then atomically queue the shared HF
-  publisher (which remains the only Space publisher).
+- Public GitHub repository is live at commit `a7fb50a`; the fail-closed gate
+  preceded the atomic canonical backlog entry.
+- The shared drain remains the sole Space publisher. Next is public Space
+  readback after its quota permits creation.
