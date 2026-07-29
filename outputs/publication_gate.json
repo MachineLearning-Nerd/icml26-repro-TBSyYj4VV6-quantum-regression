@@ -1,0 +1,16 @@
+{
+  "arxiv": "2509.24757",
+  "checks": {
+    "exact_reduction_controls": true,
+    "runtime_dominance_controls": true,
+    "six_anchored_claims_pass": true,
+    "source_typo_disclosed": true,
+    "theory_scope_limitation_explicit": true
+  },
+  "claim_count": 6,
+  "paper": "TBSyYj4VV6",
+  "publication_eligible": true,
+  "publication_gate_passed": true,
+  "scope": "six source-anchored quantum-regression theorem/reduction claims; CPU finite construction audits plus pinned public proof anchors",
+  "tests_passed": true
+}

@@ -1,0 +1,104 @@
+{
+  "all_claims_passed": true,
+  "arxiv": "2509.24757",
+  "claims": {
+    "C1": {
+      "evidence": [
+        {
+          "classical_over_quantum_leading": 2.0,
+          "epsilon": 0.2,
+          "m": 10000,
+          "n": 100,
+          "r": 5
+        },
+        {
+          "classical_over_quantum_leading": 10.0,
+          "epsilon": 0.1,
+          "m": 1000000,
+          "n": 100,
+          "r": 10
+        },
+        {
+          "classical_over_quantum_leading": 5.0,
+          "epsilon": 0.05,
+          "m": 10000000,
+          "n": 1000,
+          "r": 20
+        }
+      ],
+      "mechanism": "literal leading-term and m-dominance evaluation",
+      "negative_control": "small-m/high-n cell rejects a claimed m-dominant quantum advantage",
+      "passed": true,
+      "scope": "finite parameter checks of the stated asymptotic runtime/sparsity form",
+      "source": "Theorem 10 (formal theorem in source)"
+    },
+    "C2": {
+      "evidence": {
+        "classical_over_quantum": [
+          2.0,
+          4.0,
+          8.0,
+          16.0
+        ],
+        "m": [
+          10000,
+          40000,
+          160000,
+          640000
+        ]
+      },
+      "mechanism": "exact m-to-sqrt(m) leading-term scaling audit",
+      "negative_control": "incorrect linear-in-m quantum term would grow fourfold instead of twofold under m\u00d716",
+      "passed": true,
+      "scope": "leading terms; n^3 is retained as the source additive term",
+      "source": "Corollary 23: Quantum Linear Regression"
+    },
+    "C3": {
+      "evidence": {
+        "max_reduction_error": 0.0,
+        "wrong_weight_error": 2.625
+      },
+      "mechanism": "literal quadratic-plus-lambda-L1 augmented loss family",
+      "negative_control": "omitting lambda changes the objective",
+      "passed": true,
+      "scope": "finite algebraic reduction and the source's stated poly(n,1/epsilon) runtime family",
+      "source": "Corollary 26: Quantum Lasso Regression"
+    },
+    "C4": {
+      "evidence": {
+        "max_reduction_error": 0.0,
+        "wrong_scale_error": 6.916874999999997
+      },
+      "mechanism": "[A; sqrt(lambda)I], [b;0] objective identity",
+      "negative_control": "using lambda I rather than sqrt(lambda)I changes the objective",
+      "passed": true,
+      "scope": "finite exact reduction transferring the Corollary 23 runtime",
+      "source": "Corollary 25: Quantum Ridge Regression"
+    },
+    "C5": {
+      "evidence": {
+        "huber_error": 0.0,
+        "join_error": 2.0000000544584395e-09,
+        "wrong_offset_error": 0.5
+      },
+      "mechanism": "piecewise gamma_1 equals Huber loss and joins continuously",
+      "negative_control": "wrong outer offset fails the Huber equality",
+      "passed": true,
+      "scope": "loss specialization; universal quantum-algorithm guarantee remains source-proof anchored",
+      "source": "Corollary 12 gamma_p regression; p=1 Huber specialization"
+    },
+    "C6": {
+      "evidence": {
+        "max_homogeneity_error": 1.7763568394002505e-15
+      },
+      "mechanism": "direct p-homogeneity identity on p in (0,2]",
+      "negative_control": "p=0 is rejected by the source domain",
+      "passed": true,
+      "scope": "loss property behind the scale-ratio simplification and m-speedup statement",
+      "source": "Corollary 11 Quantum ell_p Regression"
+    }
+  },
+  "paper": "TBSyYj4VV6",
+  "scope": "CPU finite construction and runtime-form audit; not a claim of executing quantum hardware or independently proving universal complexity theorems.",
+  "source_sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549"
+}
