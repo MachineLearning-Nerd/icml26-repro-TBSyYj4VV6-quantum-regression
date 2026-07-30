@@ -1,0 +1,37 @@
+{
+  "claim_id": "C1",
+  "status_target": "FALSIFIED",
+  "source": {
+    "paper": "arXiv:2509.24757v1",
+    "sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549",
+    "theorem": "Theorem 10",
+    "label": "thm:quantum-glm-sparsification",
+    "algorithm": "Algorithm 2, QGLMSparsify",
+    "anchors": [
+      "arxiv-version.tex:513-532",
+      "arxiv-version.tex:537-541",
+      "arxiv-version.tex:1074-1082",
+      "arxiv-version.tex:1111-1117"
+    ]
+  },
+  "quantifiers": {
+    "matrix": "A in R^(m x n), row sparsity r <= n",
+    "losses": "(L, theta, c)-proper family",
+    "epsilon": "every epsilon > 0",
+    "range": "s_max > s_min >= 0",
+    "probability": "at least 1 - O(1/n)"
+  },
+  "guarantee": {
+    "output": "a nonnegative weight vector defining an epsilon-approximate GLM sparsifier",
+    "support": "O~(log(s_max/s_min) n/epsilon^2)",
+    "runtime": "O~((n^omega + n r^2 + r sqrt(mn)/epsilon) log(s_max/s_min))"
+  },
+  "named_algorithm_obligations": [
+    "Algorithm 2 sets M = Theta~(n/epsilon^2).",
+    "MultiSample is invoked with k=M.",
+    "The cited MultiSample theorem assumes 1 <= k <= input-vector length m.",
+    "Algorithm 2 explicitly processes i=1,...,M before returning a classical weight vector."
+  ],
+  "falsification_condition": "An assumption-satisfying parameter family for which the named algorithm invokes MultiSample outside its stated domain and its explicit processing lower bound grows as epsilon^-2 while the claimed runtime grows only as epsilon^-1 up to polylogarithms.",
+  "negative_control": "At epsilon=sqrt(n/m), normalized M=m and M equals the r sqrt(mn)/epsilon term for r=1, so neither contradiction is present."
+}

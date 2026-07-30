@@ -12,6 +12,9 @@ import json
 import math
 from pathlib import Path
 
+from claim1_independent_checker import check as check_claim1
+from claim1_runtime_audit import write_audit
+
 
 SOURCE_SHA = "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549"
 
@@ -128,18 +131,39 @@ def claim_records():
 
 
 def main():
-    claims = claim_records()
+    historical_claims = claim_records()
+    root = Path(__file__).resolve().parents[2]
+    claim1 = write_audit(root)
+    independent = check_claim1(root)
     verdict = {
         "paper": "TBSyYj4VV6", "arxiv": "2509.24757", "source_sha256": SOURCE_SHA,
-        "claims": claims, "all_claims_passed": all(c["passed"] for c in claims.values()),
-        "scope": "CPU finite construction and runtime-form audit; not a claim of executing quantum hardware or independently proving universal complexity theorems.",
+        "historical_rejected_baseline": {
+            "claims": historical_claims,
+            "all_checks_executed": all(c["passed"] for c in historical_claims.values()),
+            "judge_score": "0/12",
+        },
+        "current_claims": {
+            "C1": {
+                "status": "FALSIFICATION_CANDIDATE",
+                "contract_contradicted": claim1["finding"]["exact_named_algorithm_contract_contradicted"],
+                "independent_checker_passed": independent["passed"],
+            }
+        },
+        "release_ready": False,
+        "scope": "Exact source-contract audit of QGLMSparsify; remaining claims are not yet adjudicated.",
     }
-    root = Path(__file__).resolve().parents[2]
     out = root / "outputs" / "verdict.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(verdict, indent=2, sort_keys=True) + "\n")
-    print(json.dumps({"all_claims_passed": verdict["all_claims_passed"], "claims": {k: v["passed"] for k, v in claims.items()}}, sort_keys=True))
-    if not verdict["all_claims_passed"]:
+    summary = {
+        "historical_baseline_checks_executed": verdict["historical_rejected_baseline"]["all_checks_executed"],
+        "C1_contract_contradicted": claim1["finding"]["exact_named_algorithm_contract_contradicted"],
+        "C1_independent_checker": independent["passed"],
+        "release_ready": False,
+    }
+    print("CURRENT_CAMPAIGN_SUMMARY")
+    print(json.dumps(summary, sort_keys=True))
+    if not all((summary["historical_baseline_checks_executed"], summary["C1_contract_contradicted"], summary["C1_independent_checker"])):
         raise SystemExit(1)
 
 
