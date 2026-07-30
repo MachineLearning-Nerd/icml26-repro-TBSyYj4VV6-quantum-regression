@@ -1,0 +1,25 @@
+{
+  "paper": "arXiv:2509.24757v1",
+  "retrieved_at_utc": "2026-07-30T17:15:50Z",
+  "user_agent": "OpenResearch-Reproduction/1.0 (contact: research-audit)",
+  "sources": [
+    {
+      "url": "https://export.arxiv.org/e-print/2509.24757v1",
+      "sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549",
+      "kind": "arXiv source archive"
+    },
+    {
+      "url": "https://ar5iv.labs.arxiv.org/html/2509.24757",
+      "sha256": "2eb932e86c757e1f88620d8880129ff9c35c626e1500476e0dfe9a5851636032",
+      "kind": "HTML rendering"
+    }
+  ],
+  "source_anchors": {
+    "claim_1": "arxiv-version.tex:537-540, Theorem 10, label thm:quantum-glm-sparsification",
+    "claim_2": "arxiv-version.tex:1150-1153, Corollary 23, label cor:linear-regression",
+    "claim_3": "arxiv-version.tex:1164-1168, Corollary 26, label cor:lasso-regression",
+    "claim_4": "arxiv-version.tex:1160-1163, Corollary 25, label cor:ridge-regression",
+    "claim_5": "arxiv-version.tex:263-270 and 552-554, gamma_p definition and Corollary 12",
+    "claim_6": "arxiv-version.tex:541 and 547-551, homogeneous-loss note and Corollary 11"
+  }
+}

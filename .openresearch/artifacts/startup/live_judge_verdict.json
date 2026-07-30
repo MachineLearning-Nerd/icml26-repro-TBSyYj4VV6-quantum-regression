@@ -1,0 +1,49 @@
+{
+  "dataset": "ICML-2026-agent-repro/verdicts",
+  "dataset_file_sha256": "360c81a9ecb598d8d548f0c228506189596f899e3b49ffe9368c7d1d464e3c98",
+  "filter": {
+    "space_id": "DineshAI/TBSyYj4VV6"
+  },
+  "record": {
+    "space_id": "DineshAI/TBSyYj4VV6",
+    "orid": "TBSyYj4VV6",
+    "paper_title": "Accelerating Regression Tasks with Quantum Algorithms",
+    "sha": "69210c3e5b45e365cb218b0ffd88948bfe81c18e",
+    "judged_at": "2026-07-30T13:23:12+00:00",
+    "claims": [
+      {
+        "claim": "Theorem 10 GLM sparsification runtime and quadratic sample-count speedup",
+        "verdict": "inconclusive",
+        "evidence": "Only stated-formula arithmetic; no quantum algorithm or constructed sparsifier."
+      },
+      {
+        "claim": "Corollary 23 linear-regression runtime",
+        "verdict": "inconclusive",
+        "evidence": "Only arithmetic on the stated square-root term; no measured algorithm."
+      },
+      {
+        "claim": "Corollary 26 Lasso algorithm and runtime",
+        "verdict": "inconclusive",
+        "evidence": "Only one small algebraic objective identity; no quantum algorithm or solved regression task."
+      },
+      {
+        "claim": "Corollary 25 Ridge algorithm and runtime",
+        "verdict": "inconclusive",
+        "evidence": "Only one small augmented-system identity and formula arithmetic."
+      },
+      {
+        "claim": "Corollary 12 Huber via gamma_p and runtime",
+        "verdict": "inconclusive",
+        "evidence": "Only a piecewise loss identity; no quantum algorithm."
+      },
+      {
+        "claim": "Corollary 11 ell_p runtime and quadratic sample-count speedup",
+        "verdict": "inconclusive",
+        "evidence": "Only a homogeneity identity and stated-formula arithmetic."
+      }
+    ],
+    "overall": "The evaluator found no implemented, simulated, or tested quantum algorithm and no experimental evidence for the complexity claims.",
+    "quality": "low",
+    "score": "0/12"
+  }
+}
