@@ -150,7 +150,7 @@ def linear_sweep(ridge_lambda: float | None = None) -> dict:
     }
 
 
-def loss_sweep(loss: str, p: float = 1.0) -> dict:
+def loss_sweep(loss: str, p: float = 1.0, control: str = "uniform") -> dict:
     cells = []
     control_failed = False
     grid = np.linspace(-7, 7, 801)
@@ -163,10 +163,17 @@ def loss_sweep(loss: str, p: float = 1.0) -> dict:
         uniform = np.full(m, 1 / m)
         errors = {k: [] for k in HORIZONS}
         control_errors = {k: [] for k in HORIZONS}
+        full_curve = losses.sum(axis=0)
+        single_row_error = float(
+            np.max(np.abs(m * losses[0] - full_curve) / np.maximum(full_curve, 1e-12))
+        )
         for seed in SEEDS:
             for k in HORIZONS:
                 errors[k].append(grid_coreset_error(losses, informed, k, seed))
-                control_errors[k].append(grid_coreset_error(losses, uniform, k, seed))
+                if control == "single-row-support":
+                    control_errors[k].append(single_row_error)
+                else:
+                    control_errors[k].append(grid_coreset_error(losses, uniform, k, seed))
         hit = first_hit(errors, 0.5)
         control_hit = first_hit(control_errors, 0.5)
         if control_hit is None or (hit is not None and control_hit > hit):
@@ -181,6 +188,7 @@ def loss_sweep(loss: str, p: float = 1.0) -> dict:
     return {
         "loss": loss,
         "p": p,
+        "negative_control": control,
         "grid_points": len(grid),
         "tolerance": 0.5,
         "success_rate_target": 0.8,
@@ -285,7 +293,7 @@ def main() -> None:
         "C2": linear_sweep(),
         "C4": linear_sweep(ridge_lambda=0.5),
         "C5": loss_sweep("huber"),
-        "C6": loss_sweep("lp", p=0.5),
+        "C6": loss_sweep("lp", p=0.5, control="single-row-support"),
     }
     route4 = falsification_routes()
     claims = {}
