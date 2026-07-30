@@ -42,6 +42,13 @@ Independent checker output: `power_gap_confirmed=true`,
 `domain_violation_count=11`, `negative_control_rejects_false_positive=true`,
 `passed=true`.
 
+Download: [claim contract](../../evidence/claim_1/claim_contract.json),
+[raw 11-cell audit](../../evidence/claim_1/runtime_audit.json),
+[checker output](../../evidence/claim_1/independent_checker.json), and
+[negative control](../../evidence/claim_1/negative_control.json). Executable
+sources: [verifier](../../code/claim1_runtime_audit.py) and
+[independent checker](../../code/claim1_independent_checker.py).
+
 ## Negative control
 
 At the omitted threshold `epsilon=sqrt(n/m)=0.353553…`, normalized `M=m=16`
@@ -61,6 +68,9 @@ Run `193efcb5-712d-4815-8e2e-138765a00292`, commit
 `f9d7de4910bf187ca442c00f0c0c725c93313300`, deterministic/no seeds, local
 single-process CPU, 5 seconds. The verifier and independent checker exit
 nonzero if the contradiction or control evidence changes.
+
+Environment: Python `3.12.*`, [pyproject](../../code/pyproject.toml), and
+[exact uv lock](../../code/uv.lock). [CPU record](../../evidence/claim_1/runtime_cpu.json).
 
 ## Limit
 

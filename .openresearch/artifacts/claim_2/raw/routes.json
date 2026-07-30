@@ -1,0 +1,85 @@
+{
+  "blocker": "No executable implementation or machine-checkable proof certificate for the named quantum subroutines; finite sampling simulations cannot establish universal asymptotic runtime.",
+  "confidence": "LOW",
+  "route_1_proof_chain": {
+    "anchor": "Corollary 23, source lines 1150-1153",
+    "certificate_found": false,
+    "chain": "Theorem 19 quantum leverage scores -> sampling -> classical linear solve",
+    "paper_source_sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549",
+    "quantifiers": "algorithmic existence and high-probability guarantee over all inputs satisfying oracle assumptions"
+  },
+  "route_2_finite_simulation": {
+    "linear": {
+      "full_objective": 0.20353542496661925,
+      "objective_ratio": 1.000004175015614,
+      "sampled_solution_objective": 0.20353627473019648
+    },
+    "scope": "finite classical simulation of the target sampling distribution; no quantum subroutine runtime is measured"
+  },
+  "route_3_calibrated_first_hit": {
+    "cells": [
+      {
+        "first_hit_k": 256,
+        "m": 512,
+        "success_rate_at_512": 1,
+        "uniform_control_first_hit_k": null,
+        "uniform_success_rate_at_512": 0
+      },
+      {
+        "first_hit_k": 256,
+        "m": 2048,
+        "success_rate_at_512": 1,
+        "uniform_control_first_hit_k": null,
+        "uniform_success_rate_at_512": 0
+      },
+      {
+        "first_hit_k": 256,
+        "m": 8192,
+        "success_rate_at_512": 1,
+        "uniform_control_first_hit_k": null,
+        "uniform_success_rate_at_512": 0
+      }
+    ],
+    "horizons": [
+      8,
+      16,
+      32,
+      64,
+      128,
+      256,
+      512
+    ],
+    "negative_control_failed_as_intended": true,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19
+    ],
+    "success_rate_target": 0.8,
+    "tolerance": 0.5
+  },
+  "route_4_falsification": {
+    "cases": 20,
+    "reason": "no impossible approximation inequality found; no exhaustive-policy or lower-bound certificate",
+    "valid_counterexample_found": false
+  },
+  "routes_completed": 4,
+  "status": "BLOCKED"
+}

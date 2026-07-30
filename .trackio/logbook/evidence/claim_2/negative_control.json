@@ -1,0 +1,60 @@
+{
+  "claim_id": "C2",
+  "cells": [
+    {
+      "first_hit_k": 256,
+      "m": 512,
+      "success_rate_at_512": 1,
+      "uniform_control_first_hit_k": null,
+      "uniform_success_rate_at_512": 0
+    },
+    {
+      "first_hit_k": 256,
+      "m": 2048,
+      "success_rate_at_512": 1,
+      "uniform_control_first_hit_k": null,
+      "uniform_success_rate_at_512": 0
+    },
+    {
+      "first_hit_k": 256,
+      "m": 8192,
+      "success_rate_at_512": 1,
+      "uniform_control_first_hit_k": null,
+      "uniform_success_rate_at_512": 0
+    }
+  ],
+  "horizons": [
+    8,
+    16,
+    32,
+    64,
+    128,
+    256,
+    512
+  ],
+  "negative_control_failed_as_intended": true,
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "success_rate_target": 0.8,
+  "tolerance": 0.5
+}

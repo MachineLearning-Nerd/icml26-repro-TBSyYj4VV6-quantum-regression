@@ -1,0 +1,24 @@
+{
+  "claim_id": "C3",
+  "status": "FALSIFIED",
+  "source": {
+    "paper": "arXiv:2509.24757v1",
+    "sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549",
+    "anchor": "arxiv-version.tex:1164-1168",
+    "statement": "For every lambda>0 and epsilon>0, output x with ||Ax-b||_2^2 + lambda||x||_1 <= (1+epsilon) min_x (||Ax-b||_2^2 + ||x||_1)."
+  },
+  "counterexample": {
+    "A": [[1]],
+    "b": [1],
+    "m": 1,
+    "n": 1,
+    "r": 1,
+    "lambda": 100,
+    "epsilon": "1/10",
+    "left_objective_global_minimum": "1",
+    "stated_right_bound": "33/40",
+    "gap": "7/40"
+  },
+  "falsification_condition": "The minimum possible left side exceeds the stated right side, so no output x exists.",
+  "negative_control": "Setting lambda=1 makes both objectives identical and x=1/2 satisfies the stated 1+epsilon guarantee."
+}

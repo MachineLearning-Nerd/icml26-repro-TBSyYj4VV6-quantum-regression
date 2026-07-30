@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430">
+  <rect width="960" height="430" fill="#fff"/>
+  <text x="54" y="45" font-family="sans-serif" font-size="24" font-weight="700" fill="#0f172a">Claim 1: the explicit M-loop outruns the displayed terms</text>
+  <text x="54" y="73" font-family="sans-serif" font-size="14" fill="#475569">Normalized M / claimed runtime terms; source-valid fixed m=16, n=2, r=1</text>
+  <line x1="90" y1="360" x2="910" y2="360" stroke="#94a3b8"/>
+  <line x1="90" y1="95" x2="90" y2="360" stroke="#94a3b8"/>
+  <line x1="90" y1="332" x2="910" y2="332" stroke="#ef4444" stroke-dasharray="6 5"/>
+  <text x="100" y="324" font-family="sans-serif" font-size="13" fill="#b91c1c">ratio = 1</text>
+  <polyline points="120,332 270,306 420,260 570,210 720,153 870,102" fill="none" stroke="#7c3aed" stroke-width="4"/>
+  <g fill="#7c3aed">
+    <circle cx="120" cy="332" r="6"/><circle cx="270" cy="306" r="6"/><circle cx="420" cy="260" r="6"/>
+    <circle cx="570" cy="210" r="6"/><circle cx="720" cy="153" r="6"/><circle cx="870" cy="102" r="6"/>
+  </g>
+  <g font-family="sans-serif" font-size="13" fill="#334155" text-anchor="middle">
+    <text x="120" y="383">q=2</text><text x="270" y="383">q=4</text><text x="420" y="383">q=6</text>
+    <text x="570" y="383">q=8</text><text x="720" y="383">q=10</text><text x="870" y="383">q=12</text>
+  </g>
+  <g font-family="sans-serif" font-size="12" fill="#6d28d9" text-anchor="middle">
+    <text x="120" y="318">0.98</text><text x="270" y="292">5.09</text><text x="420" y="246">22.0</text>
+    <text x="570" y="196">89.9</text><text x="720" y="139">361</text><text x="870" y="90">1,448</text>
+  </g>
+  <text x="54" y="414" font-family="sans-serif" font-size="13" fill="#475569">Every plotted cell also has M&gt;m, violating the cited MultiSample precondition.</text>
+</svg>

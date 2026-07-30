@@ -1,0 +1,8 @@
+{
+  "M_le_r_sqrt_mn_over_epsilon": true,
+  "M_normalized": 16,
+  "contradiction_detected": false,
+  "epsilon": 0.3535533905932738,
+  "input_length_m": 16,
+  "multisample_precondition_M_le_m": true
+}

@@ -1,0 +1,12 @@
+{
+  "claim_id": "C6",
+  "status": "BLOCKED",
+  "source": {
+    "paper": "arXiv:2509.24757v1",
+    "sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549",
+    "anchor": "arxiv-version.tex:549-551",
+    "statement": "For every p in (0,2], the algorithm returns a high-probability (1+epsilon)-approximate ell_p regression solution in O~(r sqrt(mn)/epsilon + poly(n,1/epsilon)) quantum time, giving quadratic m speedup."
+  },
+  "full_credit_condition": "A proof certificate or exact executable quantum implementation over the stated p-domain, or a valid assumption-satisfying counterexample.",
+  "result": "Finite p=0.5 and p=1.5 checks found no contradiction; the cited solver application is stated only for p in (1,2], leaving p<=1 unresolved."
+}

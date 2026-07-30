@@ -1,0 +1,15 @@
+{
+  "run_id": "193efcb5-712d-4815-8e2e-138765a00292",
+  "git_sha": "f9d7de4910bf187ca442c00f0c0c725c93313300",
+  "backend": "local",
+  "selected_flavor": null,
+  "estimated_cores": 1,
+  "estimated_runtime": "under 5 minutes",
+  "actual_host_logical_cpus_available": 8,
+  "actual_host_physical_cpus_available": 8,
+  "actual_process_model": "one standard-library Python process; no parallel dependencies",
+  "orx_reported_duration_seconds": 5,
+  "random_seeds": [],
+  "deterministic": true,
+  "fixed_command": "uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py"
+}

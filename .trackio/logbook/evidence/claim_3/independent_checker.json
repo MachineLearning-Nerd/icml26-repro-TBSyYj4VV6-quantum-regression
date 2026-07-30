@@ -1,0 +1,8 @@
+{
+  "checker": "claim3_independent_checker.py",
+  "left_piecewise_lower_bound_confirmed": true,
+  "right_completion_of_square_confirmed": true,
+  "strict_impossibility_gap": "7/40",
+  "negative_control_passed": true,
+  "passed": true
+}

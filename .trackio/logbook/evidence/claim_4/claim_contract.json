@@ -1,0 +1,12 @@
+{
+  "claim_id": "C4",
+  "status": "BLOCKED",
+  "source": {
+    "paper": "arXiv:2509.24757v1",
+    "sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549",
+    "anchor": "arxiv-version.tex:1160-1163",
+    "statement": "For lambda>0 and epsilon>0, Ridge regression is solved with high probability in O~(r sqrt(mn)/epsilon + n^3) quantum time via the augmented [A;sqrt(lambda)I], [b;0] system."
+  },
+  "full_credit_condition": "A proof certificate or exact executable quantum implementation validating the universal runtime, or a valid assumption-satisfying counterexample.",
+  "result": "The reduction and finite sampled solve work, but the inherited quantum runtime remains uncertified and unfalsified."
+}

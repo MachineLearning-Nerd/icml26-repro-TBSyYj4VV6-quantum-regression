@@ -1,0 +1,12 @@
+{
+  "claim_id": "C5",
+  "status": "BLOCKED",
+  "source": {
+    "paper": "arXiv:2509.24757v1",
+    "sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549",
+    "anchor": "arxiv-version.tex:263-270 and 552-554",
+    "statement": "The gamma_p framework specializes at p=1 to Huber regression and yields a high-probability (1+epsilon)-approximate solution in O~(r sqrt(mn)/epsilon + poly(n,1/epsilon)) quantum time."
+  },
+  "full_credit_condition": "A proof certificate or exact executable QGLMSparsify/QMLSO implementation validating the universal runtime, or a valid assumption-satisfying counterexample.",
+  "result": "The loss specialization and finite coreset solve work, but the named quantum runtime remains uncertified and unfalsified."
+}

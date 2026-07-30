@@ -1,0 +1,8 @@
+{
+  "claim_id": "C1",
+  "domain_violation_count": 11,
+  "independent_checker": "claim1_independent_checker.py",
+  "negative_control_rejects_false_positive": true,
+  "passed": true,
+  "power_gap_confirmed": true
+}

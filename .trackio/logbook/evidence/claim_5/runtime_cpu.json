@@ -1,0 +1,14 @@
+{
+  "claim_id": "C5",
+  "run_id": "7d8f2bf0-adb1-4e49-940f-df81da9cf5a5",
+  "git_sha": "e15aace",
+  "backend": "hf",
+  "job_flavor": "cpu-upgrade",
+  "job_duration_seconds": 21,
+  "actual_cpu_allocation": 64,
+  "estimated_cores_before_run": 8,
+  "platform": "Linux-6.12.94-123.192.amzn2023.x86_64-x86_64-with-glibc2.36",
+  "python": "3.12.12",
+  "seconds": 6.951017700999728,
+  "selected_flavor": "cpu-upgrade"
+}

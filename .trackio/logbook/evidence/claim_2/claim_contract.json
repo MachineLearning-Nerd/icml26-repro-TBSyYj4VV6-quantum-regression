@@ -1,0 +1,12 @@
+{
+  "claim_id": "C2",
+  "status": "BLOCKED",
+  "source": {
+    "paper": "arXiv:2509.24757v1",
+    "sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549",
+    "anchor": "arxiv-version.tex:1150-1153",
+    "statement": "With high probability, for query access to A and b, row sparsity r<=n, and epsilon>0, output x with ||Ax-b||_2^2 <= (1+epsilon) min_y ||Ay-b||_2^2 in O~(r sqrt(mn)/epsilon + n^3) time."
+  },
+  "full_credit_condition": "A machine-checkable proof certificate for the universal algorithm/runtime guarantee, an executable implementation of the named quantum subroutines with independently calibrated resource scaling, or a valid assumption-satisfying counterexample.",
+  "result": "Four distinct routes found neither a proof certificate nor a valid counterexample. Finite sampling simulations are scoped corroboration only."
+}
