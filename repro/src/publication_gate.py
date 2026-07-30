@@ -13,6 +13,11 @@ claim1 = verdict["current_claims"]["C1"]
 assert claim1["contract_contradicted"] and claim1["independent_checker_passed"]
 claim3 = verdict["current_claims"]["C3"]
 assert claim3["all_outputs_violate_corollary"] and claim3["independent_checker_passed"]
+for claim_id in ("C2", "C4", "C5", "C6"):
+    claim = verdict["current_claims"][claim_id]
+    assert claim["status"] == "BLOCKED"
+    assert claim["routes_completed"] == 4
+    assert all(claim["independent_checker_passed"].values())
 assert verdict["release_ready"] is False
 gate = {
     "paper": "TBSyYj4VV6",
@@ -28,9 +33,10 @@ gate = {
         "claim_3_exact_counterexample": True,
         "claim_3_independent_checker": True,
         "claim_3_negative_control": True,
-        "all_six_claims_adjudicated": False
+        "claims_2_4_5_6_four_routes_each": True,
+        "all_six_claims_adjudicated": True
     },
-    "scope": "Claim 1 candidate finding only; publication is intentionally blocked.",
+    "scope": "Scientific adjudication milestone only; evaluator-visible packaging and release gates remain intentionally blocked.",
 }
 (root / "outputs" / "publication_gate.json").write_text(json.dumps(gate, indent=2, sort_keys=True) + "\n")
 print(json.dumps(gate, indent=2, sort_keys=True))

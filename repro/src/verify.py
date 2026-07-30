@@ -16,6 +16,8 @@ from claim1_independent_checker import check as check_claim1
 from claim1_runtime_audit import write_audit
 from claim3_independent_checker import check as check_claim3
 from claim3_lasso_counterexample import write_counterexample
+from remaining_claim_checker import check as check_remaining
+from remaining_claim_routes import main as run_remaining_routes
 
 
 SOURCE_SHA = "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549"
@@ -139,6 +141,9 @@ def main():
     independent = check_claim1(root)
     claim3 = write_counterexample(root)
     claim3_independent = check_claim3(root)
+    run_remaining_routes()
+    remaining = json.loads((root / "outputs" / "remaining_claim_routes.json").read_text())
+    remaining_check = check_remaining(root)
     verdict = {
         "paper": "TBSyYj4VV6", "arxiv": "2509.24757", "source_sha256": SOURCE_SHA,
         "historical_rejected_baseline": {
@@ -156,10 +161,18 @@ def main():
                 "status": "FALSIFIED",
                 "all_outputs_violate_corollary": claim3["finding"]["all_outputs_violate_corollary"],
                 "independent_checker_passed": claim3_independent["passed"],
-            }
+            },
+            **{
+                claim: {
+                    "status": remaining["claims"][claim]["status"],
+                    "routes_completed": remaining["claims"][claim]["routes_completed"],
+                    "independent_checker_passed": remaining_check["checks"][claim],
+                }
+                for claim in ("C2", "C4", "C5", "C6")
+            },
         },
         "release_ready": False,
-        "scope": "Exact source-contract audit of QGLMSparsify; remaining claims are not yet adjudicated.",
+        "scope": "All six claims adjudicated: two exact falsifications and four blocked universal runtime claims.",
     }
     out = root / "outputs" / "verdict.json"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -170,6 +183,7 @@ def main():
         "C1_independent_checker": independent["passed"],
         "C3_literal_corollary_falsified": claim3["finding"]["literal_corollary_falsified"],
         "C3_independent_checker": claim3_independent["passed"],
+        "remaining_four_route_checker": remaining_check["passed"],
         "release_ready": False,
     }
     print("CURRENT_CAMPAIGN_SUMMARY")
@@ -180,6 +194,7 @@ def main():
         summary["C1_independent_checker"],
         summary["C3_literal_corollary_falsified"],
         summary["C3_independent_checker"],
+        summary["remaining_four_route_checker"],
     )):
         raise SystemExit(1)
 
