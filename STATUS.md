@@ -1,4 +1,13 @@
-# STATUS — TBSyYj4VV6
+# STATUS — current campaign
+
+**State: research in progress; publication blocked.**
+
+- Claim 1: FALSIFIED for the exact written `QGLMSparsify` algorithm/runtime
+  contract; direct source-contract evidence and an independent checker pass.
+- Claims 2–6: not yet adjudicated.
+- Previous live judged score remains 0/12. No score increase is claimed.
+
+## Historical rejected baseline
 
 **State: PUBLIC + QUEUED — awaiting shared HF Space drain.**
 

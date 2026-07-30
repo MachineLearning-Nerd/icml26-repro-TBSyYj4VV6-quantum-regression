@@ -15,58 +15,71 @@
     "file": "pages/index.md",
     "children": [
       {
-        "slug": "claim-1-glm-sparsification",
-        "title": "Claim 1 — GLM sparsification",
-        "file": "pages/claim-1-glm-sparsification/page.md",
+        "slug": "current-claim-1",
+        "title": "Current verification — Claim 1",
+        "file": "pages/current-claim-1/page.md",
         "children": []
       },
       {
-        "slug": "claim-2-linear-regression",
-        "title": "Claim 2 — Linear regression",
-        "file": "pages/claim-2-linear-regression/page.md",
-        "children": []
-      },
-      {
-        "slug": "claim-3-lasso",
-        "title": "Claim 3 — Lasso",
-        "file": "pages/claim-3-lasso/page.md",
-        "children": []
-      },
-      {
-        "slug": "claim-4-ridge",
-        "title": "Claim 4 — Ridge",
-        "file": "pages/claim-4-ridge/page.md",
-        "children": []
-      },
-      {
-        "slug": "claim-5-huber",
-        "title": "Claim 5 — Huber",
-        "file": "pages/claim-5-huber/page.md",
-        "children": []
-      },
-      {
-        "slug": "claim-6-ell-p",
-        "title": "Claim 6 — ell_p",
-        "file": "pages/claim-6-ell-p/page.md",
-        "children": []
-      },
-      {
-        "slug": "methods",
-        "title": "Methods",
-        "file": "pages/methods/page.md",
-        "children": []
-      },
-      {
-        "slug": "negative-controls",
-        "title": "Negative controls",
-        "file": "pages/negative-controls/page.md",
-        "children": []
-      },
-      {
-        "slug": "conclusion",
-        "title": "Conclusion",
-        "file": "pages/conclusion/page.md",
-        "children": []
+        "slug": "historical-rejected-baseline",
+        "title": "Historical rejected baseline",
+        "file": "pages/historical-rejected-baseline/page.md",
+        "children": [
+          {
+            "slug": "claim-1-glm-sparsification",
+            "title": "Claim 1 — GLM sparsification",
+            "file": "pages/claim-1-glm-sparsification/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-2-linear-regression",
+            "title": "Claim 2 — Linear regression",
+            "file": "pages/claim-2-linear-regression/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-3-lasso",
+            "title": "Claim 3 — Lasso",
+            "file": "pages/claim-3-lasso/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-4-ridge",
+            "title": "Claim 4 — Ridge",
+            "file": "pages/claim-4-ridge/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-5-huber",
+            "title": "Claim 5 — Huber",
+            "file": "pages/claim-5-huber/page.md",
+            "children": []
+          },
+          {
+            "slug": "claim-6-ell-p",
+            "title": "Claim 6 — ell_p",
+            "file": "pages/claim-6-ell-p/page.md",
+            "children": []
+          },
+          {
+            "slug": "methods",
+            "title": "Methods",
+            "file": "pages/methods/page.md",
+            "children": []
+          },
+          {
+            "slug": "negative-controls",
+            "title": "Negative controls",
+            "file": "pages/negative-controls/page.md",
+            "children": []
+          },
+          {
+            "slug": "conclusion",
+            "title": "Conclusion",
+            "file": "pages/conclusion/page.md",
+            "children": []
+          }
+        ]
       }
     ]
   },
