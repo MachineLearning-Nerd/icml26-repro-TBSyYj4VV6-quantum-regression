@@ -1,13 +1,16 @@
-# STATUS — current campaign
+# STATUS — awaiting judge
 
-**State: research in progress; publication blocked.**
+**State: published; awaiting live evaluator.**
 
-- Claim 1: FALSIFIED for the exact written `QGLMSparsify` algorithm/runtime
-  contract; direct source-contract evidence and an independent checker pass.
-- Claim 3: FALSIFIED by an exact rational counterexample to Corollary 26 as
-  printed.
-- Claims 2, 4, 5, and 6: not yet adjudicated.
-- Previous live judged score remains 0/12. No score increase is claimed.
+- Existing Space: `DineshAI/TBSyYj4VV6`
+- Published revision: `851c05f89e1c8340ea539db391da196a4d57a90e`
+- Claim 1: FALSIFIED for the exact written `QGLMSparsify` contract.
+- Claim 3: FALSIFIED by an exact rational counterexample to Corollary 26.
+- Claims 2, 4, 5, and 6: BLOCKED after four verification routes each.
+- Previous live judged score remains 0/12. Forecast: 0–4/12; no score increase
+  is claimed before evaluator results.
+- Post-publication audit: 58/58 uploaded hashes, historical subset 21/21,
+  current-first blind traversal passed.
 
 ## Historical rejected baseline
 
