@@ -11,6 +11,8 @@ assert verdict["paper"] == "TBSyYj4VV6"
 assert verdict["historical_rejected_baseline"]["all_checks_executed"]
 claim1 = verdict["current_claims"]["C1"]
 assert claim1["contract_contradicted"] and claim1["independent_checker_passed"]
+claim3 = verdict["current_claims"]["C3"]
+assert claim3["all_outputs_violate_corollary"] and claim3["independent_checker_passed"]
 assert verdict["release_ready"] is False
 gate = {
     "paper": "TBSyYj4VV6",
@@ -23,6 +25,9 @@ gate = {
         "claim_1_exact_contract": True,
         "claim_1_independent_checker": True,
         "claim_1_negative_control": True,
+        "claim_3_exact_counterexample": True,
+        "claim_3_independent_checker": True,
+        "claim_3_negative_control": True,
         "all_six_claims_adjudicated": False
     },
     "scope": "Claim 1 candidate finding only; publication is intentionally blocked.",

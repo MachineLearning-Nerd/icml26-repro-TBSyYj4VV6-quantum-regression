@@ -14,6 +14,8 @@ from pathlib import Path
 
 from claim1_independent_checker import check as check_claim1
 from claim1_runtime_audit import write_audit
+from claim3_independent_checker import check as check_claim3
+from claim3_lasso_counterexample import write_counterexample
 
 
 SOURCE_SHA = "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549"
@@ -135,6 +137,8 @@ def main():
     root = Path(__file__).resolve().parents[2]
     claim1 = write_audit(root)
     independent = check_claim1(root)
+    claim3 = write_counterexample(root)
+    claim3_independent = check_claim3(root)
     verdict = {
         "paper": "TBSyYj4VV6", "arxiv": "2509.24757", "source_sha256": SOURCE_SHA,
         "historical_rejected_baseline": {
@@ -144,9 +148,14 @@ def main():
         },
         "current_claims": {
             "C1": {
-                "status": "FALSIFICATION_CANDIDATE",
+                "status": "FALSIFIED",
                 "contract_contradicted": claim1["finding"]["exact_named_algorithm_contract_contradicted"],
                 "independent_checker_passed": independent["passed"],
+            },
+            "C3": {
+                "status": "FALSIFIED",
+                "all_outputs_violate_corollary": claim3["finding"]["all_outputs_violate_corollary"],
+                "independent_checker_passed": claim3_independent["passed"],
             }
         },
         "release_ready": False,
@@ -159,11 +168,19 @@ def main():
         "historical_baseline_checks_executed": verdict["historical_rejected_baseline"]["all_checks_executed"],
         "C1_contract_contradicted": claim1["finding"]["exact_named_algorithm_contract_contradicted"],
         "C1_independent_checker": independent["passed"],
+        "C3_literal_corollary_falsified": claim3["finding"]["literal_corollary_falsified"],
+        "C3_independent_checker": claim3_independent["passed"],
         "release_ready": False,
     }
     print("CURRENT_CAMPAIGN_SUMMARY")
     print(json.dumps(summary, sort_keys=True))
-    if not all((summary["historical_baseline_checks_executed"], summary["C1_contract_contradicted"], summary["C1_independent_checker"])):
+    if not all((
+        summary["historical_baseline_checks_executed"],
+        summary["C1_contract_contradicted"],
+        summary["C1_independent_checker"],
+        summary["C3_literal_corollary_falsified"],
+        summary["C3_independent_checker"],
+    )):
         raise SystemExit(1)
 
 

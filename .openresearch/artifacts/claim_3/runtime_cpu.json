@@ -1,0 +1,10 @@
+{
+  "backend": "local",
+  "selected_flavor": null,
+  "estimated_cores": 1,
+  "estimated_runtime": "under 5 minutes",
+  "actual_process_model": "one standard-library Python process",
+  "deterministic": true,
+  "random_seeds": [],
+  "fixed_command": "uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py"
+}

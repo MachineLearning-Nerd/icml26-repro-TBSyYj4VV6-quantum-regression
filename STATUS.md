@@ -4,7 +4,9 @@
 
 - Claim 1: FALSIFIED for the exact written `QGLMSparsify` algorithm/runtime
   contract; direct source-contract evidence and an independent checker pass.
-- Claims 2–6: not yet adjudicated.
+- Claim 3: FALSIFIED by an exact rational counterexample to Corollary 26 as
+  printed.
+- Claims 2, 4, 5, and 6: not yet adjudicated.
 - Previous live judged score remains 0/12. No score increase is claimed.
 
 ## Historical rejected baseline

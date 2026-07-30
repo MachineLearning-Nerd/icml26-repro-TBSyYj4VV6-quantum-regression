@@ -1,11 +1,13 @@
 # Current reproduction campaign
 
-Claim 1 is **FALSIFIED** for the exact written `QGLMSparsify`
-algorithm/runtime contract: Algorithm 2 invokes its cited sampling primitive
-outside the primitive’s stated domain for theorem-valid epsilon values, and its
-explicit processing cost grows as `epsilon^-2` while Theorem 10 claims only
-`O~(epsilon^-1)` dependence at fixed dimensions. Claims 2–6 remain under
-audit; publication is blocked.
+Claims 1 and 3 are **FALSIFIED**. Claim 1’s exact written `QGLMSparsify`
+algorithm/runtime contract is contradicted because Algorithm 2 invokes its
+cited sampling primitive outside the primitive’s stated domain for
+theorem-valid epsilon values, and its explicit processing cost grows as
+`epsilon^-2` while Theorem 10 claims only `O~(epsilon^-1)` dependence at fixed
+dimensions. Claim 3’s printed Corollary 26 has an exact one-dimensional
+counterexample because its right minimand omits lambda. Claims 2, 4, 5, and 6
+remain under audit; publication is blocked.
 
 Current evidence is in
 [`.openresearch/artifacts/claim_1/EVAL.md`](.openresearch/artifacts/claim_1/EVAL.md).

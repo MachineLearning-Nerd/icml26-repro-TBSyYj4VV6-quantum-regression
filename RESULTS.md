@@ -1,8 +1,8 @@
 # Current results
 
-Claim 1 is **FALSIFIED** for the exact written `QGLMSparsify`
-algorithm/runtime contract. See
-[the current evaluation](.openresearch/artifacts/claim_1/EVAL.md). Claims 2–6
+Claims 1 and 3 are **FALSIFIED**. See the current evaluations for
+[Claim 1](.openresearch/artifacts/claim_1/EVAL.md) and
+[Claim 3](.openresearch/artifacts/claim_3/EVAL.md). Claims 2, 4, 5, and 6
 remain under audit, and the release gate is closed.
 
 ## Historical rejected baseline
