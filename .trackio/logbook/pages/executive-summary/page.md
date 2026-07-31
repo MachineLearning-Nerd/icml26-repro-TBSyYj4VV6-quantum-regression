@@ -22,8 +22,8 @@ algorithm/runtime” claim.
 | --- | --- |
 | Paper | [arXiv:2509.24757](https://arxiv.org/abs/2509.24757) · [OpenReview TBSyYj4VV6](https://openreview.net/forum?id=TBSyYj4VV6) |
 | Compute | CPU only; local one-process checks and Hugging Face `cpu-upgrade`; no GPU or quantum hardware |
-| Accepted HF jobs | [cumulative release run](https://huggingface.co/jobs/DineshAI/6a6b9048b36a6516e96a3042) · [four-route/control run](https://huggingface.co/jobs/DineshAI/6a6b8c7fb36a6516e96a2fed) |
-| Runtime | 5-second local checks; 6.951-second scientific HF runtime in a 21-second job |
+| HF jobs | [final cumulative run](https://huggingface.co/jobs/DineshAI/6a6c0cee23ed89c748ec8dfb) · [environment-only failed attempt](https://huggingface.co/jobs/DineshAI/6a6c0cb723ed89c748ec8df7) · [prior cumulative release run](https://huggingface.co/jobs/DineshAI/6a6b9048b36a6516e96a3042) · [four-route/control run](https://huggingface.co/jobs/DineshAI/6a6b8c7fb36a6516e96a2fed) |
+| Runtime | 5-second local checks; final HF run used 11.661 seconds scientific time in a 32-second job |
 | Code | [MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression) |
 | Published logbook | [DineshAI/TBSyYj4VV6](https://huggingface.co/spaces/DineshAI/TBSyYj4VV6) |
 | Judge data | [ICML-2026-agent-repro/verdicts](https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts) |

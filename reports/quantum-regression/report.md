@@ -86,6 +86,11 @@ five seconds each. The multi-core audit ran on HF `cpu-upgrade`: 8 cores were
 estimated, 64 were scheduler-visible, scientific runtime was 6.951 seconds,
 and the full job lasted 21 seconds. No GPU was used.
 
+The final cumulative [HF Job](https://huggingface.co/jobs/DineshAI/6a6c0cee23ed89c748ec8dfb)
+reran every verifier after the Claim 3 scope correction: 8 cores were
+estimated, 64 were scheduler-visible, scientific runtime was 11.661 seconds,
+and the full job lasted 32 seconds.
+
 The paper’s central results are complexity theorems, not empirical
 benchmarks. Full verification of Claims 2/4/5/6 needs an exact executable
 implementation of the named quantum subroutines or a machine-checkable proof
