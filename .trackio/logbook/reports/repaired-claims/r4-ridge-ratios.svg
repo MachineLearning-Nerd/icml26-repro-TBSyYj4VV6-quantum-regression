@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" font-family="system-ui,-apple-system,Segoe UI,sans-serif" role="img" aria-label="R4 — ridge inherits R2 through an exact identity">
+<rect width="760" height="430" fill="#fcfcfb"/>
+<text x="78" y="26" font-size="15" font-weight="600" fill="#0b0b0b">R4 — ridge inherits R2 through an exact identity</text>
+<text x="78" y="44" font-size="12" fill="#52514e">m = 131,072, &#955; = 0.5, k = 7,098 (18&#215; reduction) · sampled-solve objective vs full-data optimum, 10 seeds</text>
+<line x1="78" y1="370.0" x2="730" y2="370.0" stroke="#e1e0d9" stroke-width="1"/>
+<text x="70" y="374.0" font-size="11" fill="#898781" text-anchor="end">1.000</text>
+<line x1="78" y1="308.79999999999995" x2="730" y2="308.79999999999995" stroke="#e1e0d9" stroke-width="1"/>
+<text x="70" y="312.79999999999995" font-size="11" fill="#898781" text-anchor="end">1.002</text>
+<line x1="78" y1="247.5999999999999" x2="730" y2="247.5999999999999" stroke="#e1e0d9" stroke-width="1"/>
+<text x="70" y="251.5999999999999" font-size="11" fill="#898781" text-anchor="end">1.004</text>
+<line x1="78" y1="186.39999999999984" x2="730" y2="186.39999999999984" stroke="#e1e0d9" stroke-width="1"/>
+<text x="70" y="190.39999999999984" font-size="11" fill="#898781" text-anchor="end">1.006</text>
+<line x1="78" y1="125.19999999999979" x2="730" y2="125.19999999999979" stroke="#e1e0d9" stroke-width="1"/>
+<text x="70" y="129.1999999999998" font-size="11" fill="#898781" text-anchor="end">1.008</text>
+<line x1="78" y1="63.999999999999716" x2="730" y2="63.999999999999716" stroke="#e1e0d9" stroke-width="1"/>
+<text x="70" y="67.99999999999972" font-size="11" fill="#898781" text-anchor="end">1.010</text>
+<line x1="78" y1="370" x2="730" y2="370" stroke="#c3c2b7" stroke-width="1.5"/>
+<circle cx="118.0" cy="147.01779999999866" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="118.0" y="388" font-size="11" fill="#898781" text-anchor="middle">0</text>
+<circle cx="181.55555555555554" cy="213.90939999999932" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="181.55555555555554" y="388" font-size="11" fill="#898781" text-anchor="middle">1</text>
+<circle cx="245.11111111111111" cy="197.04880000000028" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="245.11111111111111" y="388" font-size="11" fill="#898781" text-anchor="middle">2</text>
+<circle cx="308.66666666666663" cy="237.89980000000293" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="308.66666666666663" y="388" font-size="11" fill="#898781" text-anchor="middle">3</text>
+<circle cx="372.22222222222223" cy="188.08299999999727" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="372.22222222222223" y="388" font-size="11" fill="#898781" text-anchor="middle">4</text>
+<circle cx="435.77777777777777" cy="243.13240000000053" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="435.77777777777777" y="388" font-size="11" fill="#898781" text-anchor="middle">5</text>
+<circle cx="499.3333333333333" cy="262.50219999999695" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="499.3333333333333" y="388" font-size="11" fill="#898781" text-anchor="middle">6</text>
+<circle cx="562.8888888888889" cy="257.4531999999979" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="562.8888888888889" y="388" font-size="11" fill="#898781" text-anchor="middle">7</text>
+<circle cx="626.4444444444445" cy="242.48979999999904" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="626.4444444444445" y="388" font-size="11" fill="#898781" text-anchor="middle">8</text>
+<circle cx="690.0" cy="236.46159999999895" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="690.0" y="388" font-size="11" fill="#898781" text-anchor="middle">9</text>
+<text x="130.0" y="151.01779999999866" font-size="11.5" fill="#0b0b0b">worst seed: 1.007287</text>
+<text x="78" y="80" font-size="12" fill="#52514e">threshold 1+&#949; = 1.25 sits 34&#215; further up (off scale) &#183; augmentation identity error = 0 (exact rationals)</text>
+<text x="404.0" y="418" font-size="12" fill="#898781" text-anchor="middle">seed</text>
+<text x="20" y="217.0" font-size="12" fill="#898781" text-anchor="middle" transform="rotate(-90 20 217.0)">objective ratio</text>
+</svg>

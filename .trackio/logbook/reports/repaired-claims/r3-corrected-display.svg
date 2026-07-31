@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 430" font-family="system-ui,-apple-system,Segoe UI,sans-serif" role="img" aria-label="R3 — fix the display, drop the word &#8220;first&#8221;">
+<rect width="760" height="430" fill="#fcfcfb"/>
+<text x="78" y="26" font-size="15" font-weight="600" fill="#0b0b0b">R3 — fix the display, drop the word &#8220;first&#8221;</text>
+<text x="78" y="44" font-size="12" fill="#52514e">A=[1], b=[1], &#955;=100, &#949;=1/10 · exact fractions on both panels</text>
+<line x1="78" y1="210" x2="730" y2="210" stroke="#c3c2b7" stroke-width="1.5"/>
+<line x1="78" y1="106.0" x2="730" y2="106.0" stroke="#0b0b0b" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="80" y="98.0" font-size="12" fill="#52514e">required: min of left objective = 1 (exact)</text>
+<path d="M240 210 L240 128.20000000000002 Q240 124.20000000000002 244 124.20000000000002 L326 124.20000000000002 Q330 124.20000000000002 330 128.20000000000002 L330 210 Z" fill="#d03b3b"/>
+<text x="228" y="171.10000000000002" font-size="12.5" font-weight="600" fill="#0b0b0b" text-anchor="end">&#10007; 33/40 - impossible</text>
+<text x="285" y="230" font-size="12" fill="#52514e" text-anchor="middle">printed bound (missing &#955;)</text>
+<path d="M480 210 L480 99.59999999999998 Q480 95.59999999999998 484 95.59999999999998 L566 95.59999999999998 Q570 95.59999999999998 570 99.59999999999998 L570 210 Z" fill="#0ca30c"/>
+<text x="525" y="85.59999999999998" font-size="12.5" font-weight="600" fill="#0b0b0b" text-anchor="middle">&#10003; 11/10 - consistent</text>
+<text x="525" y="230" font-size="12" fill="#52514e" text-anchor="middle">corrected bound (&#955; both sides)</text>
+<line x1="108" y1="355" x2="700" y2="355" stroke="#c3c2b7" stroke-width="2"/>
+<circle cx="158" cy="355" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="158" y="340" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="middle">Oct 2021</text>
+<text x="158" y="375" font-size="10.5" fill="#52514e" text-anchor="middle">Chen&#8211;de Wolf: quantum Lasso</text>
+<text x="158" y="389" font-size="10.5" fill="#52514e" text-anchor="middle">(constrained form, d-speedup)</text>
+<circle cx="404.0" cy="355" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="404.0" y="340" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="middle">Dec 2023</text>
+<text x="404.0" y="375" font-size="10.5" fill="#52514e" text-anchor="middle">Pathwise quantum Lasso</text>
+<text x="404.0" y="389" font-size="10.5" fill="#52514e" text-anchor="middle">(penalized; d- and n-speedup variants)</text>
+<circle cx="640" cy="355" r="5" fill="#2a78d6" stroke="#fcfcfb" stroke-width="2"/>
+<text x="640" y="340" font-size="12" font-weight="600" fill="#0b0b0b" text-anchor="middle">Sep 2025</text>
+<text x="640" y="375" font-size="10.5" fill="#52514e" text-anchor="middle">this paper</text>
+<text x="640" y="389" font-size="10.5" fill="#52514e" text-anchor="middle">&#8220;first&#8221; is unrepairable</text>
+</svg>
