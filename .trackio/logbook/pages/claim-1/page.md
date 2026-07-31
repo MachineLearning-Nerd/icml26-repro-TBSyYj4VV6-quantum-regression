@@ -67,3 +67,48 @@ uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src
 This falsifies the published named-algorithm/runtime contract, not every
 possible quantum sparsification algorithm. A new dense-return branch or an
 `epsilon=Omega(sqrt(n/m))` restriction would be a repaired claim.
+
+---
+<!-- trackio-cell
+{"type": "markdown", "id": "cell_c1_supp_scale_2026_07_31", "created_at": "2026-07-31T08:05:00+00:00", "title": "Supplemental executed audit at m=2^18"}
+-->
+## Supplemental executed audit at m=2^18
+
+A second, independent executed audit at `m=262144, n=64, r=8` establishes both halves of the picture. **In-regime** (`epsilon >= sqrt(n/m)`): the executed realization of Algorithm 2's sampling core (steps 5-10; identical output law to the quantum sampler, which changes only query cost) delivers the promised epsilon-sparsifier — spectral deviation at most `0.61*eps` and end-to-end solve ratio within `1+eps` on 10/10 seeds at each epsilon. **Out-of-regime**: the sweep measures the first `MultiSample` domain violation at `epsilon=0.0625` and the first crossing of the `sqrt(mn)/epsilon` runtime envelope by the explicit loop at `epsilon=0.25` — each exactly one halving step under its predicted constant (`eps*_dom = sqrt(C n ln n/m) = 0.063729`; `eps*_loop = C ln(n) sqrt(n/m) = 0.259930`). Together: the universal `epsilon>0` wording is falsified by the missing precondition, while the restricted-regime theorem — with the `epsilon = Omega(sqrt(n/m))` condition the paper itself derives after Corollary 23, plus a one-line dense fallback (`if M >= m return w=1`, cost `O(m) <= O~(sqrt(mn)/epsilon)` there) — is provable.
+
+```bash
+python code/claim1_regime_execution.py
+```
+
+````output
+Claim 1 / Theorem 10 executed audit
+instance: m=262144 n=64 r=8 M=ceil(4*n*ln(n)/eps^2) seeds=0..9
+Part A - in-regime execution of Algorithm 2 sampling core:
+  eps=0.5    M=4259   M<=m=True max_spectral_dev=0.303842 within_eps=True max_obj_ratio=1.019357 within_1+eps=True
+  eps=0.25   M=17035  M<=m=True max_spectral_dev=0.151221 within_eps=True max_obj_ratio=1.005346 within_1+eps=True
+  eps=0.125  M=68140  M<=m=True max_spectral_dev=0.069271 within_eps=True max_obj_ratio=1.001416 within_1+eps=True
+Part B - boundary sweep (MultiSample domain and loop envelope):
+  eps=0.5          M=4259         M<=m=True  M<=sqrt(mn)/eps=True
+  eps=0.25         M=17035        M<=m=True  M<=sqrt(mn)/eps=False
+  eps=0.125        M=68140        M<=m=True  M<=sqrt(mn)/eps=False
+  eps=0.0625       M=272557       M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.03125      M=1090227      M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.015625     M=4360905      M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.0078125    M=17443620     M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.00390625   M=69774480     M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.00195312   M=279097920    M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.000976562  M=1116391677   M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.000488281  M=4465566708   M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.000244141  M=17862266831  M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.00012207   M=71449067324  M<=m=False M<=sqrt(mn)/eps=False
+predicted domain boundary eps*_dom = sqrt(C n ln n / m) = 0.063729
+predicted loop-envelope boundary eps*_loop = C ln(n) sqrt(n/m) = 0.259930
+measured first out-of-domain eps = 0.0625; measured first loop>envelope eps = 0.25
+each measured boundary sits one halving step under its prediction: True
+negative control: eps=eps*=0.063729 gives M=262144 <= m=262144: True
+RESULTS_SHA256=7430ab58474ebb87dbe5eb8f07399438c2fa0bb2aeff8892679d6129c145dff0
+````
+
+Environment: local CPU, Python 3.14, NumPy 2.5.1, deterministic seeds; printed floats are rounded before printing so BLAS variation cannot change stdout; `RESULTS_SHA256` fingerprints the printed values. Stdout above is byte-identical to the linked stdout evidence file.
+
+Supplemental evidence: [executed stdout](../../evidence/claim_1/regime_execution_stdout.txt) and [executed script](../../code/claim1_regime_execution.py).

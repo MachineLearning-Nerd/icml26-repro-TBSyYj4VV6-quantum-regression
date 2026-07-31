@@ -1,0 +1,55 @@
+Excerpt A (target paper, ar5iv https://ar5iv.labs.arxiv.org/html/2509.24757,
+related-work paragraph acknowledging prior quantum Lasso work):
+
+where $m\gg n$ . Moreover, for linear, multiple, and Ridge regression, our algorithm also subsumes the results of Song et al. ( 2023 ) , the previous known quantum algorithm for the problem.
+We emphasize that our focus is on the computational task of approximately minimizing the loss function $F$ , rather than on the statistical learning problem of estimating an unknown model from random samples. The latter setting was studied by Chen and de Wolf ( 2023 ) , who investigated quantum algorithms for Lasso and ridge regression; in our notation, their results correspond to the case $m=O(\log n/\varepsilon^{2})$ .
+For clarity, table   1 summarizes the resulting runtimes across classical algorithms, prior quantum work, and our algorithms. 
+
+ 1.2 Techniques 
+
+ Generalized linear model sparsification. 
+
+ To systematically investigate quantum speedups for a broad class of regression problems, we a
+
+---
+Excerpt B (target paper Table 1 region, Lasso row shows no prior quantum entry):
+
+lary   24 ) 
+
+ Ridge regression 
+
+ $\widetilde{O}(mr+\operatorname{poly}(n,1/\varepsilon))$ 
+
+ (Avron et al., 2017 ) 
+
+ $\widetilde{O}(\sqrt{m}n^{1.5}/\varepsilon+\operatorname{poly}(n,1/\varepsilon))$ 
+
+ (Song et al., 2023 ) 
+
+ $\widetilde{O}(r\sqrt{mn}/\varepsilon+n^{3})$ 
+
+ ( corollary   25 ) 
+
+ Lasso regression 
+
+ $\widetilde{O}(mn^{2}+n^{3})$ 
+
+ (Efron et al., 2004 ) 
+
+ — 
+
+ $\widetilde{O}(r\sqrt{mn}/\varepsilon+\operatorname{poly}(n,1/\varepsilon))$ 
+
+ ( corollary   26 ) 
+
+ Huber regression 
+
+ $\widetilde{O}(mr+\operatorname{poly}(n,1/\varepsilon))$ 
+
+ (Jambulapati et al., 2024 ) 
+
+ — 
+
+ $\widetilde{O}(r\sqrt{mn}/\varepsilon+\operatorname{poly}(n,1/\varepsilon))$ 
+
+ ( corollary   12 , 

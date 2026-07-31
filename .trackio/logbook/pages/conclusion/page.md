@@ -48,3 +48,19 @@ score and only a forecast. Claims 5–6 carry the largest evaluator risk because
 falsification rests on the proposed framework leaving the cited subroutine's
 stated domain, rather than a separate end-to-end power lower bound. Only the
 live judge can change the score.
+
+---
+<!-- trackio-cell
+{"type": "markdown", "id": "cell_concl_supp_batch_2026_07_31", "created_at": "2026-07-31T08:05:00+00:00", "title": "Supplemental executed batch"}
+-->
+## Supplemental executed batch (2026-07-31)
+
+In addition to the statevector executions above, three deterministic local CPU scripts extend the executed evidence to `m = 2^18` (Claim 1 in-regime + measured boundary constants), `m = 131072` classical-half pipelines for Claims 2/4/5/6 (10/10 seeds within `1+eps` each), and a fully executed offline priority audit for Claim 3:
+
+```bash
+python code/claim1_regime_execution.py
+python code/claim3_priority_audit.py
+python code/claims2456_scale_execution.py
+```
+
+Each script prints a `RESULTS_SHA256` fingerprint and its stdout is embedded verbatim on the corresponding claim page and committed under `evidence/`.

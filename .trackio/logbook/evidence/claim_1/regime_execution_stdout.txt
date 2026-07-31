@@ -1,0 +1,26 @@
+Claim 1 / Theorem 10 executed audit
+instance: m=262144 n=64 r=8 M=ceil(4*n*ln(n)/eps^2) seeds=0..9
+Part A - in-regime execution of Algorithm 2 sampling core:
+  eps=0.5    M=4259   M<=m=True max_spectral_dev=0.303842 within_eps=True max_obj_ratio=1.019357 within_1+eps=True
+  eps=0.25   M=17035  M<=m=True max_spectral_dev=0.151221 within_eps=True max_obj_ratio=1.005346 within_1+eps=True
+  eps=0.125  M=68140  M<=m=True max_spectral_dev=0.069271 within_eps=True max_obj_ratio=1.001416 within_1+eps=True
+Part B - boundary sweep (MultiSample domain and loop envelope):
+  eps=0.5          M=4259         M<=m=True  M<=sqrt(mn)/eps=True
+  eps=0.25         M=17035        M<=m=True  M<=sqrt(mn)/eps=False
+  eps=0.125        M=68140        M<=m=True  M<=sqrt(mn)/eps=False
+  eps=0.0625       M=272557       M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.03125      M=1090227      M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.015625     M=4360905      M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.0078125    M=17443620     M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.00390625   M=69774480     M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.00195312   M=279097920    M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.000976562  M=1116391677   M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.000488281  M=4465566708   M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.000244141  M=17862266831  M<=m=False M<=sqrt(mn)/eps=False
+  eps=0.00012207   M=71449067324  M<=m=False M<=sqrt(mn)/eps=False
+predicted domain boundary eps*_dom = sqrt(C n ln n / m) = 0.063729
+predicted loop-envelope boundary eps*_loop = C ln(n) sqrt(n/m) = 0.259930
+measured first out-of-domain eps = 0.0625; measured first loop>envelope eps = 0.25
+each measured boundary sits one halving step under its prediction: True
+negative control: eps=eps*=0.063729 gives M=262144 <= m=262144: True
+RESULTS_SHA256=7430ab58474ebb87dbe5eb8f07399438c2fa0bb2aeff8892679d6129c145dff0

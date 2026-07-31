@@ -1,0 +1,26 @@
+Claim 3 / Corollary 26 priority + display audit (exact arithmetic)
+  source arxiv_2110.13086_abs.html sha256=c384c804076dd79b...
+  source arxiv_2312.14141_abs.html sha256=bc4dedeb62c55596...
+  source target_2509.24757_excerpts.txt sha256=e2bccc1cbd5bbb17...
+Step 1-2: primary-source date and content audit
+  arXiv:2110.13086 v1=2021-10-25 earlier_than_target=True
+    title: Quantum Algorithms and Lower Bounds for Linear Regression with Norm Constraints
+    abstract mentions quantum=True lasso=True penalized-form=False
+  arXiv:2312.14141 v1=2023-12-21 earlier_than_target=True
+    title: Quantum Algorithms for the Pathwise Lasso
+    abstract mentions quantum=True lasso=True penalized-form=True
+  prior quantum-Lasso records earlier than target: 2 of 2
+Step 3: objective bijection, exact 1-d soft-threshold instance
+  argmin[(1/2)(x-1)^2+(1/2)|x|] = 1/2; argmin[(x-1)^2+(1)|x|] = 1/2; equal under lambda_target=2*t: True
+Step 4: target self-citation of prior quantum Lasso work
+  excerpt contains 'studied by Chen and de Wolf': True
+  excerpt contains 'quantum algorithms for Lasso': True
+Step 5: printed-inequality counterexample, exact fractions
+  min_x[(x-1)^2+100|x|] = 1 at x=0
+  (1+eps)*min_y[(y-1)^2+|y|] = 33/40 at y=1/2
+  printed guarantee requires 1 <= 33/40: False; impossibility gap = 7/40
+Step 6: negative controls
+  Ridge-only earlier record (Shao 2023, IJMLC 14(1):117-124) mentions lasso=False -> does not falsify firstness: True
+  target-vs-itself earlier_than_target=False -> not prior art: True
+AUDIT RESULT: firstness falsified by >=1 earlier primary source (found 2), display inequality falsified exactly: True
+RESULTS_SHA256=4972f9be23b807065ac2e2d8a682ee492c60a17ab80d5b701a588e052d3c3a08

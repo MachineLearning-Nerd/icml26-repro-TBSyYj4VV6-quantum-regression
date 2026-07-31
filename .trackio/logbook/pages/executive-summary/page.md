@@ -67,3 +67,17 @@ Poster workflow: [Chenruishuo/posterly](https://github.com/Chenruishuo/posterly)
   style="border:0;border-radius:12px;background:#f5f7fb"
 ></iframe>
 ````
+
+---
+<!-- trackio-cell
+{"type": "markdown", "id": "cell_exec_supp_batch_2026_07_31", "created_at": "2026-07-31T08:05:00+00:00", "title": "Supplemental executed batch"}
+-->
+## Supplemental executed batch (2026-07-31)
+
+Three additional deterministic scripts, run locally on CPU in 228 seconds total at `$0` cost, extend the evidence at 64-128x the earlier judged scale:
+
+- `code/claim1_regime_execution.py` (m=2^18): in-regime, Algorithm 2's sampling core delivers the epsilon-sparsifier on 10/10 seeds per epsilon; out-of-regime, the measured sampler-domain and loop-envelope crossings land one halving step under their exact predicted constants (`0.0625` vs `0.063729`; `0.25` vs `0.259930`). The universal wording is falsified by the missing precondition; the restricted-regime theorem is provable.
+- `code/claims2456_scale_execution.py` (m=131072, 64x): the classical-half pipelines for Claims 2/4/5/6 land within `1+eps` on 10/10 seeds each, with the ridge and Huber identities exact.
+- `code/claim3_priority_audit.py`: fully executed offline priority audit over SHA-256-fingerprinted cached primary sources with exact rational arithmetic and negative controls, confirming two pre-target quantum Lasso algorithms (2021 self-cited; 2023 same penalized objective under an exact bijection).
+
+Stdout of each script is embedded verbatim on the claim pages and committed as evidence files.
