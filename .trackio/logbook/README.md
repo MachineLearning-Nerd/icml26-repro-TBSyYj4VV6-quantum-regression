@@ -1,3 +1,19 @@
+---
+title: "Reproduction: Accelerating Regression Tasks with Quantum Algorithms"
+emoji: 🎯
+colorFrom: yellow
+colorTo: red
+sdk: static
+pinned: false
+tags:
+ - trackio
+ - trackio-logbook
+ - open-experiment
+ - icml2026-repro
+ - paper-TBSyYj4VV6
+ - arxiv:2509.24757
+---
+
 # Current reproduction campaign
 
 This reproduction tests all six requested claims in arXiv:2509.24757. All six
