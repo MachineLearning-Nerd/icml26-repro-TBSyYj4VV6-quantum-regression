@@ -20,6 +20,7 @@ from downstream_contract_audit import write_audits
 from downstream_contract_checker import check as check_downstream
 from remaining_claim_checker import check as check_remaining
 from remaining_claim_routes import main as run_remaining_routes
+from quantum_statevector_audit import main as run_quantum_statevector_audit
 
 
 SOURCE_SHA = "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549"
@@ -144,6 +145,7 @@ def main():
     claim3 = write_counterexample(root)
     claim3_independent = check_claim3(root)
     run_remaining_routes()
+    run_quantum_statevector_audit()
     remaining = json.loads((root / "outputs" / "remaining_claim_routes.json").read_text())
     remaining_check = check_remaining(root)
     downstream = write_audits(root)
