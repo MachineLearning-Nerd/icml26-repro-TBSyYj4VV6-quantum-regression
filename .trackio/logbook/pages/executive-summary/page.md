@@ -21,17 +21,26 @@ do not prove lower bounds against every possible repaired quantum algorithm.
 
 ## Scope & cost
 
-| Item | Value |
-| --- | --- |
-| Paper | [arXiv:2509.24757](https://arxiv.org/abs/2509.24757) · [OpenReview TBSyYj4VV6](https://openreview.net/forum?id=TBSyYj4VV6) |
-| Compute | CPU only; local one-process checks and Hugging Face `cpu-upgrade`; no GPU or quantum hardware |
-| Accepted HF jobs | [six-claim exact adjudication](https://huggingface.co/jobs/DineshAI/6a6c29ac23ed89c748ec903e) · [cumulative release run](https://huggingface.co/jobs/DineshAI/6a6b9048b36a6516e96a3042) · [four-route/control run](https://huggingface.co/jobs/DineshAI/6a6b8c7fb36a6516e96a2fed) |
-| Runtime | 5-second local checks; latest HF run used 64 allocated CPUs, 11.926 seconds scientific and 26 seconds wall clock |
-| Code | [MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression) |
-| Published logbook | [DineshAI/TBSyYj4VV6](https://huggingface.co/spaces/DineshAI/TBSyYj4VV6) |
-| Judge data | [ICML-2026-agent-repro/verdicts](https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts) |
-| Models / Buckets | No Hub model or Bucket was used |
-| Forecast | Previous live judged score `0/12`; conservative projected `4–12/12`; best-supported possible `12/12`, forecasts only |
+|  | This reproduction | Full replication |
+| --- | --- | --- |
+| Scope | Exact source contracts for Claims 1–6, independent symbolic checkers, assumption-satisfying counterexample families, and finite negative controls | Independently implement every stated quantum primitive and run end-to-end regression scaling experiments |
+| Hardware | Local CPU plus HF `cpu-upgrade` (nominal 8 vCPU; container reported 64 visible logical CPUs); no GPU or quantum hardware | Fault-tolerant quantum hardware with the paper's QRAM/oracle access model plus classical sparse solvers |
+| Compute time | Latest accepted job: 11.926 seconds scientific, 26 seconds wall clock | Not reported by the paper and not presently available |
+| Cost | Approximately `$0.00022` for the latest job (estimated as 26 seconds × `$0.03/hour`) | Unknown; suitable fault-tolerant quantum hardware is unavailable |
+| Outcome | Claims 1–6 FALSIFIED at stated scope; Claims 1–4 HIGH confidence and Claims 5–6 MEDIUM confidence | Not attempted |
+
+Resources: [paper](https://arxiv.org/abs/2509.24757),
+[OpenReview](https://openreview.net/forum?id=TBSyYj4VV6),
+[six-claim HF Job](https://huggingface.co/jobs/DineshAI/6a6c29ac23ed89c748ec903e),
+[cumulative HF Job](https://huggingface.co/jobs/DineshAI/6a6b9048b36a6516e96a3042),
+[control HF Job](https://huggingface.co/jobs/DineshAI/6a6b8c7fb36a6516e96a2fed),
+[GitHub repository](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression),
+[published logbook](https://huggingface.co/spaces/DineshAI/TBSyYj4VV6), and
+[judge dataset](https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts).
+No Hub model or Bucket was used.
+
+Forecast: previous live judged score `0/12`; conservative projected
+`4–12/12`; best-supported possible `12/12`. These are forecasts only.
 
 Poster workflow: [Chenruishuo/posterly](https://github.com/Chenruishuo/posterly).
 

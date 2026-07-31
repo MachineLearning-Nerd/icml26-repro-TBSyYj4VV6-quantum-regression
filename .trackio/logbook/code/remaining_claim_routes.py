@@ -318,7 +318,8 @@ def main() -> None:
         "claims": claims,
         "runtime": {
             "seconds": time.perf_counter() - started,
-            "actual_cpu_allocation": cpu_count(),
+            "nominal_cpu_allocation_vcpus": 8,
+            "container_visible_logical_cpus": cpu_count(),
             "platform": platform.platform(),
             "python": platform.python_version(),
             "estimated_cores_before_run": 8,

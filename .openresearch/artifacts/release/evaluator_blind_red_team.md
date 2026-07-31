@@ -74,8 +74,9 @@ Conclusions:
 - Claims 5–6 explicitly expose their MEDIUM-confidence scope: the paper's
   all-epsilon algorithm leaves the cited sampler domain; no universal lower
   bound against repaired algorithms is claimed.
-- The fixed command, locked environment, Git SHA, seeds, 64-CPU HF Job,
-  raw results, checker outputs, failing controls, and limitations are linked.
+- The fixed command, locked environment, Git SHA, seeds, nominal 8-vCPU HF
+  Job (64 container-visible logical CPUs), raw results, checker outputs,
+  failing controls, and limitations are linked.
 - Historical rejected pages remain reachable but cannot be mistaken for the
   current verifier.
 - No conclusion required hidden repository knowledge or an inaccessible file.

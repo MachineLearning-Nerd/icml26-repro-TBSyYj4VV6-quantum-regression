@@ -20,7 +20,8 @@
     "backend": "hf",
     "selected_flavor": "cpu-upgrade",
     "estimated_cores_before_run": 8,
-    "actual_cpu_allocation": 64,
+    "nominal_cpu_allocation_vcpus": 8,
+    "container_visible_logical_cpus": 64,
     "scientific_runtime_seconds": 11.925704308087006,
     "job_duration_seconds": 26,
     "gpu_used": false
