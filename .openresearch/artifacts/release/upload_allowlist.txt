@@ -1,9 +1,12 @@
 README.md
 code/.python-version
 code/claim1_independent_checker.py
+code/claim1_regime_execution.py
 code/claim1_runtime_audit.py
 code/claim3_independent_checker.py
 code/claim3_lasso_counterexample.py
+code/claim3_priority_audit.py
+code/claims2456_scale_execution.py
 code/downstream_contract_audit.py
 code/downstream_contract_checker.py
 code/publication_gate.py
@@ -20,6 +23,7 @@ evidence/claim_1/independent_checker.json
 evidence/claim_1/negative_control.json
 evidence/claim_1/quantum_statevector_audit.json
 evidence/claim_1/quantum_statevector_checker.json
+evidence/claim_1/regime_execution_stdout.txt
 evidence/claim_1/runtime_audit.json
 evidence/claim_1/runtime_cpu.json
 evidence/claim_2/claim_contract.json
@@ -39,8 +43,12 @@ evidence/claim_3/independent_checker.json
 evidence/claim_3/negative_control.json
 evidence/claim_3/quantum_statevector_audit.json
 evidence/claim_3/quantum_statevector_checker.json
+evidence/claim_3/priority_audit_stdout.txt
 evidence/claim_3/routes.json
 evidence/claim_3/runtime_cpu.json
+evidence/claim_3/sources/arxiv_2110.13086_abs.html
+evidence/claim_3/sources/arxiv_2312.14141_abs.html
+evidence/claim_3/sources/target_2509.24757_excerpts.txt
 evidence/claim_4/claim_contract.json
 evidence/claim_4/downstream_contract_audit.json
 evidence/claim_4/formal_statevector_run.json
@@ -68,6 +76,7 @@ evidence/claim_6/quantum_statevector_audit.json
 evidence/claim_6/quantum_statevector_checker.json
 evidence/claim_6/routes.json
 evidence/claim_6/runtime_cpu.json
+evidence/claims2456_scale_stdout.txt
 evidence/release/final_release_report.md
 logbook.json
 notebooks/quantum_regression_reproduction.py

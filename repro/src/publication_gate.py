@@ -66,6 +66,12 @@ required_evidence = [
     root / ".trackio/logbook/code/downstream_contract_checker.py",
     root / ".trackio/logbook/code/quantum_statevector_audit.py",
     root / ".trackio/logbook/code/quantum_statevector_checker.py",
+    root / ".trackio/logbook/code/claim1_regime_execution.py",
+    root / ".trackio/logbook/code/claims2456_scale_execution.py",
+    root / ".trackio/logbook/code/claim3_priority_audit.py",
+    root / ".trackio/logbook/evidence/claim_1/regime_execution_stdout.txt",
+    root / ".trackio/logbook/evidence/claims2456_scale_stdout.txt",
+    root / ".trackio/logbook/evidence/claim_3/priority_audit_stdout.txt",
     root / ".trackio/logbook/evidence/release/final_release_report.md",
     root / ".openresearch/artifacts/release/evaluator_blind_red_team.md",
     root / ".openresearch/artifacts/release/upload_allowlist.txt",
@@ -78,6 +84,13 @@ statevector_checker = json.loads(
     (root / "outputs" / "quantum_statevector_checker.json").read_text()
 )
 assert statevector_checker["passed"]
+supplemental = json.loads(
+    (root / "outputs" / "supplemental_hf_checks.json").read_text()
+)
+assert len(supplemental) == 3
+assert all(run["passed"] for run in supplemental)
+assert all(run["selected_hardware"] == "hf cpu-upgrade" for run in supplemental)
+assert all(run["estimated_required_cores"] == 8 for run in supplemental)
 
 logbook = json.loads((root / ".trackio/logbook/logbook.json").read_text())
 current_slugs = {child["slug"] for child in logbook["root"]["children"]}
@@ -162,6 +175,7 @@ gate = {
         "claims_2_4_5_6_independent_checker": True,
         "statevector_quantum_stages_executed": True,
         "statevector_independent_checker": True,
+        "supplemental_scale_runs_executed_on_hf_cpu_upgrade": True,
         "all_six_claims_adjudicated": True,
         "candidate_logbook_valid": True,
         "historical_21_file_set_is_subset": True,

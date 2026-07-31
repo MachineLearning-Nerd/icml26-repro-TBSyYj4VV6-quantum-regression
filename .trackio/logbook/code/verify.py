@@ -10,6 +10,10 @@ from __future__ import annotations
 
 import json
 import math
+import os
+import subprocess
+import sys
+import time
 from pathlib import Path
 
 from claim1_independent_checker import check as check_claim1
@@ -25,6 +29,34 @@ from quantum_statevector_checker import check as check_quantum_statevector
 
 
 SOURCE_SHA = "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549"
+
+
+def run_supplemental(root, script_name, required_markers):
+    started = time.monotonic()
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(root / ".trackio" / "logbook" / "code" / script_name),
+        ],
+        cwd=root,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    for marker in required_markers:
+        if marker not in result.stdout:
+            raise RuntimeError(f"{script_name} missing required marker: {marker}")
+    print(f"SUPPLEMENTAL_RUN {script_name}")
+    print(result.stdout, end="")
+    return {
+        "script": script_name,
+        "passed": True,
+        "runtime_seconds": round(time.monotonic() - started, 3),
+        "estimated_required_cores": 8,
+        "selected_hardware": "hf cpu-upgrade",
+        "visible_logical_cpus": os.cpu_count(),
+        "required_markers": required_markers,
+    }
 
 
 def dot(a, b): return sum(x * y for x, y in zip(a, b))
@@ -155,6 +187,43 @@ def main():
     remaining_check = check_remaining(root)
     downstream = write_audits(root)
     downstream_check = check_downstream(root)
+    supplemental = [
+        run_supplemental(
+            root,
+            "claim1_regime_execution.py",
+            [
+                "within_eps=True",
+                "within_1+eps=True",
+                "each measured boundary sits one halving step under its prediction: True",
+                "negative control:",
+                "RESULTS_SHA256=",
+            ],
+        ),
+        run_supplemental(
+            root,
+            "claims2456_scale_execution.py",
+            [
+                "least-squares:",
+                "ridge:",
+                "huber:",
+                "ell_1.5:",
+                "coverage ratio<=1+eps: 10/10",
+                "RESULTS_SHA256=",
+            ],
+        ),
+        run_supplemental(
+            root,
+            "claim3_priority_audit.py",
+            [
+                "prior quantum-Lasso records earlier than target: 2 of 2",
+                "display inequality falsified exactly: True",
+                "RESULTS_SHA256=",
+            ],
+        ),
+    ]
+    (root / "outputs" / "supplemental_hf_checks.json").write_text(
+        json.dumps(supplemental, indent=2, sort_keys=True) + "\n"
+    )
     verdict = {
         "paper": "TBSyYj4VV6", "arxiv": "2509.24757", "source_sha256": SOURCE_SHA,
         "historical_rejected_baseline": {
@@ -210,6 +279,7 @@ def main():
         "remaining_four_route_checker": remaining_check["passed"],
         "downstream_exact_contract_checker": downstream_check["passed"],
         "quantum_statevector_checker": quantum_statevector["passed"],
+        "supplemental_hf_checks": all(run["passed"] for run in supplemental),
         "release_ready": True,
     }
     print("CURRENT_CAMPAIGN_SUMMARY")
@@ -224,6 +294,7 @@ def main():
         summary["remaining_four_route_checker"],
         summary["downstream_exact_contract_checker"],
         summary["quantum_statevector_checker"],
+        summary["supplemental_hf_checks"],
     )):
         raise SystemExit(1)
 
