@@ -90,9 +90,10 @@ the current falsifications.
 ## Compute and limits
 
 Baseline, Claim 1, and Claim 3 were deterministic one-process local runs of
-five seconds each. The multi-core audit ran on HF `cpu-upgrade`: 8 cores were
-estimated, 64 were scheduler-visible, scientific runtime was 6.951 seconds,
-and the full job lasted 21 seconds. No GPU was used.
+five seconds each. The final scientific audit ran on
+[HF `cpu-upgrade`](https://huggingface.co/jobs/DineshAI/6a6c29ac23ed89c748ec903e):
+8 cores were estimated, 64 were allocated, scientific runtime was 11.926
+seconds, and the full job lasted 26 seconds. No GPU was used.
 
 The paper’s central results are complexity theorems, not empirical
 benchmarks. Claims 1–4 have HIGH-confidence independent contradictions.

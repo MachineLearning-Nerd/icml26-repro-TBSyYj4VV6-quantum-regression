@@ -53,3 +53,29 @@ Conclusions:
 - The poster, fixed command, accepted HF Jobs, GitHub repository, raw data,
   controls, and `0–2/12` forecast are discoverable from the canonical pages.
 - No missing cell remained in the conclusion’s evaluator-visible matrix.
+
+## Pass 4 after exact six-claim adjudication
+
+The reviewer started from a fresh allowlisted candidate and used only
+`pages/index.md`. Files opened, in traversal order:
+
+- `pages/executive-summary/page.md` and `poster_embed.html`
+- `pages/claim-{1,2,3,4,5,6}/page.md`
+- each linked claim contract, source audit, verifier, independent checker,
+  negative control, raw JSON result, and runtime record
+- `pages/conclusion/page.md`
+- the linked illustrated report and self-contained notebook
+
+Conclusions:
+
+- All six exact claim statements, assumptions, quantifiers, and current
+  FALSIFIED verdicts are directly discoverable.
+- Claims 1–4 expose HIGH-confidence independent contradictions.
+- Claims 5–6 explicitly expose their MEDIUM-confidence scope: the paper's
+  all-epsilon algorithm leaves the cited sampler domain; no universal lower
+  bound against repaired algorithms is claimed.
+- The fixed command, locked environment, Git SHA, seeds, 64-CPU HF Job,
+  raw results, checker outputs, failing controls, and limitations are linked.
+- Historical rejected pages remain reachable but cannot be mistaken for the
+  current verifier.
+- No conclusion required hidden repository knowledge or an inaccessible file.

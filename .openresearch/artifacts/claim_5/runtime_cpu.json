@@ -10,5 +10,18 @@
   "platform": "Linux-6.12.94-123.192.amzn2023.x86_64-x86_64-with-glibc2.36",
   "python": "3.12.12",
   "seconds": 6.951017700999728,
-  "selected_flavor": "cpu-upgrade"
+  "selected_flavor": "cpu-upgrade",
+  "latest_cumulative_run": {
+    "run_id": "9324bfb7-3493-45fa-9007-948207a207c5",
+    "hf_job": "DineshAI/6a6c29ac23ed89c748ec903e",
+    "hf_job_url": "https://huggingface.co/jobs/DineshAI/6a6c29ac23ed89c748ec903e",
+    "git_sha": "28267025b6bd0aa15a72558cd5837fdd728e270b",
+    "backend": "hf",
+    "selected_flavor": "cpu-upgrade",
+    "estimated_cores_before_run": 8,
+    "actual_cpu_allocation": 64,
+    "scientific_runtime_seconds": 11.925704308087006,
+    "job_duration_seconds": 26,
+    "gpu_used": false
+  }
 }
