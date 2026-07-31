@@ -1,70 +1,76 @@
 {
-  "schema_version": 2,
+ "schema_version": 2,
+ "title": "Reproduction: Accelerating Regression Tasks with Quantum Algorithms",
+ "emoji": "🎯",
+ "space_id": "DineshAI/repro-accelerating-regression-tasks-with-quantum-algorithms",
+ "paper": {
+  "arxiv_id": "2509.24757"
+ },
+ "tags": [
+  "icml2026-repro",
+  "paper-TBSyYj4VV6"
+ ],
+ "updated_at": "2026-07-31T08:40:00+00:00",
+ "root": {
+  "slug": "index",
   "title": "Reproduction: Accelerating Regression Tasks with Quantum Algorithms",
-  "emoji": "🎯",
-  "space_id": "DineshAI/repro-accelerating-regression-tasks-with-quantum-algorithms",
-  "paper": {
-    "arxiv_id": "2509.24757"
-  },
-  "tags": [
-    "icml2026-repro",
-    "paper-TBSyYj4VV6"
-  ],
-  "updated_at": "2026-07-31T07:00:00+00:00",
-  "root": {
-    "slug": "index",
-    "title": "Reproduction: Accelerating Regression Tasks with Quantum Algorithms",
-    "file": "pages/index.md",
-    "children": [
-      {
-        "slug": "executive-summary",
-        "title": "Executive summary",
-        "file": "pages/executive-summary/page.md",
-        "children": []
-      },
-      {
-        "slug": "claim-1",
-        "title": "Claim 1 — GLM sparsification",
-        "file": "pages/claim-1/page.md",
-        "children": []
-      },
-      {
-        "slug": "claim-2",
-        "title": "Claim 2 — Linear regression",
-        "file": "pages/claim-2/page.md",
-        "children": []
-      },
-      {
-        "slug": "claim-3",
-        "title": "Claim 3 — Lasso regression",
-        "file": "pages/claim-3/page.md",
-        "children": []
-      },
-      {
-        "slug": "claim-4",
-        "title": "Claim 4 — Ridge regression",
-        "file": "pages/claim-4/page.md",
-        "children": []
-      },
-      {
-        "slug": "claim-5",
-        "title": "Claim 5 — Huber regression",
-        "file": "pages/claim-5/page.md",
-        "children": []
-      },
-      {
-        "slug": "claim-6",
-        "title": "Claim 6 — ell-p regression",
-        "file": "pages/claim-6/page.md",
-        "children": []
-      },
-      {
-        "slug": "conclusion",
-        "title": "Conclusion",
-        "file": "pages/conclusion/page.md",
-        "children": []
-      }
-    ]
-  },
-  "revision": "icml2026-7771-statevector-v3"
+  "file": "pages/index.md",
+  "children": [
+   {
+    "slug": "executive-summary",
+    "title": "Executive summary",
+    "file": "pages/executive-summary/page.md",
+    "children": []
+   },
+   {
+    "slug": "claim-1",
+    "title": "Claim 1 — GLM sparsification",
+    "file": "pages/claim-1/page.md",
+    "children": []
+   },
+   {
+    "slug": "claim-2",
+    "title": "Claim 2 — Linear regression",
+    "file": "pages/claim-2/page.md",
+    "children": []
+   },
+   {
+    "slug": "claim-3",
+    "title": "Claim 3 — Lasso regression",
+    "file": "pages/claim-3/page.md",
+    "children": []
+   },
+   {
+    "slug": "claim-4",
+    "title": "Claim 4 — Ridge regression",
+    "file": "pages/claim-4/page.md",
+    "children": []
+   },
+   {
+    "slug": "claim-5",
+    "title": "Claim 5 — Huber regression",
+    "file": "pages/claim-5/page.md",
+    "children": []
+   },
+   {
+    "slug": "claim-6",
+    "title": "Claim 6 — ell-p regression",
+    "file": "pages/claim-6/page.md",
+    "children": []
+   },
+   {
+    "slug": "repaired-claims",
+    "title": "Repaired claims — proven alternatives",
+    "file": "pages/repaired-claims/page.md",
+    "children": []
+   },
+   {
+    "slug": "conclusion",
+    "title": "Conclusion",
+    "file": "pages/conclusion/page.md",
+    "children": []
+   }
+  ]
+ },
+ "revision": "icml2026-7771-statevector-v3"
 }
