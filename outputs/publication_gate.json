@@ -1,16 +1,27 @@
 {
   "arxiv": "2509.24757",
   "checks": {
-    "exact_reduction_controls": true,
-    "runtime_dominance_controls": true,
-    "six_anchored_claims_pass": true,
-    "source_typo_disclosed": true,
-    "theory_scope_limitation_explicit": true
+    "all_six_claims_adjudicated": true,
+    "candidate_logbook_valid": true,
+    "claim_1_exact_contract": true,
+    "claim_1_independent_checker": true,
+    "claim_1_negative_control": true,
+    "claim_3_four_routes_completed": true,
+    "claim_3_headline_scope_not_inflated": true,
+    "claim_3_independent_checker": true,
+    "claim_3_literal_display_counterexample": true,
+    "claim_3_negative_control": true,
+    "claims_2_4_5_6_four_routes_each": true,
+    "historical_21_file_set_is_subset": true,
+    "historical_baseline_rerun": true,
+    "red_team_repeated_after_fixes": true,
+    "secret_scan_passed": true,
+    "upload_allowlist_matches_manifest": true,
+    "visibility_matrix_complete": true
   },
-  "claim_count": 6,
+  "milestone_gate_passed": true,
   "paper": "TBSyYj4VV6",
   "publication_eligible": true,
-  "publication_gate_passed": true,
-  "scope": "six source-anchored quantum-regression theorem/reduction claims; CPU finite construction audits plus pinned public proof anchors",
-  "tests_passed": true
+  "release_gate_passed": true,
+  "scope": "One claim is falsified and five are blocked at headline scope; the live score remains unchanged until judge evaluation."
 }

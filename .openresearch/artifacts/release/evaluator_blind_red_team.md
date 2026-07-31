@@ -31,3 +31,25 @@ assumptions, command, environment, code, checker, control, limitations, Git/run
 provenance, seeds, and CPU/runtime record. Claims 2/4/5/6 are visibly BLOCKED,
 not promoted from finite simulations. No conclusion required repository or
 OpenResearch-only knowledge.
+
+## Pass 3 after fixed-order and Claim 3 scope correction
+
+The reviewer used only the clean staged artifact produced for the official
+ICML validator. Files opened, in traversal order:
+
+- `pages/index.md`
+- `pages/executive-summary/page.md` and `poster_embed.html`
+- `pages/claim-{1,2,3,4,5,6}/page.md`
+- every code, raw JSON, checker, control, and CPU record linked from those six pages
+- `pages/conclusion/page.md`
+
+Conclusions:
+
+- The sidebar order is exactly Executive summary, Claims 1–6, Conclusion.
+- Claim 1 is the sole headline FALSIFIED result.
+- Claim 3 is visibly BLOCKED; its lambda counterexample is labeled as a
+  display-level subfinding and cannot be mistaken for full headline evidence.
+- Claims 2–6 do not promote finite classical checks to quantum-runtime proof.
+- The poster, fixed command, accepted HF Jobs, GitHub repository, raw data,
+  controls, and `0–2/12` forecast are discoverable from the canonical pages.
+- No missing cell remained in the conclusion’s evaluator-visible matrix.

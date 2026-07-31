@@ -1,124 +1,70 @@
 {
-  "schema_version": 1,
-  "title": "Repro - Accelerating Regression Tasks with Quantum Algorithms",
+  "schema_version": 2,
+  "title": "Reproduction: Accelerating Regression Tasks with Quantum Algorithms",
   "emoji": "🎯",
-  "space_id": null,
-  "paper": null,
+  "space_id": "DineshAI/TBSyYj4VV6",
+  "paper": {
+    "arxiv_id": "2509.24757"
+  },
   "tags": [
     "icml2026-repro",
     "paper-TBSyYj4VV6"
   ],
-  "updated_at": "2026-07-29T12:47:38+00:00",
+  "updated_at": "2026-07-31T03:30:00+00:00",
   "root": {
     "slug": "index",
-    "title": "Repro - Accelerating Regression Tasks with Quantum Algorithms",
+    "title": "Reproduction: Accelerating Regression Tasks with Quantum Algorithms",
     "file": "pages/index.md",
     "children": [
       {
-        "slug": "current-claim-1",
-        "title": "Current verification — Claim 1",
-        "file": "pages/current-claim-1/page.md",
+        "slug": "executive-summary",
+        "title": "Executive summary",
+        "file": "pages/executive-summary/page.md",
         "children": []
       },
       {
-        "slug": "current-claim-2",
-        "title": "Current verification — Claim 2",
-        "file": "pages/current-claim-2/page.md",
+        "slug": "claim-1",
+        "title": "Claim 1 — GLM sparsification",
+        "file": "pages/claim-1/page.md",
         "children": []
       },
       {
-        "slug": "current-claim-3",
-        "title": "Current verification — Claim 3",
-        "file": "pages/current-claim-3/page.md",
+        "slug": "claim-2",
+        "title": "Claim 2 — Linear regression",
+        "file": "pages/claim-2/page.md",
         "children": []
       },
       {
-        "slug": "current-claim-4",
-        "title": "Current verification — Claim 4",
-        "file": "pages/current-claim-4/page.md",
+        "slug": "claim-3",
+        "title": "Claim 3 — Lasso regression",
+        "file": "pages/claim-3/page.md",
         "children": []
       },
       {
-        "slug": "current-claim-5",
-        "title": "Current verification — Claim 5",
-        "file": "pages/current-claim-5/page.md",
+        "slug": "claim-4",
+        "title": "Claim 4 — Ridge regression",
+        "file": "pages/claim-4/page.md",
         "children": []
       },
       {
-        "slug": "current-claim-6",
-        "title": "Current verification — Claim 6",
-        "file": "pages/current-claim-6/page.md",
+        "slug": "claim-5",
+        "title": "Claim 5 — Huber regression",
+        "file": "pages/claim-5/page.md",
         "children": []
       },
       {
-        "slug": "release-report",
-        "title": "Visibility matrix and release report",
-        "file": "pages/release-report/page.md",
+        "slug": "claim-6",
+        "title": "Claim 6 — ell-p regression",
+        "file": "pages/claim-6/page.md",
         "children": []
       },
       {
-        "slug": "historical-rejected-baseline",
-        "title": "Historical rejected baseline",
-        "file": "pages/historical-rejected-baseline/page.md",
-        "children": [
-          {
-            "slug": "claim-1-glm-sparsification",
-            "title": "Claim 1 — GLM sparsification",
-            "file": "pages/claim-1-glm-sparsification/page.md",
-            "children": []
-          },
-          {
-            "slug": "claim-2-linear-regression",
-            "title": "Claim 2 — Linear regression",
-            "file": "pages/claim-2-linear-regression/page.md",
-            "children": []
-          },
-          {
-            "slug": "claim-3-lasso",
-            "title": "Claim 3 — Lasso",
-            "file": "pages/claim-3-lasso/page.md",
-            "children": []
-          },
-          {
-            "slug": "claim-4-ridge",
-            "title": "Claim 4 — Ridge",
-            "file": "pages/claim-4-ridge/page.md",
-            "children": []
-          },
-          {
-            "slug": "claim-5-huber",
-            "title": "Claim 5 — Huber",
-            "file": "pages/claim-5-huber/page.md",
-            "children": []
-          },
-          {
-            "slug": "claim-6-ell-p",
-            "title": "Claim 6 — ell_p",
-            "file": "pages/claim-6-ell-p/page.md",
-            "children": []
-          },
-          {
-            "slug": "methods",
-            "title": "Methods",
-            "file": "pages/methods/page.md",
-            "children": []
-          },
-          {
-            "slug": "negative-controls",
-            "title": "Negative controls",
-            "file": "pages/negative-controls/page.md",
-            "children": []
-          },
-          {
-            "slug": "conclusion",
-            "title": "Conclusion",
-            "file": "pages/conclusion/page.md",
-            "children": []
-          }
-        ]
+        "slug": "conclusion",
+        "title": "Conclusion",
+        "file": "pages/conclusion/page.md",
+        "children": []
       }
     ]
   },
-  "agent_view_tokens": 1623,
-  "revision": "1785329258078368784"
+  "revision": "icml2026-7771-claims-v2"
 }

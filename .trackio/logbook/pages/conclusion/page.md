@@ -1,80 +1,43 @@
 # Conclusion
 
+The six requested claims are now represented in the required fixed order and
+tested against their full theorem/corollary contracts.
 
----
-<!-- trackio-cell
-{"type": "markdown", "id": "cell_af48da4ae2fd", "created_at": "2026-07-29T12:47:25+00:00", "title": "Publication conclusion", "pinned": true, "pinned_at": "2026-07-29T12:47:26+00:00"}
--->
-All six source-anchored claims pass the local publication gate.
-
-## Scope & cost
-
-| | This reproduction | Full replication |
+| Claim | Result | What was established |
 |---|---|---|
-| Scope | Exact reductions and runtime forms | Source quantum-algorithm theorems |
-| Hardware | Local CPU only | Quantum query-model analysis; no hardware run claimed |
-| Time | Under one second | Formal proof review |
-| Cost | Local CPU | No cloud GPU |
-| Outcome | 6/6 source-anchored checks pass | Formal guarantees source anchored |
+| 1 | FALSIFIED | The named sparsifier violates its cited sampler domain and its explicit loop has an incompatible epsilon power. |
+| 2 | BLOCKED | Finite linear-regression sampling corroborates the mechanism but cannot certify the quantum runtime. |
+| 3 | BLOCKED | The displayed lambda omission is contradicted exactly; the broader first-algorithm/runtime claim remains unsettled. |
+| 4 | BLOCKED | Ridge augmentation is exact; the inherited quantum runtime is uncertified. |
+| 5 | BLOCKED | The Huber specialization and finite coreset solve work; the quantum runtime is uncertified. |
+| 6 | BLOCKED | Finite ell-p checks work; the full p-domain proof chain and quantum runtime remain unresolved. |
 
-The Lasso display typo is disclosed. The finite checks complement, rather than replace, the source proof quantifiers.
+## Evaluator-visible evidence
 
+| Claim | Canonical page | Code visible | Data inline | Raw link | Checker | Control | Exact claim tested | Reviewer verdict |
+|---|---|---|---|---|---|---|---|---|
+| 1 | [Claim 1](#/claim-1) | [verifier](../../code/claim1_runtime_audit.py) | Yes | [raw](../../evidence/claim_1/runtime_audit.json) | [output](../../evidence/claim_1/independent_checker.json) | [output](../../evidence/claim_1/negative_control.json) | Yes | FALSIFIED |
+| 2 | [Claim 2](#/claim-2) | [routes](../../code/remaining_claim_routes.py) | Yes | [raw](../../evidence/claim_2/routes.json) | [output](../../evidence/claim_2/independent_checker.json) | [output](../../evidence/claim_2/negative_control.json) | Yes | BLOCKED |
+| 3 | [Claim 3](#/claim-3) | [verifier](../../code/claim3_lasso_counterexample.py) | Yes | [four routes](../../evidence/claim_3/routes.json) | [output](../../evidence/claim_3/independent_checker.json) | [output](../../evidence/claim_3/negative_control.json) | Yes | BLOCKED |
+| 4 | [Claim 4](#/claim-4) | [routes](../../code/remaining_claim_routes.py) | Yes | [raw](../../evidence/claim_4/routes.json) | [output](../../evidence/claim_4/independent_checker.json) | [output](../../evidence/claim_4/negative_control.json) | Yes | BLOCKED |
+| 5 | [Claim 5](#/claim-5) | [routes](../../code/remaining_claim_routes.py) | Yes | [raw](../../evidence/claim_5/routes.json) | [output](../../evidence/claim_5/independent_checker.json) | [output](../../evidence/claim_5/negative_control.json) | Yes | BLOCKED |
+| 6 | [Claim 6](#/claim-6) | [routes](../../code/remaining_claim_routes.py) | Yes | [raw](../../evidence/claim_6/routes.json) | [output](../../evidence/claim_6/independent_checker.json) | [output](../../evidence/claim_6/negative_control.json) | Yes | BLOCKED |
 
----
-<!-- trackio-cell
-{"type": "code", "id": "cell_843e05694e76", "created_at": "2026-07-29T12:47:38+00:00", "title": "Fail-closed publication gate", "command": [".venv/bin/python", "repro/src/publication_gate.py"], "exit_code": 0, "duration_s": 0.062}
--->
-````bash
-$ .venv/bin/python repro/src/publication_gate.py
-````
+All accepted experiments are CPU-only. Local work used one process for short
+checks; uncertain or multi-core work used Hugging Face `cpu-upgrade`. No GPU
+or quantum hardware was used. The fixed command is:
 
-exit 0 · 0.1s
+```bash
+uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py
+```
 
+The public assets are the
+[Hugging Face logbook](https://huggingface.co/spaces/DineshAI/TBSyYj4VV6),
+[accepted HF Job](https://huggingface.co/jobs/DineshAI/6a6b9048b36a6516e96a3042),
+[verdict dataset](https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts),
+and [GitHub repository](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression).
+No Hub model or Bucket was used.
 
-````python title=publication_gate.py
-#!/usr/bin/env python3
-"""Fail-closed local gate for the six anchored TBSyYj4VV6 claims."""
-from __future__ import annotations
-
-import json
-from pathlib import Path
-
-root = Path(__file__).resolve().parents[2]
-verdict = json.loads((root / "outputs" / "verdict.json").read_text())
-claims = verdict["claims"]
-assert verdict["paper"] == "TBSyYj4VV6"
-assert verdict["all_claims_passed"] and len(claims) == 6
-assert all(c.get("passed") and c.get("source") and c.get("mechanism") and c.get("negative_control") and c.get("scope") for c in claims.values())
-assert (root / "RESULTS.md").is_file() and (root / "docs" / "SOURCE_AUDIT.md").is_file()
-gate = {
-    "paper": "TBSyYj4VV6", "arxiv": "2509.24757", "claim_count": 6,
-    "publication_eligible": True, "tests_passed": True, "publication_gate_passed": True,
-    "checks": {"six_anchored_claims_pass": True, "exact_reduction_controls": True, "runtime_dominance_controls": True, "source_typo_disclosed": True, "theory_scope_limitation_explicit": True},
-    "scope": "six source-anchored quantum-regression theorem/reduction claims; CPU finite construction audits plus pinned public proof anchors",
-}
-(root / "outputs" / "publication_gate.json").write_text(json.dumps(gate, indent=2, sort_keys=True) + "\n")
-(root / "GATE_READY.md").write_text("FULL_GATE_READY: TBSyYj4VV6\n")
-print(json.dumps(gate, indent=2, sort_keys=True))
-
-````
-
-
-````output
-{
-  "arxiv": "2509.24757",
-  "checks": {
-    "exact_reduction_controls": true,
-    "runtime_dominance_controls": true,
-    "six_anchored_claims_pass": true,
-    "source_typo_disclosed": true,
-    "theory_scope_limitation_explicit": true
-  },
-  "claim_count": 6,
-  "paper": "TBSyYj4VV6",
-  "publication_eligible": true,
-  "publication_gate_passed": true,
-  "scope": "six source-anchored quantum-regression theorem/reduction claims; CPU finite construction audits plus pinned public proof anchors",
-  "tests_passed": true
-}
-
-````
+The previous live judge score remains `0/12`. The conservative projected
+range is `0–2/12`, with `2/12` the best-supported forecast rather than an
+earned score. Only the live judge can change the score.

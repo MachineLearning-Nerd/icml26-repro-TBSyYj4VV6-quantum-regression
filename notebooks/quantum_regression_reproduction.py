@@ -23,13 +23,13 @@ def _(mo):
     |---|---|---|
     | 1 | **FALSIFIED** | Algorithm 2 uses `M>m` and explicitly loops over `M=O~(epsilon^-2)` |
     | 2 | **BLOCKED** | finite linear ratio 1.000004; no quantum-runtime certificate |
-    | 3 | **FALSIFIED** | exact impossibility gap `1 - 33/40 = 7/40` |
+    | 3 | **BLOCKED** | printed display has exact gap `1 - 33/40 = 7/40`; headline firstness/runtime remains unresolved |
     | 4 | **BLOCKED** | finite Ridge ratio 1.000207; inherited runtime unresolved |
     | 5 | **BLOCKED** | finite Huber ratio 1.002026; QMLSO runtime unresolved |
     | 6 | **BLOCKED** | finite ell-0.5 ratio 1.002983; cited solver range starts above p=1 |
 
-    Live score: **0/12**. Conservative forecast: **0–4/12**.
-    Best-supported possibility: **4/12**, not a judge result.
+    Live score: **0/12**. Conservative forecast: **0–2/12**.
+    Best-supported possibility: **2/12**, not a judge result.
     """)
     return
 

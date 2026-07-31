@@ -14,3 +14,10 @@ square gives `(x-1/2)^2+3/4`; for `x<0` it exceeds 1. Its global minimum is
 The main verifier and a separately implemented piecewise checker use exact
 `Fraction` arithmetic and exit nonzero unless the contradiction and
 `lambda=1` control both hold.
+
+This is route 2 of a four-route headline audit. Route 1 reconstructs the exact
+source statement and quantifiers. Route 3 audits the corrected proof chain
+and available implementation evidence. Route 4 attempts to falsify the
+repaired headline runtime and records that no oracle-model lower bound or
+other assumption-satisfying counterexample was established. Machine-readable
+results are in `raw/routes.json`.

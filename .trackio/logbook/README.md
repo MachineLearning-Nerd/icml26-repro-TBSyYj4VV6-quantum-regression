@@ -13,16 +13,18 @@ tags:
   - paper-TBSyYj4VV6
 ---
 
-# Quantum regression reproduction
+# Reproduction: Accelerating Regression Tasks with Quantum Algorithms
 
 Current evaluator entrypoint: [open the six-claim logbook](pages/index.md).
 
-Claims 1 and 3 are candidate **FALSIFIED** findings. Claims 2, 4, 5, and 6
-are **BLOCKED** after four distinct verification routes each. The previous
-live judge score remains **0/12**. The conservative forecast is **0–4/12**;
-**4/12 is the best-supported possibility, not a judge result**.
+Claim 1 is **FALSIFIED** for the exact named-algorithm/runtime contract.
+Claims 2–6 are **BLOCKED**. Claim 3's literal `lambda`-omission
+counterexample is retained as a scoped editorial subfinding, not as evidence
+that settles the broader first-quantum-Lasso-algorithm claim. The previous
+live judge score remains **0/12**. The conservative forecast is **0–2/12**;
+**2/12 is the best-supported possibility, not a judge result**.
 
-- [Visibility matrix and release report](pages/release-report/page.md)
+- [Executive summary and poster](pages/executive-summary/page.md)
 - [Illustrated technical report](reports/quantum-regression/report.md)
 - [Self-contained marimo notebook](notebooks/quantum_regression_reproduction.py)
 - [Historical rejected baseline](pages/historical-rejected-baseline/page.md)
