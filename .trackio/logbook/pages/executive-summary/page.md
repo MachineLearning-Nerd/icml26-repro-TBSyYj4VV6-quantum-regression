@@ -38,7 +38,11 @@ Resources: [paper](https://arxiv.org/abs/2509.24757),
 [GitHub repository](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression),
 [published logbook](https://huggingface.co/spaces/DineshAI/repro-accelerating-regression-tasks-with-quantum-algorithms), and
 [judge dataset](https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts).
-No Hub model or Bucket was used.
+Trackio publication uses a
+[private trace dataset](https://huggingface.co/datasets/DineshAI/repro-accelerating-regression-tasks-with-quantum-algorithms-traces)
+and
+[private workspace Bucket](https://huggingface.co/buckets/DineshAI/repro-accelerating-regression-tasks-with-quantum-algorithms-artifacts).
+No Hub model was used.
 
 Forecast: previous live judged score `0/12`; conservative projected
 `4–12/12`; best-supported possible `12/12`. These are forecasts only.
