@@ -96,6 +96,12 @@ five seconds each. The final scientific audit ran on
 reported 64 visible logical CPUs. Scientific runtime was 10.913 seconds, and
 the full job lasted 26 seconds. No GPU was used.
 
+The final visibility [HF Job](https://huggingface.co/jobs/DineshAI/6a6c31d723ed89c748ec90e1)
+reran every verifier after direct checker-source links were added: 8 cores
+were estimated, the `cpu-upgrade` allocation was nominally 8 vCPU, the
+container exposed 64 logical CPUs, scientific runtime was 12.163 seconds, and
+the full job lasted 27 seconds.
+
 The paper’s central results are complexity theorems, not empirical
 benchmarks. Claims 1–4 have HIGH-confidence independent contradictions.
 Claims 5–6 are MEDIUM confidence because their hidden polynomial term prevents
