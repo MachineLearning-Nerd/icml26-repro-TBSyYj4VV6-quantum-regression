@@ -5,6 +5,12 @@ colorFrom: indigo
 colorTo: red
 sdk: static
 pinned: false
+tags:
+  - trackio
+  - trackio-logbook
+  - open-experiment
+  - icml2026-repro
+  - paper-TBSyYj4VV6
 ---
 
 # Quantum regression reproduction
