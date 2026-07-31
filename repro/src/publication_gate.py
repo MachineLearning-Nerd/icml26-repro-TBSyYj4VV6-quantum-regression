@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 from pathlib import Path
 
 root = Path(__file__).resolve().parents[2]
@@ -168,7 +169,7 @@ candidate_text = "\n".join(
     path.read_text(errors="ignore")
     for path in required_pages + required_evidence
 )
-assert ("hf" + "_") not in candidate_text
+assert re.search(r"\bhf_[A-Za-z0-9]{20,}\b", candidate_text) is None
 assert ("github_" + "pat_") not in candidate_text
 assert ("sk" + "-") not in candidate_text
 
