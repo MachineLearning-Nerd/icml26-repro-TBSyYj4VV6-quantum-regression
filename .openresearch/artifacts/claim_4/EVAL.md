@@ -7,3 +7,6 @@ sampling pipeline. With fixed `m=16,n=2,r=1,lambda=1`, the added two rows do
 not change the `epsilon^-2` explicit-loop lower bound, which contradicts the
 displayed `epsilon^-1+n^3` runtime. The checker separately confirms the
 augmented sampling length and a boundary control.
+
+The supplemental statevector-sampled augmented solve reaches objective ratio
+`1.0002072182` at `m=2048,n=8,K=256`.

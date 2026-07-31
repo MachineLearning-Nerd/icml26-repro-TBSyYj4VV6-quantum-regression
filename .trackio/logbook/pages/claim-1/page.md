@@ -28,13 +28,35 @@ Representative raw results:
 | 0.00390625 | 131,072 | false | 89.889 |
 | 0.000244140625 | 33,554,432 | false | 1,447.530 |
 
+## Executed quantum stage
+
+The supplemental statevector verifier reconstructs the cited Hamoudi
+good/bad circuit and performs its amplitude-amplification reflections and
+measurements. Across four in-domain cells up to `N=2048,K=256`, coarse
+distribution TV was `0.0881, 0.0295, 0.0259, 0.0207`. It then executed the
+target call contract on non-toy witnesses:
+
+| m | n | epsilon | requested M | M/m | result |
+|---:|---:|---:|---:|---:|---|
+| 2,048 | 8 | 0.03125 | 8,192 | 4 | rejected: `K>N` |
+| 8,192 | 8 | 0.015625 | 32,768 | 4 | rejected: `K>N` |
+| 32,768 | 8 | 0.0078125 | 131,072 | 4 | rejected: `K>N` |
+
+At `m=M=8,192`, the circuit constructs, so the control distinguishes the
+paper's valid and invalid regimes.
+
 Evidence: [contract](../../evidence/claim_1/claim_contract.json),
 [11-cell raw audit](../../evidence/claim_1/runtime_audit.json),
 [independent checker](../../evidence/claim_1/independent_checker.json),
 [checker code](../../code/claim1_independent_checker.py),
 [negative control](../../evidence/claim_1/negative_control.json),
 [CPU record](../../evidence/claim_1/runtime_cpu.json), and
-[verifier](../../code/claim1_runtime_audit.py).
+[verifier](../../code/claim1_runtime_audit.py). Supplemental:
+[statevector raw data](../../evidence/claim_1/quantum_statevector_audit.json),
+[independent checker](../../evidence/claim_1/quantum_statevector_checker.json),
+[formal HF run](../../evidence/claim_1/formal_statevector_run.json),
+[statevector code](../../code/quantum_statevector_audit.py), and
+[checker code](../../code/quantum_statevector_checker.py).
 
 Fixed command:
 

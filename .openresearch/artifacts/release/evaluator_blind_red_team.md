@@ -80,3 +80,23 @@ Conclusions:
 - Historical rejected pages remain reachable but cannot be mistaken for the
   current verifier.
 - No conclusion required hidden repository knowledge or an inaccessible file.
+
+## Pass 5 after statevector evidence
+
+Starting only from `logbook.json` and `pages/index.md`, the reviewer followed
+the eight fixed-order canonical routes and every relative link. The traversal
+opened 67 evaluator-visible text files with zero missing links, including:
+
+- all six canonical claim pages;
+- six directly linked statevector raw files;
+- six independently generated statevector checker outputs;
+- six formal HF run records;
+- both new executable source files; and
+- the current release forecast/risk report.
+
+The reviewer located the non-toy `M=4m` witnesses, valid `M=m` control,
+quantum-sampled regression objectives, 40-cell quantum LARS/KKT result,
+oracle-disabled control, exact fixed command, source hashes, simulator
+limitations, CPU allocation, job link, current `4/12` live score, and forecast
+without repository-only knowledge. `marimo check` passed. No missing
+visibility-matrix cell or stale current verdict was found.

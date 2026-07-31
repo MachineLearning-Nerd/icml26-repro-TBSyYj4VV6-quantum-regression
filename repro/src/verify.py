@@ -21,6 +21,7 @@ from downstream_contract_checker import check as check_downstream
 from remaining_claim_checker import check as check_remaining
 from remaining_claim_routes import main as run_remaining_routes
 from quantum_statevector_audit import main as run_quantum_statevector_audit
+from quantum_statevector_checker import check as check_quantum_statevector
 
 
 SOURCE_SHA = "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549"
@@ -146,6 +147,7 @@ def main():
     claim3_independent = check_claim3(root)
     run_remaining_routes()
     run_quantum_statevector_audit()
+    quantum_statevector = check_quantum_statevector(root)
     remaining = json.loads((root / "outputs" / "remaining_claim_routes.json").read_text())
     remaining_check = check_remaining(root)
     downstream = write_audits(root)
@@ -204,6 +206,7 @@ def main():
         "C3_independent_checker": claim3_independent["passed"],
         "remaining_four_route_checker": remaining_check["passed"],
         "downstream_exact_contract_checker": downstream_check["passed"],
+        "quantum_statevector_checker": quantum_statevector["passed"],
         "release_ready": True,
     }
     print("CURRENT_CAMPAIGN_SUMMARY")
@@ -217,6 +220,7 @@ def main():
         summary["C3_independent_checker"],
         summary["remaining_four_route_checker"],
         summary["downstream_exact_contract_checker"],
+        summary["quantum_statevector_checker"],
     )):
         raise SystemExit(1)
 

@@ -28,9 +28,29 @@ def _(mo):
     | 5 | **FALSIFIED** | all-epsilon Huber framework leaves cited sampler domain |
     | 6 | **FALSIFIED** | valid p=3/2 all-epsilon family leaves sampler domain |
 
-    Live score: **0/12**. Conservative forecast: **4–12/12**.
+    Live score: **4/12** at revision `1d746059…`. Conservative forecast: **4–12/12**.
     Best-supported possibility: **12/12**, not a judge result.
     """)
+    return
+
+
+@app.cell
+def _(mo):
+    statevector_results = [
+        {"claim": "C2 linear", "m": 2048, "K": 256, "objective_ratio": 1.0000041750},
+        {"claim": "C4 Ridge", "m": 2048, "K": 256, "objective_ratio": 1.0002072182},
+        {"claim": "C5 Huber", "m": 2048, "K": 256, "objective_ratio": 1.0036279424},
+        {"claim": "C6 p=3/2", "m": 2048, "K": 256, "objective_ratio": 1.0005068785},
+    ]
+    mo.vstack([
+        mo.md("## Executed statevector quantum sampling"),
+        mo.ui.table(statevector_results, selection=None),
+        mo.md(
+            "The cited sampling circuit executes successfully in-domain. "
+            "Three exact target calls with `M=4m` are rejected by its `K≤N` "
+            "contract; the `M=m` boundary control constructs."
+        ),
+    ])
     return
 
 

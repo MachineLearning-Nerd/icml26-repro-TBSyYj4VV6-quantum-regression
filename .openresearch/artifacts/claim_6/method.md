@@ -14,3 +14,8 @@ valid counterexample.
 The accepted negative control has support on only one row and therefore cannot
 represent the full loss family. The earlier uniform control was rejected
 because it passed this easy instance.
+
+The supplemental route executes the cited statevector sampler for a valid
+`p=3/2` loss on 2,048 observations, measures 256 indices, and checks the
+sampled grid solution against the full objective. It deliberately avoids
+`p<=1`, so the evidence does not depend on the separate nonconvex solver issue.

@@ -13,3 +13,9 @@ counterexample search that separately checked the augmentation.
 The command and locked environment are identical to Claim 2. The tested
 regularization was `lambda=0.5`; this value was not derived from the theorem’s
 runtime formula.
+
+The supplemental route executes the same statevector importance sampler on
+the exact augmented Ridge system at `m=2048,n=8,lambda=0.5`. A full augmented
+least-squares solve independently checks the sampled solution. The inherited
+out-of-domain witnesses and the valid boundary control are evaluated by the
+same executable.

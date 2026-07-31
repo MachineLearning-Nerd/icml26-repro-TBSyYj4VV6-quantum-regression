@@ -1,0 +1,25 @@
+{
+  "checker": "quantum_statevector_checker.py",
+  "checks": {
+    "boundary_constructs": true,
+    "boundary_is_M_equal_m": true,
+    "distribution_has_four_cells": true,
+    "distribution_matches_target": true,
+    "every_exact_call_rejected": true,
+    "every_witness_has_M_gt_m": true,
+    "formal_commit_matches": true,
+    "formal_run_matches": true,
+    "formal_run_succeeded": true,
+    "lasso_has_40_seeded_cells": true,
+    "lasso_kkt_checks_pass": true,
+    "lasso_objective_checks_pass": true,
+    "lasso_queries_measured": true,
+    "no_gpu": true,
+    "oracle_removed_control_fails": true,
+    "query_slope_is_finite": true,
+    "regression_outputs_checked": true,
+    "target_source_hash_matches": true,
+    "three_non_toy_domain_witnesses": true
+  },
+  "passed": true
+}

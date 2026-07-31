@@ -19,3 +19,8 @@ contract. It does not assert an impossibility result for every quantum GLM
 sparsification algorithm. A repaired theorem with an explicit
 `epsilon=Omega(sqrt(n/m))` restriction or a dense-return branch would be a
 different statement.
+
+Supplemental evidence executes the cited statevector circuit in-domain,
+matches its target distribution in four cells, rejects three non-toy `M=4m`
+target calls, and passes the `M=m` boundary control. See
+`raw/quantum_statevector_audit.json` and its independent checker.

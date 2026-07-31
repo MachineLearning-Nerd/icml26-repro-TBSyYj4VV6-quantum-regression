@@ -18,13 +18,25 @@ Representative normalized cells are `M=32,512,131072` at
 control `epsilon=sqrt(n/18)=1/3`, `M=18` and the checker rejects the
 counterexample trigger.
 
+## Executed regression evidence
+
+The statevector sampler executed on the exact augmented system
+(`m=2048,n=8,lambda=0.5,K=256`). The sampled Ridge solution had full augmented
+objective ratio `1.0002072182`, checked against an independent full solve.
+The augmentation works; the falsification is the inherited all-epsilon
+runtime/domain contract.
+
 Evidence: [contract](../../evidence/claim_4/claim_contract.json),
 [raw contract audit](../../evidence/claim_4/downstream_contract_audit.json),
 [independent checker](../../evidence/claim_4/independent_checker.json),
 [checker code](../../code/downstream_contract_checker.py),
 [negative control](../../evidence/claim_4/negative_control.json),
 [CPU record](../../evidence/claim_4/runtime_cpu.json), and
-[verifier](../../code/downstream_contract_audit.py).
+[verifier](../../code/downstream_contract_audit.py). Supplemental:
+[statevector raw](../../evidence/claim_4/quantum_statevector_audit.json),
+[checker](../../evidence/claim_4/quantum_statevector_checker.json),
+[formal HF run](../../evidence/claim_4/formal_statevector_run.json), and
+[code](../../code/quantum_statevector_audit.py).
 
 This falsifies the inherited proposed runtime, not the Ridge augmentation or
 every possible repaired quantum Ridge algorithm.

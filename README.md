@@ -10,9 +10,10 @@ epsilon while explicitly invoking a sampler whose cited guarantee requires
 primary quantum Lasso papers from 2021 and 2023, before the target’s 2025
 publication; its printed corollary also has the exact gap `1 > 33/40`.
 
-The previous live score remains **0/12**. A conservative forecast for a new
-judge revision is **4–12/12**, with **12/12 the best-supported possibility,
-not a judge result**. Claims 5–6 retain MEDIUM confidence because their
+The current live score is **4/12** at published revision
+`1d7460599344b8c93d085a9b283213a9d677ded3`. A conservative forecast for the
+next judge revision remains **4–12/12**, with **12/12 the best-supported
+possibility, not a judge result**. Claims 5–6 retain MEDIUM confidence because their
 falsification is a subroutine-domain contradiction rather than a separate
 end-to-end power lower bound. All formal runs are CPU-only.
 
@@ -36,6 +37,7 @@ experiments:
 | [`orx/exact-downstream-corollary-adjudication`](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression/tree/orx/exact-downstream-corollary-adjudication) | Exact downstream contracts, prior-art audit, cumulative gate | `uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py` | Claims 1–6 FALSIFIED; full gate passed | [HF `cpu-upgrade`](https://huggingface.co/jobs/DineshAI/6a6c29ac23ed89c748ec903e), nominal 8 vCPU; 64 visible logical CPUs, 11.926s scientific, 26s job |
 | [`orx/official-icml-template-and-hardware-accounting`](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression/tree/orx/official-icml-template-and-hardware-accounting) | Mandatory scope/cost template and precise CPU accounting | `uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py` | Full gate and official ICML validator passed | [HF `cpu-upgrade`](https://huggingface.co/jobs/DineshAI/6a6c2c4ab36a6516e96a3773), nominal 8 vCPU; 64 visible logical CPUs, 10.913s scientific, 26s job |
 | [`orx/direct-per-claim-verifier-source-links`](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression/tree/orx/direct-per-claim-verifier-source-links) | Expose verifier and independent-checker source on every canonical claim page | `uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py` | Full cumulative gate passed; Claims 1–6 FALSIFIED | [HF `cpu-upgrade`](https://huggingface.co/jobs/DineshAI/6a6c31d723ed89c748ec90e1), nominal 8 vCPU; 64 visible logical CPUs, 12.163s scientific, 27s job |
+| [`orx/statevector-quantum-pipeline-and-prior-lars`](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression/tree/orx/statevector-quantum-pipeline-and-prior-lars) | Execute the cited state-preparation circuit, regression sampling, and pre-target quantum LARS | `uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py` | Statevector checks and controls passed; non-toy `M=4m` target calls rejected | [HF `cpu-upgrade`](https://huggingface.co/jobs/DineshAI/6a6c3c8523ed89c748ec91ce), nominal 8 vCPU; 64 visible logical CPUs, 9.487s combined scientific runtime |
 
 The fixed command is:
 

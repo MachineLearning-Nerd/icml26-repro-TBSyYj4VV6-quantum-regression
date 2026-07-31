@@ -18,3 +18,8 @@ for the same penalized Lasso objective family, and arXiv:2110.13086 (2021)
 gives another quantum Lasso algorithm. Both predate the target (2025).
 Date ordering, objective mapping, semantic requirements, and two negative
 controls are recomputed by the independent checker.
+
+The pre-target simple quantum LARS algorithm is also executed with
+statevector Grover/Dürr–Høyer search. All 40 seeded cells pass independent
+KKT and objective checks; the oracle-disabled control succeeds only 2/40
+times.

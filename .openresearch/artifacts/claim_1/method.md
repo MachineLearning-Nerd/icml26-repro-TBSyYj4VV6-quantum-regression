@@ -23,3 +23,10 @@ The negative control sets `epsilon=sqrt(n/m)`. Then `M=m` and, for `r=1`,
 This is a source-contract audit of the exact named algorithm, not a hardware
 benchmark and not a claim that every conceivable quantum sparsification
 algorithm is impossible.
+
+The supplemental statevector route reconstructs Hamoudi's good/bad circuit
+state, executes amplitude-amplification reflections, measures samples, and
+compares the empirical distribution with the exact target in four cells up to
+`N=2048,K=256`. It then makes the exact target call at three larger
+assumption-satisfying witnesses. All have `M=4m` and are rejected by the
+cited `K<=N` contract; the `M=m` boundary control constructs successfully.

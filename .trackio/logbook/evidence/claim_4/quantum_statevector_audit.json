@@ -1,0 +1,214 @@
+{
+  "claim_status_basis": {
+    "C1": "named MultiSample statevector circuit executes in-domain and rejects every non-toy K>N witness",
+    "C2": "quantum-sampled linear solve executes, while the exact all-epsilon pipeline reaches the same K>N rejection",
+    "C3": "a pre-2025 quantum LARS implementation executes and its outputs pass KKT and independent objective checks",
+    "C4": "quantum-sampled Ridge solve executes, while augmentation inherits K>N rejection",
+    "C5": "quantum-sampled Huber solve executes, while the all-epsilon framework reaches K>N rejection",
+    "C6": "quantum-sampled p=3/2 solve executes, while the universal epsilon framework reaches K>N rejection"
+  },
+  "limitations": [
+    "Statevector simulation is not fault-tolerant quantum hardware.",
+    "Classical code constructs leverage, sensitivity, and joining-time oracle values.",
+    "Finite successful runs corroborate correctness only; falsification rests on the exact named subroutine domain.",
+    "Logical oracle-query counts are not CPU simulator wall-clock complexity."
+  ],
+  "multisample": {
+    "distribution_checks": [
+      {
+        "K": 8,
+        "N": 256,
+        "coarse_total_variation": 0.08813332881970064,
+        "mean_weight_oracle_queries": 62.4,
+        "measurement_attempts": 208
+      },
+      {
+        "K": 32,
+        "N": 256,
+        "coarse_total_variation": 0.029480782430451116,
+        "mean_weight_oracle_queries": 320.7,
+        "measurement_attempts": 1069
+      },
+      {
+        "K": 128,
+        "N": 256,
+        "coarse_total_variation": 0.025901250373542024,
+        "mean_weight_oracle_queries": 320.2,
+        "measurement_attempts": 3202
+      },
+      {
+        "K": 256,
+        "N": 2048,
+        "coarse_total_variation": 0.02073451756046829,
+        "mean_weight_oracle_queries": 2522.4,
+        "measurement_attempts": 8408
+      }
+    ],
+    "domain_witnesses": [
+      {
+        "M": 8192,
+        "M_over_m": 4.0,
+        "epsilon": 0.03125,
+        "error": "Hamoudi MultiSample requires 1 <= K <= N; got K=8192, N=2048",
+        "exact_named_subroutine_rejected_call": true,
+        "m": 2048,
+        "n": 8
+      },
+      {
+        "M": 32768,
+        "M_over_m": 4.0,
+        "epsilon": 0.015625,
+        "error": "Hamoudi MultiSample requires 1 <= K <= N; got K=32768, N=8192",
+        "exact_named_subroutine_rejected_call": true,
+        "m": 8192,
+        "n": 8
+      },
+      {
+        "M": 131072,
+        "M_over_m": 4.0,
+        "epsilon": 0.0078125,
+        "error": "Hamoudi MultiSample requires 1 <= K <= N; got K=131072, N=32768",
+        "exact_named_subroutine_rejected_call": true,
+        "m": 32768,
+        "n": 8
+      }
+    ],
+    "negative_control_boundary": {
+      "M": 8192,
+      "circuit_constructed": true,
+      "epsilon": 0.03125,
+      "good_probability": 1.0,
+      "m": 8192,
+      "n": 8
+    },
+    "source": {
+      "algorithm": "Hamoudi 2022 preprocessing and state-preparation circuit",
+      "anchors": "PRA.tex:108,199-215,229-261",
+      "arxiv": "2207.11014",
+      "target_invocation": "arxiv-version.tex:524,1074-1077"
+    }
+  },
+  "paper": "arXiv:2509.24757v1",
+  "prior_quantum_lasso": {
+    "algorithm": "Simple quantum LARS with statevector BBHT Grover search inside Durr-Hoyer threshold improvement",
+    "all_kkt_checks_passed": true,
+    "all_objective_checks_passed": true,
+    "cells": [
+      {
+        "features": 16,
+        "kkt_success_rate": 1.0,
+        "mean_quantum_oracle_queries": 21.0,
+        "objective_success_rate": 1.0,
+        "observations": 32,
+        "oracle_removed_control_success_rate": 0.2,
+        "seeds": 10
+      },
+      {
+        "features": 32,
+        "kkt_success_rate": 1.0,
+        "mean_quantum_oracle_queries": 29.6,
+        "objective_success_rate": 1.0,
+        "observations": 32,
+        "oracle_removed_control_success_rate": 0.1,
+        "seeds": 10
+      },
+      {
+        "features": 64,
+        "kkt_success_rate": 1.0,
+        "mean_quantum_oracle_queries": 56.0,
+        "objective_success_rate": 1.0,
+        "observations": 32,
+        "oracle_removed_control_success_rate": 0.0,
+        "seeds": 10
+      },
+      {
+        "features": 128,
+        "kkt_success_rate": 1.0,
+        "mean_quantum_oracle_queries": 76.9,
+        "objective_success_rate": 1.0,
+        "observations": 32,
+        "oracle_removed_control_success_rate": 0.0,
+        "seeds": 10
+      }
+    ],
+    "log_log_query_slope_vs_features": 0.6537612462203135,
+    "negative_control_failed_as_intended": true,
+    "source": {
+      "algorithm_anchor": "main.tex:942-1004",
+      "arxiv": "2312.14141",
+      "objective_anchor": "main.tex:195-198",
+      "paper": "Quantum Algorithms for the Pathwise Lasso",
+      "published": "2023-12-21T18:57:54Z",
+      "target_publication": "2025-09-29T13:22:59Z"
+    }
+  },
+  "regression": {
+    "C2_linear": {
+      "objective_ratio": 1.0000041750156141,
+      "observed_objective": 0.2035362747301965,
+      "optimum": 0.20353542496661925,
+      "quantum_sampling": {
+        "amplification_iterations": 0,
+        "copies": 256,
+        "dimension": 2048,
+        "good_probability_after": 0.9994595196538857,
+        "good_probability_before": 0.9994595196538857,
+        "measurement_attempts": 256,
+        "weight_oracle_queries": 512
+      }
+    },
+    "C4_ridge": {
+      "objective_ratio": 1.0002072181551598,
+      "observed_objective": 1.3405760153752035,
+      "optimum": 1.3402982812380015,
+      "quantum_sampling": {
+        "amplification_iterations": 0,
+        "copies": 256,
+        "dimension": 2056,
+        "good_probability_after": 0.9994510488098068,
+        "good_probability_before": 0.999451048809807,
+        "measurement_attempts": 256,
+        "weight_oracle_queries": 512
+      }
+    },
+    "C5_huber": {
+      "full_grid_index": 399,
+      "objective_ratio": 1.003627942413334,
+      "quantum_sampling": {
+        "amplification_iterations": 0,
+        "copies": 256,
+        "dimension": 2048,
+        "good_probability_after": 0.6025709654841259,
+        "good_probability_before": 0.6025709654841258,
+        "measurement_attempts": 403,
+        "weight_oracle_queries": 806
+      },
+      "sampled_grid_index": 401
+    },
+    "C6_lp_p_3_over_2": {
+      "full_grid_index": 399,
+      "objective_ratio": 1.0005068784779747,
+      "quantum_sampling": {
+        "amplification_iterations": 0,
+        "copies": 256,
+        "dimension": 2048,
+        "good_probability_after": 0.6430827819942089,
+        "good_probability_before": 0.6430827819942089,
+        "measurement_attempts": 368,
+        "weight_oracle_queries": 736
+      },
+      "sampled_grid_index": 400
+    },
+    "scope": "Statevector execution of the cited quantum importance-sampling circuit; leverage/sensitivity oracle values and final solvers are classical."
+  },
+  "runtime": {
+    "container_visible_logical_cpus": 8,
+    "estimated_cores_before_run": 1,
+    "nominal_cpu_allocation_vcpus": 1,
+    "platform": "macOS-26.5.2-arm64-arm-64bit",
+    "python": "3.12.11",
+    "seconds": 1.0381197500391863,
+    "selected_flavor": "local-one-core-regeneration"
+  },
+  "target_source_sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549"
+}

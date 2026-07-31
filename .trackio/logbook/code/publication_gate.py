@@ -50,8 +50,23 @@ required_evidence = [
         for claim in (2, 4, 5, 6)
     ],
     root / ".trackio/logbook/evidence/claim_3/firstness_counterexample.json",
+    *[
+        root / f".trackio/logbook/evidence/claim_{claim}/quantum_statevector_audit.json"
+        for claim in range(1, 7)
+    ],
+    *[
+        root / f".trackio/logbook/evidence/claim_{claim}/quantum_statevector_checker.json"
+        for claim in range(1, 7)
+    ],
+    *[
+        root / f".trackio/logbook/evidence/claim_{claim}/formal_statevector_run.json"
+        for claim in range(1, 7)
+    ],
     root / ".trackio/logbook/code/downstream_contract_audit.py",
     root / ".trackio/logbook/code/downstream_contract_checker.py",
+    root / ".trackio/logbook/code/quantum_statevector_audit.py",
+    root / ".trackio/logbook/code/quantum_statevector_checker.py",
+    root / ".trackio/logbook/evidence/release/final_release_report.md",
     root / ".openresearch/artifacts/release/evaluator_blind_red_team.md",
     root / ".openresearch/artifacts/release/upload_allowlist.txt",
     root / ".openresearch/artifacts/release/upload_manifest.sha256",
@@ -59,6 +74,10 @@ required_evidence = [
     root / "notebooks/quantum_regression_reproduction.py",
 ]
 assert all(path.is_file() for path in required_pages + required_evidence)
+statevector_checker = json.loads(
+    (root / "outputs" / "quantum_statevector_checker.json").read_text()
+)
+assert statevector_checker["passed"]
 
 logbook = json.loads((root / ".trackio/logbook/logbook.json").read_text())
 current_slugs = {child["slug"] for child in logbook["root"]["children"]}
@@ -141,6 +160,8 @@ gate = {
         "claim_3_negative_control": True,
         "claims_2_4_5_6_exact_contract_counterexamples": True,
         "claims_2_4_5_6_independent_checker": True,
+        "statevector_quantum_stages_executed": True,
+        "statevector_independent_checker": True,
         "all_six_claims_adjudicated": True,
         "candidate_logbook_valid": True,
         "historical_21_file_set_is_subset": True,
@@ -149,7 +170,7 @@ gate = {
         "upload_allowlist_matches_manifest": True,
         "secret_scan_passed": True
     },
-    "scope": "All six exact proposed-algorithm claims are falsified; Claims 5-6 retain medium confidence and the live score remains unchanged until judge evaluation.",
+    "scope": "All six exact proposed-algorithm claims remain candidate falsifications. The live score is 4/12 at revision 1d7460599344b8c93d085a9b283213a9d677ded3; the next score cannot change until a new judge evaluation.",
 }
 (root / "outputs" / "publication_gate.json").write_text(json.dumps(gate, indent=2, sort_keys=True) + "\n")
 print(json.dumps(gate, indent=2, sort_keys=True))

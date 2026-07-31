@@ -19,13 +19,25 @@ the explicit loop's epsilon power; the falsification is the proposed
 all-epsilon framework's undefined subroutine call, not a separate total-time
 lower bound.
 
+## Executed regression evidence
+
+For 2,048 Huber observations, the statevector sampler measured 256 indices
+using 806 logical weight-oracle queries. The sampled grid solution's full-loss
+objective ratio was `1.0036279424`. This successful in-domain result is
+checked separately from the larger `M=4m` calls that violate the cited
+sampler contract.
+
 Evidence: [contract](../../evidence/claim_5/claim_contract.json),
 [raw contract audit](../../evidence/claim_5/downstream_contract_audit.json),
 [independent checker](../../evidence/claim_5/independent_checker.json),
 [checker code](../../code/downstream_contract_checker.py),
 [negative control](../../evidence/claim_5/negative_control.json),
 [CPU record](../../evidence/claim_5/runtime_cpu.json), and
-[verifier](../../code/downstream_contract_audit.py).
+[verifier](../../code/downstream_contract_audit.py). Supplemental:
+[statevector raw](../../evidence/claim_5/quantum_statevector_audit.json),
+[checker](../../evidence/claim_5/quantum_statevector_checker.json),
+[formal HF run](../../evidence/claim_5/formal_statevector_run.json), and
+[code](../../code/quantum_statevector_audit.py).
 
 This does not rule out a repaired Huber algorithm with the omitted epsilon
 restriction.

@@ -16,3 +16,9 @@ For fixed valid `m,n,r`, `M` grows as `epsilon^-2` up to polylogarithms while
 the displayed runtime grows only as `epsilon^-1`. This directly contradicts
 the exact proposed pipeline, without making an all-algorithms lower-bound
 claim.
+
+The cited sampler was independently retrieved from arXiv:2207.11014
+(SHA-256
+`53f2c291c4f4521f019da57a7492684dc09c7f81b0bf09de2ff8536a03e6df5a`);
+Theorem 1 and the circuit construction are anchored at
+`PRA.tex:108–109,199–215,229–261`.

@@ -23,14 +23,15 @@ do not prove lower bounds against every possible repaired quantum algorithm.
 
 |  | This reproduction | Full replication |
 | --- | --- | --- |
-| Scope | Exact source contracts for Claims 1–6, independent symbolic checkers, assumption-satisfying counterexample families, and finite negative controls | Independently implement every stated quantum primitive and run end-to-end regression scaling experiments |
+| Scope | Exact source contracts for Claims 1–6, statevector executions of the cited sampling circuit and pre-target quantum LARS, independent symbolic/numerical checkers, assumption-satisfying counterexample families, and negative controls | Fault-tolerant implementation of every stated quantum primitive and end-to-end hardware scaling experiments |
 | Hardware | Local CPU plus HF `cpu-upgrade` (nominal 8 vCPU; container reported 64 visible logical CPUs); no GPU or quantum hardware | Fault-tolerant quantum hardware with the paper's QRAM/oracle access model plus classical sparse solvers |
-| Compute time | Latest accepted job: 12.163 seconds scientific, 27 seconds wall clock | Not reported by the paper and not presently available |
-| Cost | Approximately `$0.00023` for the latest job (estimated as 27 seconds × `$0.03/hour`) | Unknown; suitable fault-tolerant quantum hardware is unavailable |
+| Compute time | Statevector HF run: 1.484 seconds; preceding cumulative routes: 8.003 seconds; no GPU | Not reported by the paper and not presently available |
+| Cost | HF `cpu-upgrade`; exact billing was not exposed by the run record | Unknown; suitable fault-tolerant quantum hardware is unavailable |
 | Outcome | Claims 1–6 FALSIFIED at stated scope; Claims 1–4 HIGH confidence and Claims 5–6 MEDIUM confidence | Not attempted |
 
 Resources: [paper](https://arxiv.org/abs/2509.24757),
 [OpenReview](https://openreview.net/forum?id=TBSyYj4VV6),
+[statevector HF Job](https://huggingface.co/jobs/DineshAI/6a6c3c8523ed89c748ec91ce),
 [final visibility HF Job](https://huggingface.co/jobs/DineshAI/6a6c31d723ed89c748ec90e1),
 [release-validation HF Job](https://huggingface.co/jobs/DineshAI/6a6c2c4ab36a6516e96a3773),
 [six-claim HF Job](https://huggingface.co/jobs/DineshAI/6a6c29ac23ed89c748ec903e),
@@ -43,8 +44,11 @@ Trackio publication uses a
 [private trace dataset](https://huggingface.co/datasets/DineshAI/repro-accelerating-regression-tasks-with-quantum-algorithms-traces)
 for the scrubbed agent session. No Hub model or Bucket was used.
 
-Forecast: previous live judged score `0/12`; conservative projected
-`4–12/12`; best-supported possible `12/12`. These are forecasts only.
+Live judge result for revision `1d7460599344b8c93d085a9b283213a9d677ded3`
+is `4/12` (Claims 2, 4, 5, 6 received toy credit; Claims 1 and 3 remained
+inconclusive). After adding statevector execution, the conservative projected
+range remains `4–12/12`; best-supported possible is `12/12`. These are
+forecasts only; only a new live judge verdict can change the score.
 
 Poster workflow: [Chenruishuo/posterly](https://github.com/Chenruishuo/posterly).
 

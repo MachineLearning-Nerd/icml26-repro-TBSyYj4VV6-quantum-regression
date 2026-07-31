@@ -22,6 +22,14 @@ gives the target family under the bijection
 2021, also proves a quantum Lasso algorithm. The target itself acknowledges
 that work at source lines 329–330.
 
+The reproduction also executes the 2023 simple quantum LARS algorithm:
+statevector BBHT Grover search performs each joining-variable search inside
+Dürr–Høyer threshold improvement. All 40 seeded cells
+(`features=16,32,64,128`, ten seeds each) passed independent KKT and
+coordinate-descent objective checks. Mean measured logical oracle queries in
+the canonical regeneration were `21.0,29.6,56.0,76.9`; disabling the Grover
+oracle found the correct initial feature only `2/40` times.
+
 Independently, the target's approximation inequality omits `lambda` from the
 right minimand. For `A=[1],b=[1],lambda=100,epsilon=1/10`, the smallest left
 side is exactly `1` and the printed right bound is `33/40`, an impossibility
@@ -36,6 +44,10 @@ Evidence: [headline contract](../../evidence/claim_3/claim_contract.json),
 [negative control](../../evidence/claim_3/negative_control.json),
 [CPU record](../../evidence/claim_3/runtime_cpu.json), and
 [counterexample code](../../code/claim3_lasso_counterexample.py).
+Supplemental: [quantum LARS raw](../../evidence/claim_3/quantum_statevector_audit.json),
+[checker](../../evidence/claim_3/quantum_statevector_checker.json),
+[formal HF run](../../evidence/claim_3/formal_statevector_run.json), and
+[implementation](../../code/quantum_statevector_audit.py).
 
 The checker recomputes both publication-date orderings, the exact objective
 mapping, required semantic matches, the rational gap, and two controls: a

@@ -5,14 +5,17 @@ tested against their full theorem/corollary contracts.
 
 | Claim | Result | What was established |
 |---|---|---|
-| 1 | FALSIFIED | The named sparsifier violates its cited sampler domain and its explicit loop has an incompatible epsilon power. |
-| 2 | FALSIFIED | Its exact pipeline has the same sampler-domain defect and an explicit epsilon-power runtime contradiction. |
-| 3 | FALSIFIED | Quantum Lasso algorithms from 2021 and 2023 predate the target; the printed display also has an exact 7/40 gap. |
-| 4 | FALSIFIED | The valid Ridge augmentation inherits the sampler-domain and epsilon-power contradictions. |
-| 5 | FALSIFIED | The all-epsilon Huber framework invokes MultiSample outside its stated domain; the Huber identity itself is valid. |
-| 6 | FALSIFIED | A valid p=3/2 family contradicts the all-epsilon proposed framework; the restricted constant-epsilon regime is not denied. |
+| 1 | FALSIFIED | The named sparsifier violates its cited sampler domain and its explicit loop has an incompatible epsilon power; the cited circuit executes in-domain and rejects three non-toy `M=4m` calls. |
+| 2 | FALSIFIED | Its exact pipeline has the same sampler-domain defect and epsilon-power contradiction; the in-domain statevector-sampled solve reaches ratio 1.0000042. |
+| 3 | FALSIFIED | Quantum Lasso algorithms from 2021 and 2023 predate the target; 40 quantum-LARS cells pass KKT/objective checks, and the printed display has an exact 7/40 gap. |
+| 4 | FALSIFIED | The valid Ridge augmentation inherits the contradictions; the quantum-sampled augmented solve reaches ratio 1.0002072. |
+| 5 | FALSIFIED | The all-epsilon Huber framework invokes MultiSample outside its stated domain; its in-domain quantum-sampled ratio is 1.0036279. |
+| 6 | FALSIFIED | A valid p=3/2 family contradicts the all-epsilon framework; its in-domain quantum-sampled ratio is 1.0005069. |
 
 ## Evaluator-visible evidence
+
+The complete [release forecast and risk table](../../evidence/release/final_release_report.md)
+uses the live `4/12` judge result as its baseline.
 
 | Claim | Canonical page | Code visible | Data inline | Raw link | Checker | Control | Exact claim tested | Reviewer verdict |
 |---|---|---|---|---|---|---|---|---|
@@ -38,9 +41,10 @@ The public assets are the
 and [GitHub repository](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression).
 No Hub model or Bucket was used.
 
-The previous live judge score remains `0/12`. The conservative projected
-range is `4–12/12`, with `12/12` the best-supported possible score and only a
-forecast. Claims 5–6 carry the largest evaluator risk because their exact
+The live judge score is `4/12` at revision
+`1d7460599344b8c93d085a9b283213a9d677ded3`. The conservative projected range
+for the next revision is `4–12/12`, with `12/12` the best-supported possible
+score and only a forecast. Claims 5–6 carry the largest evaluator risk because their exact
 falsification rests on the proposed framework leaving the cited subroutine's
 stated domain, rather than a separate end-to-end power lower bound. Only the
 live judge can change the score.

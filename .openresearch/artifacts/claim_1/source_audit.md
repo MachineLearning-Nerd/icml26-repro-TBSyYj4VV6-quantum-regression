@@ -23,3 +23,9 @@ sparsifier requires `epsilon = Omega(sqrt(n/m))` (lines 1150–1153). That
 restriction makes `M <= m`, but it is absent from Theorem 10 and Algorithm 2’s
 formal preconditions. This audit therefore tests the exact written
 quantifiers, while the threshold case is retained as a negative control.
+
+The cited Hamoudi source was retrieved from
+`https://export.arxiv.org/e-print/2207.11014` with SHA-256
+`53f2c291c4f4521f019da57a7492684dc09c7f81b0bf09de2ff8536a03e6df5a`.
+Its Theorem 1 states `1<=K<=N`; its preprocessing and circuit proof are at
+`PRA.tex:199–215,229–261`.

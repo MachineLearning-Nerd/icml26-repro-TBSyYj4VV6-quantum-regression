@@ -15,13 +15,25 @@ The paper states at line 329 that sparsification/speedup requires
 `epsilon=Omega(sqrt(n/m))`, but Corollary 11 omits it. The boundary control
 uses exactly `epsilon=sqrt(n/m)` and stays in-domain.
 
+## Executed regression evidence
+
+For a valid `p=3/2` problem with 2,048 observations, the statevector sampler
+measured 256 indices with 736 logical weight-oracle queries. The sampled
+solution's full-objective ratio was `1.0005068785`. This avoids the separate
+`p<=1` interpretation and demonstrates successful in-domain quantum sampling
+before testing the omitted all-epsilon regime.
+
 Evidence: [contract](../../evidence/claim_6/claim_contract.json),
 [raw contract audit](../../evidence/claim_6/downstream_contract_audit.json),
 [independent checker](../../evidence/claim_6/independent_checker.json),
 [checker code](../../code/downstream_contract_checker.py),
 [negative control](../../evidence/claim_6/negative_control.json),
 [CPU record](../../evidence/claim_6/runtime_cpu.json), and
-[verifier](../../code/downstream_contract_audit.py).
+[verifier](../../code/downstream_contract_audit.py). Supplemental:
+[statevector raw](../../evidence/claim_6/quantum_statevector_audit.json),
+[checker](../../evidence/claim_6/quantum_statevector_checker.json),
+[formal HF run](../../evidence/claim_6/formal_statevector_run.json), and
+[code](../../code/quantum_statevector_audit.py).
 
 This falsifies the universal proposed-algorithm wording. It does not deny the
 repaired constant-epsilon, `m>>n` regime highlighted in the prose.

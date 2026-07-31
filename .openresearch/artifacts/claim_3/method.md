@@ -21,3 +21,10 @@ maps its `lambda` family exactly to the target family, and checks that it
 actually supplies quantum algorithms and classical Lasso outputs. A second
 pre-target quantum Lasso paper, arXiv:2110.13086, is checked independently.
 A later matching paper and an earlier Ridge-only paper are negative controls.
+
+The supplemental route implements the 2023 paper's simple quantum LARS path.
+Each joining-variable search uses a statevector BBHT Grover search inside
+Dürr–Høyer threshold improvement. Across feature counts `16,32,64,128`, ten
+seeds per count, and up to six kinks, an independent coordinate-descent solver
+checks every path objective and a separate KKT calculation checks stationarity.
+Disabling the Grover comparison oracle is the negative control.

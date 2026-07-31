@@ -22,3 +22,10 @@ executed and preserved:
 The fixed command was
 `uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py`.
 Python 3.12 and NumPy 2.3.2 are pinned by `uv.lock`.
+
+The supplemental route executes Hamoudi's statevector sampling circuit on a
+`m=2048,n=8` leverage distribution, constructs the weighted sample, and
+solves linear regression. An independent least-squares solve checks the full
+objective. The same executable then evaluates the target's requested
+`M=n/epsilon^2` at `m=2048,8192,32768`, rather than choosing `M` from a
+successful finite horizon.

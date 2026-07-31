@@ -11,3 +11,7 @@
   theorem is not the quantified statement audited here.
 - No quantum hardware is needed to check a violated subroutine precondition or
   an explicit pseudocode operation lower bound.
+- The supplemental execution is a statevector simulator, not fault-tolerant
+  hardware. Classical code constructs the oracle amplitudes and top-`K` set;
+  the simulated portion is the cited state-preparation and amplification
+  circuit. The falsification does not depend on finite simulator timing.

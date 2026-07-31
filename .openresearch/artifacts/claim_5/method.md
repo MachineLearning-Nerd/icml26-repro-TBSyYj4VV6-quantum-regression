@@ -14,3 +14,8 @@ for a proper-loss violation.
 
 The finite solver used an 801-point calibration grid and a separate 1401-point
 solution grid. It is explicitly not a quantum implementation.
+
+The supplemental route replaces the sampling step with the cited statevector
+quantum circuit. It builds exact scalar sensitivity values for 2,048 Huber
+observations, measures 256 indices, solves on an independently fixed
+801-point grid, and evaluates the chosen point on the full loss.
