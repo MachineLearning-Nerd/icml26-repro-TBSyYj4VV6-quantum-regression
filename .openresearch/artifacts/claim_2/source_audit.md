@@ -6,7 +6,13 @@ quantifies over query-access matrices and vectors, `r ≤ n`, and every
 leverage-score routine from Theorem 19, samples a spectral approximation, and
 then uses a classical linear solver.
 
-The corollary is a universal algorithmic/runtime theorem. A finite CPU
-simulation can test the target sampling distribution and regression output,
-but cannot verify the quantum query/runtime bound or an all-algorithms lower
-bound.
+The proposed chain invokes the paper's quantum sparsification framework.
+Algorithm 2 sets `M=Theta~(n/epsilon^2)`, calls `MultiSample(Z,M)`, and loops
+over all `M` results. The cited MultiSample theorem requires `M<=m`.
+Corollary 23 nevertheless quantifies over every `epsilon>0`; line 1153 then
+states the missing condition `epsilon=Omega(sqrt(n/m))`.
+
+For fixed valid `m,n,r`, `M` grows as `epsilon^-2` up to polylogarithms while
+the displayed runtime grows only as `epsilon^-1`. This directly contradicts
+the exact proposed pipeline, without making an all-algorithms lower-bound
+claim.

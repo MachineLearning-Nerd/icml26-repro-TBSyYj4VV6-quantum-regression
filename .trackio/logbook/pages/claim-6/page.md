@@ -1,29 +1,25 @@
 # Claim 6 — ell-p regression
 
-**Verdict: BLOCKED. Confidence: LOW.**
+**Verdict: FALSIFIED. Confidence: MEDIUM.**
 
 > For `p in (0,2]`, the algorithm achieves a quadratic speedup in sample
 > count `m`, which dominates when `m >> n` (Corollary 11).
 
-The full source contract is a high-probability `(1+epsilon)` ell-p regression
-solution in `O~(r*sqrt(mn)/epsilon+poly(n,1/epsilon))` time for every
-`p in (0,2]`.
+Use the valid `p=3/2` subdomain, avoiding the separate `p<=1` solver issue.
+Lines 546–550 explicitly apply Theorem 10/QGLMSparsify for every
+`epsilon>0`. With `m=16,n=2,r=1`, normalized `M=32` already exceeds the cited
+sampler's `M<=m` domain at `epsilon=0.25`, and grows as
+`Theta~(epsilon^-2)`.
 
-Four routes reconstructed the source/reference domain, tested finite sampled
-solves at `p=0.5` and `p=1.5`, swept 20-seed first-hit distributions, and
-searched for counterexamples over `p={0.25,0.5,1,1.5,2}`. The `p=0.5`
-finite objective ratio was `1.0029825893`. A single-row-support negative
-control was `0/20` at every horizon.
-
-The primary cited solver application states ell-p regression for
-`p in (1,2]`, while this corollary claims `(0,2]`. That is an unresolved
-proof-chain gap, not a counterexample.
+The paper states at line 329 that sparsification/speedup requires
+`epsilon=Omega(sqrt(n/m))`, but Corollary 11 omits it. The boundary control
+uses exactly `epsilon=sqrt(n/m)` and stays in-domain.
 
 Evidence: [contract](../../evidence/claim_6/claim_contract.json),
-[four routes](../../evidence/claim_6/routes.json),
+[raw contract audit](../../evidence/claim_6/downstream_contract_audit.json),
 [independent checker](../../evidence/claim_6/independent_checker.json),
 [negative control](../../evidence/claim_6/negative_control.json), and
 [CPU record](../../evidence/claim_6/runtime_cpu.json).
 
-Finite classical scaling cannot verify the universal quantum speedup; the
-claim remains BLOCKED.
+This falsifies the universal proposed-algorithm wording. It does not deny the
+repaired constant-epsilon, `m>>n` regime highlighted in the prose.

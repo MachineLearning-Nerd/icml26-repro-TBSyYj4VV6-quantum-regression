@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330">
+  <rect width="960" height="330" fill="#ffffff"/>
+  <text x="52" y="44" font-family="sans-serif" font-size="24" font-weight="700" fill="#0f172a">Quantum Lasso algorithms predate the target manuscript</text>
+  <text x="52" y="72" font-family="sans-serif" font-size="14" fill="#475569">Initial arXiv publication dates from primary metadata</text>
+  <line x1="100" y1="190" x2="860" y2="190" stroke="#94a3b8" stroke-width="4"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <circle cx="170" cy="190" r="13" fill="#7c3aed"/>
+    <text x="170" y="132" font-size="17" font-weight="700" fill="#5b21b6">2021-10-25</text>
+    <text x="170" y="155" font-size="13" fill="#334155">Chen–de Wolf</text>
+    <text x="170" y="225" font-size="13" fill="#475569">quantum Lasso</text>
+    <circle cx="490" cy="190" r="13" fill="#7c3aed"/>
+    <text x="490" y="132" font-size="17" font-weight="700" fill="#5b21b6">2023-12-21</text>
+    <text x="490" y="155" font-size="13" fill="#334155">Pathwise Lasso</text>
+    <text x="490" y="225" font-size="13" fill="#475569">same penalized family</text>
+    <circle cx="790" cy="190" r="13" fill="#ef4444"/>
+    <text x="790" y="132" font-size="17" font-weight="700" fill="#991b1b">2025-09-29</text>
+    <text x="790" y="155" font-size="13" fill="#334155">target paper</text>
+    <text x="790" y="225" font-size="13" fill="#475569">claimed firstness</text>
+  </g>
+  <path d="M 190 268 L 760 268" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow)"/>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L0,6 L8,3 z" fill="#7c3aed"/></marker></defs>
+  <text x="475" y="300" font-family="sans-serif" font-size="15" text-anchor="middle" fill="#5b21b6">Both primary quantum Lasso results precede the target</text>
+</svg>

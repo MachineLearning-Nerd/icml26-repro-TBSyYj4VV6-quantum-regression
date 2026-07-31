@@ -1,35 +1,39 @@
 # Claim 2 — Linear regression
 
-**Verdict: BLOCKED. Confidence: LOW.**
+**Verdict: FALSIFIED. Confidence: HIGH.**
 
 > The quantum linear-regression algorithm runs in
 > `O~(r*sqrt(mn)/epsilon+n^3)` time versus `O~(mr+n^3)` classically
 > (Corollary 23).
 
-The exact contract includes query access to `A,b`, `r<=n`, every
-`epsilon>0`, a high-probability `(1+epsilon)` solution, and the displayed
-runtime. Four distinct routes were completed:
+The source quantifies over every `epsilon>0`. Its exact proposed chain invokes
+the paper's quantum sparsification framework, which sets
+`M=Theta~(n/epsilon^2)`, calls `MultiSample(Z,M)`, and explicitly processes
+all `M` samples. The cited MultiSample theorem requires `M<=m`.
 
-1. proof-chain reconstruction;
-2. a finite exact-leverage sampling and solve;
-3. formula-independent first-hit sweeps over horizons, three `m` values, and
-   seeds `0..19`;
-4. an assumption-satisfying scalar falsification search.
+Fix the valid one-sparse family `m=16,n=2,r=1`. For
+`epsilon_q=2^-q`, the call leaves the sampler's stated domain. More strongly,
+the explicit loop is `Omega~(epsilon^-2)` at fixed dimensions, while
+Corollary 23 displays only `O~(epsilon^-1+n^3)`. Polylogarithms cannot absorb
+the missing inverse-epsilon power. Line 1153 itself states the omitted
+condition `epsilon=Omega(sqrt(n/m))`.
 
-At `m=2048,n=8,k=256`, the objective ratio was `1.0000041750`. The first
-80%-success horizon was `k=256` at all three tested `m` values; uniform
-sampling was `0/20` at `k=512`. These are scoped classical corroborations,
-not measurements of the quantum leverage estimator. No proof certificate or
-valid counterexample was found.
+| epsilon | normalized M | M<=m | M / displayed terms |
+|---:|---:|:---:|---:|
+| 0.25 | 32 | false | 1.045 |
+| 0.0625 | 512 | false | 5.197 |
+| 0.00390625 | 131,072 | false | 90.012 |
+
+At the negative-control boundary `epsilon=sqrt(n/m)`, `M=m` and no
+contradiction is triggered.
 
 Evidence: [contract](../../evidence/claim_2/claim_contract.json),
-[four routes](../../evidence/claim_2/routes.json),
+[raw contract audit](../../evidence/claim_2/downstream_contract_audit.json),
 [independent checker](../../evidence/claim_2/independent_checker.json),
 [negative control](../../evidence/claim_2/negative_control.json),
 [CPU record](../../evidence/claim_2/runtime_cpu.json), and
-[route code](../../code/remaining_claim_routes.py).
+[verifier](../../code/downstream_contract_audit.py).
 
-Accepted compute: [HF cpu-upgrade job](https://huggingface.co/jobs/DineshAI/6a6b8c7fb36a6516e96a2fed),
-estimated 8 cores, actual allocation 64 CPUs, 6.951 seconds scientific
-runtime. The claim remains BLOCKED because a finite classical run cannot
-verify a universal quantum complexity theorem.
+This falsifies the exact proposed algorithm/runtime contract, not every
+conceivable quantum linear-regression algorithm. Restricting epsilon as the
+paper's prose does would be a different claim.

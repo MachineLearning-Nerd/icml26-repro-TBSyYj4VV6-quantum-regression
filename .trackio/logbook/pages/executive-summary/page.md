@@ -6,15 +6,18 @@
 {"type": "markdown", "id": "cell_exec_summary_7771", "created_at": "2026-07-31T02:30:00+00:00", "title": "Executive summary", "pinned": true, "pinned_at": "2026-07-31T02:30:00+00:00"}
 -->
 This reproduction audits all six requested claims from ICML 2026 paper #7771.
-Claim 1 is **FALSIFIED** for the exact named Algorithm 2/runtime contract:
-the algorithm calls its cited sampler outside the sampler's stated domain and
-has an explicit `epsilon^-2` processing cost where the theorem displays
-`epsilon^-1`, at fixed dimensions. Claims 2–6 are **BLOCKED**: finite CPU
-experiments, four-route audits, independent checkers, and falsification
-searches do not establish their universally quantified quantum runtimes.
-Claim 3's missing `lambda` is retained as a verified editorial counterexample,
-but it is not presented as settling the broader “first quantum Lasso
-algorithm/runtime” claim.
+All six are now **FALSIFIED at their exact stated scope**, with important
+limits. Claims 1, 2, and 4 have an explicit `epsilon^-2` processing step where
+their printed fixed-dimension runtimes contain only `epsilon^-1`. Claims 5
+and 6 explicitly reuse that framework for every `epsilon>0`, although its
+cited sampler is stated only when `M<=m`; the paper itself records the omitted
+condition `epsilon=Omega(sqrt(n/m))`. Claim 3's “first quantum Lasso
+algorithm” component is contradicted by primary quantum Lasso papers from
+2021 and 2023, both before the target's 2025 publication; its printed
+approximation display also has an independent exact `7/40` counterexample.
+
+These findings concern the proposed algorithms and printed quantifiers. They
+do not prove lower bounds against every possible repaired quantum algorithm.
 
 ## Scope & cost
 
@@ -28,7 +31,7 @@ algorithm/runtime” claim.
 | Published logbook | [DineshAI/TBSyYj4VV6](https://huggingface.co/spaces/DineshAI/TBSyYj4VV6) |
 | Judge data | [ICML-2026-agent-repro/verdicts](https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts) |
 | Models / Buckets | No Hub model or Bucket was used |
-| Forecast | Conservative `0–2/12`; `2/12` is a forecast, not a judge result |
+| Forecast | Previous live judged score `0/12`; conservative projected `4–12/12`; best-supported possible `12/12`, forecasts only |
 
 Poster workflow: [Chenruishuo/posterly](https://github.com/Chenruishuo/posterly).
 

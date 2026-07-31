@@ -1,6 +1,6 @@
 # Claim 6 limitations and deviations
 
-The CPU experiment uses classical grid sensitivities and cannot measure the
-quantum runtime. The finite grid is not exhaustive over real inputs. The cited
-solver’s stated `p>1` application range leaves the `p<=1` portion unresolved,
-but no valid counterexample was found.
+The counterexample uses `p=3/2`, so it does not rely on the separate `p<=1`
+solver gap. It targets the universal all-epsilon proposed algorithm, not the
+restricted constant-epsilon, `m>>n` speedup statement. The hidden polynomial
+term prevents a separate total-runtime power contradiction.

@@ -1,7 +1,21 @@
 {
-  "lambda": 1,
-  "left_value": "3/4",
-  "output_x": "1/2",
-  "passes": true,
-  "right_bound": "33/40"
+  "firstness": {
+    "earlier_ridge_only_work": {
+      "contradicts_firstness": false,
+      "published": "2021-01-01T00:00:00Z",
+      "semantic_match": false
+    },
+    "later_matching_work": {
+      "contradicts_firstness": false,
+      "published": "2026-01-01T00:00:00Z",
+      "semantic_match": true
+    }
+  },
+  "literal_display": {
+    "lambda": 1,
+    "left_value": "3/4",
+    "output_x": "1/2",
+    "passes": true,
+    "right_bound": "33/40"
+  }
 }

@@ -1,14 +1,13 @@
 # Claim 2 evaluation
 
-Verdict: **BLOCKED**. Confidence: **LOW**.
+Verdict: **FALSIFIED**. Confidence: **HIGH**.
 
-At `m=2048`, the sampled solution had full-data objective ratio
-`1.0000041750`. Across all three matrix sizes, leverage sampling first reached
-the calibrated spectral criterion at `k=256`; uniform sampling had 0/20
-successes even at `k=512`. This directly checks a finite sampling-and-solve
-mechanism, not the claimed quantum runtime.
+The exact proposed chain explicitly processes
+`M=Theta~(n/epsilon^2)` samples. For fixed valid `m=16,n=2,r=1`, the corollary
+permits `epsilon=2^-q`; `M` then leaves the cited sampler's `M<=m` domain and
+grows one full inverse-epsilon power faster than the displayed runtime.
 
-The independent checker confirms exactly four routes, a discriminating
-negative control, honest scoping, and no mislabeled falsification. Full credit
-remains blocked by the absence of an executable quantum leverage-score
-implementation or proof certificate.
+The independent checker confirms the exact source chain, assumptions,
+universal epsilon quantifier, power gap, and a control at
+`epsilon=sqrt(n/m)` where no contradiction is triggered. Historical finite
+sampling results remain corroborative only.

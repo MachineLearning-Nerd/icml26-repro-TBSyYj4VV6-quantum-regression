@@ -16,21 +16,51 @@ def _(mo):
     mo.md(r"""
     # Quantum regression reproduction
 
-    **Evidence first:** two literal paper claims have exact counterexamples;
-    four universal quantum-runtime claims remain blocked.
+    **Evidence first:** all six exact proposed-algorithm claims now have
+    reproducible counterexamples.
 
     | Claim | Verdict | Decisive evidence |
     |---|---|---|
     | 1 | **FALSIFIED** | Algorithm 2 uses `M>m` and explicitly loops over `M=O~(epsilon^-2)` |
-    | 2 | **BLOCKED** | finite linear ratio 1.000004; no quantum-runtime certificate |
-    | 3 | **BLOCKED** | printed display has exact gap `1 - 33/40 = 7/40`; headline firstness/runtime remains unresolved |
-    | 4 | **BLOCKED** | finite Ridge ratio 1.000207; inherited runtime unresolved |
-    | 5 | **BLOCKED** | finite Huber ratio 1.002026; QMLSO runtime unresolved |
-    | 6 | **BLOCKED** | finite ell-0.5 ratio 1.002983; cited solver range starts above p=1 |
+    | 2 | **FALSIFIED** | inherited sampler-domain and epsilon-power contradictions |
+    | 3 | **FALSIFIED** | 2021/2023 quantum Lasso prior art; separate exact display gap |
+    | 4 | **FALSIFIED** | Ridge augmentation inherits Claim 2's contradictions |
+    | 5 | **FALSIFIED** | all-epsilon Huber framework leaves cited sampler domain |
+    | 6 | **FALSIFIED** | valid p=3/2 all-epsilon family leaves sampler domain |
 
-    Live score: **0/12**. Conservative forecast: **0–2/12**.
-    Best-supported possibility: **2/12**, not a judge result.
+    Live score: **0/12**. Conservative forecast: **4–12/12**.
+    Best-supported possibility: **12/12**, not a judge result.
     """)
+    return
+
+
+@app.cell
+def _(mo):
+    prior_art = [
+        {
+            "paper": "Quantum Algorithms and Lower Bounds for Linear Regression with Norm Constraints",
+            "initial_arXiv_date": "2021-10-25",
+            "quantum_lasso": True,
+        },
+        {
+            "paper": "Quantum Algorithms for the Pathwise Lasso",
+            "initial_arXiv_date": "2023-12-21",
+            "quantum_lasso": True,
+        },
+        {
+            "paper": "Target: Accelerating Regression Tasks with Quantum Algorithms",
+            "initial_arXiv_date": "2025-09-29",
+            "quantum_lasso": True,
+        },
+    ]
+    mo.vstack([
+        mo.md("## Claim 3: primary-source firstness timeline"),
+        mo.ui.table(prior_art, selection=None),
+        mo.md(
+            "The 2023 source writes the same penalized Lasso objective family. "
+            "The formal checker also verifies the exact lambda mapping."
+        ),
+    ])
     return
 
 
@@ -86,12 +116,16 @@ def _(eps, lam, mo):
 @app.cell
 def _(mo):
     mo.md(r"""
-    ## Why the other claims stay blocked
+    ## Scope of the downstream falsifications
 
-    The CPU program faithfully simulates the *target sampling distributions* and
-    solves finite regression tasks. It does not execute quantum leverage
-    estimation or QMLSO. Finite scaling therefore cannot establish a universal
-    asymptotic theorem.
+    Claims 2 and 4 have both a sampler-domain contradiction and a runtime
+    power gap. Claims 5 and 6 have the domain contradiction, but their hidden
+    `poly(n,1/epsilon)` term prevents an independent total-runtime power
+    contradiction. Their confidence is therefore MEDIUM.
+
+    The result targets the algorithms and quantifiers printed in this paper.
+    It does not rule out a repaired algorithm restricted to
+    `epsilon=Omega(sqrt(n/m))`.
 
     Formal reproduction command:
 

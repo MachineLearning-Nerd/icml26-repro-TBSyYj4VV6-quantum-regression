@@ -1,6 +1,13 @@
 # Claim 2 method
 
-Four materially different routes were executed:
+The current verifier reconstructs the exact dependency chain from Corollary
+23 to Algorithm 2, substitutes the assumption-satisfying family
+`m=16,n=2,r=1,epsilon_q=2^-q`, and checks both the sampler-domain violation
+and the `epsilon^-2` versus `epsilon^-1` runtime power gap. A separate checker
+recomputes the obligations and rejects the finding at the boundary control.
+
+Before this counterexample was found, four materially different routes were
+executed and preserved:
 
 1. Reconstruct the source proof chain and look for a machine-checkable
    certificate.

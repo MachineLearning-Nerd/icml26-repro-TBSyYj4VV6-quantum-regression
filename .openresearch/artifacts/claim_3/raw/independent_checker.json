@@ -1,12 +1,16 @@
 {
   "checker": "claim3_independent_checker.py",
+  "chen_dewolf_predates_target": true,
   "four_routes_completed": true,
-  "headline_status": "BLOCKED",
+  "headline_status": "FALSIFIED",
   "left_piecewise_lower_bound_confirmed": true,
   "literal_display_falsified": true,
   "negative_control_passed": true,
+  "negative_controls_rejected": true,
+  "objective_family_bijection_confirmed": true,
   "passed": true,
+  "pathwise_lasso_predates_target": true,
+  "prior_art_falsifies_firstness": true,
   "right_completion_of_square_confirmed": true,
-  "scope_not_inflated": true,
   "strict_impossibility_gap": "7/40"
 }

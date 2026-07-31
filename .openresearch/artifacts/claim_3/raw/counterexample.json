@@ -26,7 +26,7 @@
   },
   "finding": {
     "all_outputs_violate_corollary": true,
-    "headline_claim_resolved": false,
+    "headline_claim_resolved": true,
     "literal_corollary_falsified": true
   },
   "negative_control": {

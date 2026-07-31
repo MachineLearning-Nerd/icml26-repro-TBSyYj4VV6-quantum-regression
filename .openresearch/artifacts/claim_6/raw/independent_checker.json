@@ -1,11 +1,11 @@
 {
+  "assumptions_satisfied": true,
   "claim_id": "C6",
-  "blocker_recorded": true,
-  "exactly_four_routes": true,
-  "finite_route_scoped": true,
-  "honest_blocked_status": true,
-  "negative_control_failed_as_intended": true,
-  "no_counterexample_mislabeled": true,
-  "proof_certificate_absent": true,
-  "passed": true
+  "claim_specific_dependency_chain_present": true,
+  "eventual_domain_violation_certified": true,
+  "negative_control_rejects_false_positive": true,
+  "passed": true,
+  "runtime_basis_scoped_correctly": true,
+  "status": "FALSIFIED",
+  "universal_epsilon_quantifier_present": true
 }

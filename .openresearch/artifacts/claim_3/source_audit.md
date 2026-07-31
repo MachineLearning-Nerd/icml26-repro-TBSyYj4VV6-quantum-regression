@@ -6,8 +6,14 @@ Corollary 26 is at lines 1164–1168 of the pinned arXiv source. It assumes
 minimand contains `||x||_1` without `lambda`.
 
 The preceding prose describes the intended standard Lasso reduction with
-lambda. That likely makes the display an editorial error. The requested
-headline claim also asserts firstness and a quantum runtime, so a
-counterexample to this display cannot be promoted to a falsification of the
-whole headline contract. A corrected corollary is a different statement whose
-runtime still requires independent verification.
+lambda, so the display defect is likely editorial. The headline firstness
+claim is independently contradicted by primary sources:
+
+- arXiv:2312.14141, initially published 2023-12-21, writes
+  `(1/2)||y-X beta||_2^2+lambda||beta||_1` and gives quantum LARS algorithms.
+  Multiplying by two maps it exactly to the target objective family.
+- arXiv:2110.13086, initially published 2021-10-25, proves a quantum Lasso
+  algorithm and explicitly relates constrained and penalized formulations.
+
+Both predate the target's 2025-09-29 publication. The target source also
+acknowledges the earlier Chen–de Wolf quantum Lasso work at lines 329–330.

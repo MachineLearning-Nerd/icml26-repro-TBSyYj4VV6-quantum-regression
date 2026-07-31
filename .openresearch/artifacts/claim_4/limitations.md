@@ -1,6 +1,6 @@
 # Claim 4 limitations and deviations
 
-The augmented finite solve is classical. It does not execute the quantum
-leverage-score primitive inherited from Corollary 23, measure quantum queries,
-or prove the universal runtime. No assumption-satisfying counterexample was
-found.
+The result falsifies the exact inherited proposed pipeline, not every
+conceivable quantum Ridge algorithm. The ridge objective augmentation itself
+is valid. Adding the paper's omitted epsilon restriction would remove this
+counterexample family.

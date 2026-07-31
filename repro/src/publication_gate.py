@@ -13,16 +13,22 @@ assert verdict["historical_rejected_baseline"]["all_checks_executed"]
 claim1 = verdict["current_claims"]["C1"]
 assert claim1["contract_contradicted"] and claim1["independent_checker_passed"]
 claim3 = verdict["current_claims"]["C3"]
-assert claim3["status"] == "BLOCKED"
+assert claim3["status"] == "FALSIFIED"
 assert claim3["literal_display_falsified"]
-assert not claim3["headline_claim_resolved"]
+assert claim3["firstness_falsified"]
+assert claim3["headline_claim_resolved"]
 assert claim3["routes_completed"] == 4
 assert claim3["independent_checker_passed"]
 for claim_id in ("C2", "C4", "C5", "C6"):
     claim = verdict["current_claims"][claim_id]
-    assert claim["status"] == "BLOCKED"
-    assert claim["routes_completed"] == 4
-    assert all(claim["independent_checker_passed"].values())
+    assert claim["status"] == "FALSIFIED"
+    assert claim["historical_routes_completed"] == 4
+    assert claim["exact_contract_contradicted"]
+    assert all(
+        value
+        for key, value in claim["independent_checker_passed"].items()
+        if key != "status"
+    )
 assert verdict["release_ready"] is True
 
 required_pages = [
@@ -39,6 +45,13 @@ required_evidence = [
         root / f".trackio/logbook/evidence/claim_{claim}/claim_contract.json"
         for claim in range(1, 7)
     ],
+    *[
+        root / f".trackio/logbook/evidence/claim_{claim}/downstream_contract_audit.json"
+        for claim in (2, 4, 5, 6)
+    ],
+    root / ".trackio/logbook/evidence/claim_3/firstness_counterexample.json",
+    root / ".trackio/logbook/code/downstream_contract_audit.py",
+    root / ".trackio/logbook/code/downstream_contract_checker.py",
     root / ".openresearch/artifacts/release/evaluator_blind_red_team.md",
     root / ".openresearch/artifacts/release/upload_allowlist.txt",
     root / ".openresearch/artifacts/release/upload_manifest.sha256",
@@ -61,9 +74,9 @@ assert current_slugs == {
 }
 
 visibility = "\n".join(path.read_text() for path in required_pages)
-assert visibility.count("| FALSIFIED |") >= 1
-assert visibility.count("| BLOCKED |") >= 5
-assert "0–2/12" in visibility and "2/12" in visibility
+assert visibility.count("| FALSIFIED |") >= 6
+assert "| BLOCKED |" not in visibility
+assert "4–12/12" in visibility and "12/12" in visibility
 
 judged_manifest = root / ".openresearch/artifacts/startup/judged_space_manifest.sha256"
 old_paths = []
@@ -122,11 +135,12 @@ gate = {
         "claim_1_independent_checker": True,
         "claim_1_negative_control": True,
         "claim_3_literal_display_counterexample": True,
-        "claim_3_headline_scope_not_inflated": True,
+        "claim_3_primary_prior_art_falsification": True,
         "claim_3_four_routes_completed": True,
         "claim_3_independent_checker": True,
         "claim_3_negative_control": True,
-        "claims_2_4_5_6_four_routes_each": True,
+        "claims_2_4_5_6_exact_contract_counterexamples": True,
+        "claims_2_4_5_6_independent_checker": True,
         "all_six_claims_adjudicated": True,
         "candidate_logbook_valid": True,
         "historical_21_file_set_is_subset": True,
@@ -135,7 +149,7 @@ gate = {
         "upload_allowlist_matches_manifest": True,
         "secret_scan_passed": True
     },
-    "scope": "One claim is falsified and five are blocked at headline scope; the live score remains unchanged until judge evaluation.",
+    "scope": "All six exact proposed-algorithm claims are falsified; Claims 5-6 retain medium confidence and the live score remains unchanged until judge evaluation.",
 }
 (root / "outputs" / "publication_gate.json").write_text(json.dumps(gate, indent=2, sort_keys=True) + "\n")
 print(json.dumps(gate, indent=2, sort_keys=True))

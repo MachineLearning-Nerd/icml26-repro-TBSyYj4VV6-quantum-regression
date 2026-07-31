@@ -1,8 +1,11 @@
 # Claim 5 evaluation
 
-Verdict: **BLOCKED**. Confidence: **LOW**.
+Verdict: **FALSIFIED**. Confidence: **MEDIUM**.
 
-The finite Huber coreset solution had full-objective ratio `1.0020256149`.
-Informed sampling reached the calibrated condition at `k=16,8,8` as `m`
-increased; uniform controls required `k=256,128,16`. These results corroborate
-the finite coreset mechanism, not the quantum runtime.
+The Huber specialization is correct. The exact proposed all-epsilon algorithm
+is not: on a fixed proper Huber family, its
+`M=Theta~(n/epsilon^2)` invocation eventually violates the only stated domain
+of the cited MultiSample primitive. The checker confirms the source call
+chain and a valid boundary control. Confidence is medium because the hidden
+`poly(n,1/epsilon)` term prevents a separate end-to-end runtime power
+contradiction.

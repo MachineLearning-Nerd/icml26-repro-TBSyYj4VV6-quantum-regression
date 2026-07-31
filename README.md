@@ -1,19 +1,20 @@
 # Current reproduction campaign
 
-This reproduction tests all six claimed quantum regression runtimes in
-arXiv:2509.24757. Claim 1 is **FALSIFIED**: Algorithm 2 violates its cited
-sampler’s `M≤m` domain and has an explicit `epsilon^-2` loop despite Theorem
-10’s `O~(epsilon^-1)` bound. Claims 2–6 are **BLOCKED** because finite
-coreset simulations cannot certify universal quantum runtimes and no valid
-headline counterexample was found. Corollary 26’s omitted lambda has an exact
-one-dimensional counterexample (`1 > 33/40`), retained only as a scoped
-display-level defect rather than a falsification of the broader Lasso claim.
+This reproduction tests all six requested claims in arXiv:2509.24757. All six
+are now **FALSIFIED at their exact stated scope**. Claims 1, 2, and 4 have an
+explicit `epsilon^-2` processing step incompatible with their printed
+fixed-dimension `epsilon^-1` runtimes. Claims 5 and 6 quantify over every
+epsilon while explicitly invoking a sampler whose cited guarantee requires
+`M≤m`; the paper itself states the omitted
+`epsilon=Omega(sqrt(n/m))` condition. Claim 3’s firstness is contradicted by
+primary quantum Lasso papers from 2021 and 2023, before the target’s 2025
+publication; its printed corollary also has the exact gap `1 > 33/40`.
 
 The previous live score remains **0/12**. A conservative forecast for a new
-judge revision is **0–2/12**, with **2/12 the best-supported possibility, not
-a judge result**. All formal runs were CPU-only: short one-process checks ran
-locally; the multi-core four-route audit used Hugging Face `cpu-upgrade`
-(estimated 8 cores, allocated 64, 6.951 seconds scientific runtime).
+judge revision is **4–12/12**, with **12/12 the best-supported possibility,
+not a judge result**. Claims 5–6 retain MEDIUM confidence because their
+falsification is a subroutine-domain contradiction rather than a separate
+end-to-end power lower bound. All formal runs are CPU-only.
 
 Read the [illustrated report](reports/quantum-regression/report.md), open the
 [self-contained marimo notebook](notebooks/quantum_regression_reproduction.py),

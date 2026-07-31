@@ -1,12 +1,13 @@
 {
   "claim_id": "C6",
-  "status": "BLOCKED",
+  "status": "FALSIFIED",
   "source": {
     "paper": "arXiv:2509.24757v1",
     "sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549",
     "anchor": "arxiv-version.tex:549-551",
     "statement": "For every p in (0,2], the algorithm returns a high-probability (1+epsilon)-approximate ell_p regression solution in O~(r sqrt(mn)/epsilon + poly(n,1/epsilon)) quantum time, giving quadratic m speedup."
   },
-  "full_credit_condition": "A proof certificate or exact executable quantum implementation over the stated p-domain, or a valid assumption-satisfying counterexample.",
-  "result": "Finite p=0.5 and p=1.5 checks found no contradiction; the cited solver application is stated only for p in (1,2], leaving p<=1 unresolved."
+  "counterexample_family": "Choose the proper p=3/2 loss, m=16,n=2,r=1, and epsilon tending to zero. The universal p,epsilon corollary explicitly applies QGLMSparsify, whose M=Theta~(n/epsilon^2) call leaves the cited MultiSample domain once M>m. The paper itself says the speedup requires epsilon=Omega(sqrt(n/m)), but the corollary omits it.",
+  "negative_control": "At epsilon=sqrt(n/m), M=m and the proposed sampling step is within its stated domain.",
+  "result": "The exact all-epsilon proposed algorithm/speedup contract is contradicted. The evidence does not deny the restricted constant-epsilon, m-dominant regime."
 }

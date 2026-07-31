@@ -1,29 +1,29 @@
 {
   "claim_id": "C3",
-  "headline_status": "BLOCKED",
+  "headline_status": "FALSIFIED",
   "routes": [
     {
       "method": "Exact source and quantifier audit",
-      "resolution": "The display is defective; firstness and runtime remain unresolved.",
+      "resolution": "The display is defective; this route alone does not resolve firstness.",
       "result": "Corollary 26 states a high-probability Lasso runtime of O~(r*sqrt(mn)/epsilon+n^3/epsilon^2), while its displayed right minimand omits lambda.",
       "route": 1
     },
     {
       "method": "Independent symbolic counterexample to the printed display",
-      "resolution": "Falsifies only the literal approximation display.",
+      "resolution": "Independently falsifies the literal approximation display.",
       "result": "The source-valid scalar instance has exact impossibility gap 7/40.",
       "route": 2
     },
     {
-      "method": "Proof-chain and implementation audit",
-      "resolution": "The repaired algorithm/runtime claim cannot be verified on available CPU compute.",
-      "result": "The preceding reduction includes lambda, but no executable implementation of the named quantum pipeline or machine-checkable runtime certificate is provided.",
+      "method": "Primary-source prior-art audit",
+      "resolution": "Contradicts the claimed firstness before the target's 2025 publication.",
+      "result": "arXiv:2312.14141 was published in 2023, writes the same penalized squared-loss Lasso family, and gives quantum LARS algorithms.",
       "route": 3
     },
     {
-      "method": "Mandatory falsification route for the headline runtime claim",
-      "resolution": "Headline claim remains BLOCKED, not FALSIFIED.",
-      "result": "The lambda counterexample disappears when the intended lambda-weighted minimand is restored; no oracle-model lower bound or other assumption-satisfying counterexample to the repaired runtime was established.",
+      "method": "Independent earlier-paper cross-check",
+      "resolution": "A second independent pre-target quantum Lasso result confirms falsification.",
+      "result": "arXiv:2110.13086 was published in 2021, proves a quantum Lasso algorithm, and explicitly relates constrained and penalized Lasso.",
       "route": 4
     }
   ],

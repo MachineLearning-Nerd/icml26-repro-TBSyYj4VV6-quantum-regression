@@ -1,5 +1,7 @@
 # Claim 5 limitations and deviations
 
-Grid discretization and classical sensitivity computation replace the named
-quantum subroutines. The finite result cannot verify the universal quantum
-runtime. No proper-loss counterexample was found on the searched domain.
+The result targets the proposed framework's undefined sampler call, not the
+Huber identity or every possible quantum Huber algorithm. Because the
+corollary hides `poly(n,1/epsilon)`, this route does not independently
+contradict its total epsilon exponent. A restricted or repaired algorithm may
+remain valid.

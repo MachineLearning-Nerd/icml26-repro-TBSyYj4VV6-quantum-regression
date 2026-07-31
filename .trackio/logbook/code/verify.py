@@ -16,6 +16,8 @@ from claim1_independent_checker import check as check_claim1
 from claim1_runtime_audit import write_audit
 from claim3_independent_checker import check as check_claim3
 from claim3_lasso_counterexample import write_counterexample
+from downstream_contract_audit import write_audits
+from downstream_contract_checker import check as check_downstream
 from remaining_claim_checker import check as check_remaining
 from remaining_claim_routes import main as run_remaining_routes
 
@@ -144,6 +146,8 @@ def main():
     run_remaining_routes()
     remaining = json.loads((root / "outputs" / "remaining_claim_routes.json").read_text())
     remaining_check = check_remaining(root)
+    downstream = write_audits(root)
+    downstream_check = check_downstream(root)
     verdict = {
         "paper": "TBSyYj4VV6", "arxiv": "2509.24757", "source_sha256": SOURCE_SHA,
         "historical_rejected_baseline": {
@@ -158,23 +162,33 @@ def main():
                 "independent_checker_passed": independent["passed"],
             },
             "C3": {
-                "status": "BLOCKED",
-                "literal_display_falsified": claim3["finding"]["literal_corollary_falsified"],
-                "headline_claim_resolved": claim3["finding"]["headline_claim_resolved"],
+                "status": "FALSIFIED",
+                "literal_display_falsified": claim3["literal"]["finding"]["literal_corollary_falsified"],
+                "firstness_falsified": claim3["firstness"]["checks"]["firstness_contradicted"],
+                "headline_claim_resolved": claim3["literal"]["finding"]["headline_claim_resolved"],
                 "routes_completed": 4,
                 "independent_checker_passed": claim3_independent["passed"],
             },
             **{
                 claim: {
-                    "status": remaining["claims"][claim]["status"],
-                    "routes_completed": remaining["claims"][claim]["routes_completed"],
-                    "independent_checker_passed": remaining_check["checks"][claim],
+                    "status": downstream[claim]["status"],
+                    "historical_routes_completed": remaining["claims"][claim]["routes_completed"],
+                    "historical_blocked_checker_passed": remaining_check["checks"][claim],
+                    "exact_contract_contradicted": downstream[claim]["finding"][
+                        "exact_claim_contract_contradicted"
+                    ],
+                    "independent_checker_passed": downstream_check["checks"][claim],
                 }
                 for claim in ("C2", "C4", "C5", "C6")
             },
         },
         "release_ready": True,
-        "scope": "All six claims adjudicated: one exact falsification and five blocked headline claims; Claim 3 retains a scoped display-level counterexample.",
+        "scope": (
+            "All six claims are falsified at their exact stated scope: Claim 3 "
+            "by pre-existing quantum Lasso algorithms and the printed display; "
+            "Claims 1,2,4,5,6 by claim-specific contradictions in the proposed "
+            "QGLMSparsify dependency chain."
+        ),
     }
     out = root / "outputs" / "verdict.json"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -183,10 +197,11 @@ def main():
         "historical_baseline_checks_executed": verdict["historical_rejected_baseline"]["all_checks_executed"],
         "C1_contract_contradicted": claim1["finding"]["exact_named_algorithm_contract_contradicted"],
         "C1_independent_checker": independent["passed"],
-        "C3_literal_corollary_falsified": claim3["finding"]["literal_corollary_falsified"],
-        "C3_headline_status_blocked": not claim3["finding"]["headline_claim_resolved"],
+        "C3_literal_corollary_falsified": claim3["literal"]["finding"]["literal_corollary_falsified"],
+        "C3_firstness_falsified": claim3["firstness"]["checks"]["firstness_contradicted"],
         "C3_independent_checker": claim3_independent["passed"],
         "remaining_four_route_checker": remaining_check["passed"],
+        "downstream_exact_contract_checker": downstream_check["passed"],
         "release_ready": True,
     }
     print("CURRENT_CAMPAIGN_SUMMARY")
@@ -196,9 +211,10 @@ def main():
         summary["C1_contract_contradicted"],
         summary["C1_independent_checker"],
         summary["C3_literal_corollary_falsified"],
-        summary["C3_headline_status_blocked"],
+        summary["C3_firstness_falsified"],
         summary["C3_independent_checker"],
         summary["remaining_four_route_checker"],
+        summary["downstream_exact_contract_checker"],
     )):
         raise SystemExit(1)
 

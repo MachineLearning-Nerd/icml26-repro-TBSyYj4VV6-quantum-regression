@@ -1,0 +1,67 @@
+{
+  "checks": {
+    "chen_dewolf_predates_target": true,
+    "firstness_contradicted": true,
+    "pathwise_lasso_predates_target": true,
+    "prior_quantum_algorithm_present": true,
+    "same_penalized_objective_family": true
+  },
+  "claim_component": "first quantum algorithm for Lasso regression",
+  "claim_id": "C3",
+  "negative_controls": {
+    "earlier_ridge_only_work": {
+      "contradicts_firstness": false,
+      "published": "2021-01-01T00:00:00Z",
+      "semantic_match": false
+    },
+    "later_matching_work": {
+      "contradicts_firstness": false,
+      "published": "2026-01-01T00:00:00Z",
+      "semantic_match": true
+    }
+  },
+  "objective_mapping": {
+    "multiply_by": 2,
+    "parameter_bijection": "lambda_target = 2*lambda_prior",
+    "preserves_argmin": true,
+    "prior": "(1/2)||y-X beta||_2^2 + lambda_prior ||beta||_1",
+    "target": "||A x-b||_2^2 + lambda_target ||x||_1"
+  },
+  "prior_art": [
+    {
+      "anchors": {
+        "approximation_guarantee": "main.tex:228-234,304",
+        "lasso_objective": "main.tex:165-166,195-198",
+        "quantum_algorithm": "main.tex:146,221-225,257,265"
+      },
+      "arxiv": "2312.14141",
+      "classical_lasso_solution_output": true,
+      "penalized_squared_loss_l1_objective": true,
+      "published": "2023-12-21T18:57:54Z",
+      "quantum_algorithm_present": true,
+      "source_sha256": "cfdb8208c67d8a4c499b2bb6737912d8d674ccfbf1f2d12d803c708e1c98b093",
+      "source_url": "https://export.arxiv.org/e-print/2312.14141v3",
+      "title": "Quantum Algorithms for the Pathwise Lasso"
+    },
+    {
+      "anchors": {
+        "penalty_equivalence": "LassoRidge22.tex:169",
+        "quantum_lasso_runtime": "LassoRidge22.tex:203,806-843"
+      },
+      "arxiv": "2110.13086",
+      "lasso_problem_present": true,
+      "published": "2021-10-25T16:26:37Z",
+      "quantum_algorithm_present": true,
+      "source_sha256": "d6d120eb60829e5120b2700f8776dd35030d10a8e884522db11a7e592ce9b1cc",
+      "source_url": "https://export.arxiv.org/e-print/2110.13086v2",
+      "title": "Quantum Algorithms and Lower Bounds for Linear Regression with Norm Constraints"
+    }
+  ],
+  "target": {
+    "arxiv": "2509.24757",
+    "objective_anchor": "arxiv-version.tex:1164-1167",
+    "own_prior_art_acknowledgement": "arxiv-version.tex:329-330",
+    "published": "2025-09-29T13:22:59Z",
+    "source_sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549"
+  }
+}

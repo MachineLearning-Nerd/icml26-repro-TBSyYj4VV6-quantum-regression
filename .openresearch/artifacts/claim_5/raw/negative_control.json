@@ -1,64 +1,8 @@
 {
-  "claim_id": "C5",
-  "cells": [
-    {
-      "first_hit_k": 16,
-      "m": 512,
-      "success_rate_at_512": 1,
-      "uniform_control_first_hit_k": 256,
-      "uniform_success_rate_at_512": 1
-    },
-    {
-      "first_hit_k": 8,
-      "m": 2048,
-      "success_rate_at_512": 1,
-      "uniform_control_first_hit_k": 128,
-      "uniform_success_rate_at_512": 1
-    },
-    {
-      "first_hit_k": 8,
-      "m": 8192,
-      "success_rate_at_512": 1,
-      "uniform_control_first_hit_k": 16,
-      "uniform_success_rate_at_512": 1
-    }
-  ],
-  "grid_points": 801,
-  "horizons": [
-    8,
-    16,
-    32,
-    64,
-    128,
-    256,
-    512
-  ],
-  "loss": "huber",
-  "negative_control": "uniform",
-  "negative_control_failed_as_intended": true,
-  "p": 1,
-  "seeds": [
-    0,
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    17,
-    18,
-    19
-  ],
-  "success_rate_target": 0.8,
-  "tolerance": 0.5
+  "M_le_advertised_terms": true,
+  "M_le_m": true,
+  "M_normalized": 16,
+  "counterexample_triggered": false,
+  "epsilon": 0.3535533905932738,
+  "vector_length": 16
 }

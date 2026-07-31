@@ -213,10 +213,11 @@
   </header>
 
   <section class="banner" data-measure-role="banner">
-    <div class="banner-score">1 FALSIFIED<br>5 BLOCKED</div>
+    <div class="banner-score">6 FALSIFIED<br>0 BLOCKED</div>
     <div class="banner-text">
-      Algorithm 2 has a sampler-domain and ε-power contradiction. Finite CPU
-      simulations cannot certify the other universal quantum runtimes.
+      Claims 1, 2, and 4 have sampler-domain and ε-power contradictions.
+      Claims 5–6 omit the sampler's required regime; Claim 3 has pre-2025
+      quantum Lasso prior art.
       <span data-ps-mark="woven" data-color-exempt="logo" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#psReg"/></svg></span>
     </div>
   </section>
@@ -231,11 +232,11 @@
           cited MultiSample contract requires M≤m. Its explicit loop is
           Ω(ε⁻²), contradicting the displayed ε⁻¹ runtime at fixed dimensions.
         </div>
-        <div class="claim">
-          <span class="status">CLAIM 2 · BLOCKED</span><br>
-          Linear-regression sampling succeeds in finite CPU sweeps, but no
-          executable quantum leverage estimator or proof certificate verifies
-          the universal Õ(r√mn/ε+n³) runtime.
+        <div class="claim falsified">
+          <span class="status">CLAIM 2 · FALSIFIED</span><br>
+          Its exact pipeline explicitly processes Θ̃(n/ε²) samples, leaving
+          the cited sampler domain and contradicting the displayed ε⁻¹
+          runtime at fixed dimensions.
         </div>
         <div class="micro">Exact audit: 11/11 source-valid ε cells violate M≤m; the threshold control passes.</div>
       </article>
@@ -244,36 +245,34 @@
     <div class="column" data-measure-role="column">
       <article class="card" data-measure-role="card">
         <h2>Regularized regression</h2>
-        <div class="claim">
-          <span class="status">CLAIM 3 · BLOCKED</span><br>
-          A λ omission makes the literal Corollary 26 inequality impossible,
-          but that editorial counterexample does not by itself settle the
-          headline “first quantum Lasso algorithm/runtime” claim.
+        <div class="claim falsified">
+          <span class="status">CLAIM 3 · FALSIFIED</span><br>
+          Quantum Lasso algorithms from 2021 and 2023 predate the target.
+          Separately, a λ omission gives an exact 7/40 impossibility gap.
         </div>
-        <div class="claim">
-          <span class="status">CLAIM 4 · BLOCKED</span><br>
-          Ridge augmentation [A;√λI],[b;0] is exact and sampled solves work,
-          while the inherited universal quantum runtime remains without a certificate.
+        <div class="claim falsified">
+          <span class="status">CLAIM 4 · FALSIFIED</span><br>
+          The valid Ridge augmentation [A;√λI],[b;0] inherits Claim 2's
+          sampler-domain and ε-power contradictions.
         </div>
-        <div class="micro">Scoped Lasso defect: exact gap 7/40. It is not promoted to a headline falsification.</div>
+        <div class="micro">Primary dates: 2021-10-25 and 2023-12-21 precede 2025-09-29.</div>
       </article>
     </div>
 
     <div class="column" data-measure-role="column">
       <article class="card" data-measure-role="card">
         <h2>Robust and ℓp losses</h2>
-        <div class="claim">
-          <span class="status">CLAIM 5 · BLOCKED</span><br>
-          γ₁ matches Huber and finite coreset solves succeed; the named
-          QGLMSparsify/QMLSO runtime is neither certified nor falsified.
+        <div class="claim falsified">
+          <span class="status">CLAIM 5 · FALSIFIED</span><br>
+          γ₁ matches Huber, but the all-ε framework eventually invokes
+          MultiSample outside its stated M≤m domain.
         </div>
-        <div class="claim">
-          <span class="status">CLAIM 6 · BLOCKED</span><br>
-          Finite p=0.5 and p=1.5 checks are corroborative only. The cited
-          solver’s stated p-range leaves the corollary’s full p∈(0,2] domain
-          unresolved.
+        <div class="claim falsified">
+          <span class="status">CLAIM 6 · FALSIFIED</span><br>
+          A valid p=3/2 family contradicts the all-ε framework domain. The
+          restricted constant-ε, large-m regime is not denied.
         </div>
-        <div class="micro">Finite objectives align closely; they remain classical mechanism checks, not quantum runtime measurements.</div>
+        <div class="micro">Claims 5–6 are MEDIUM confidence because their hidden polynomial term absorbs the loop power.</div>
       </article>
     </div>
   </section>
@@ -281,7 +280,7 @@
   <section class="evidence" data-measure-role="footer-strip">
     <div><strong>Compute</strong><br>CPU only; no GPU or quantum hardware</div>
     <div><strong>Controls</strong><br>Independent checkers and fail-closed tests</div>
-    <div><strong>Forecast</strong><br>0–2/12; only the live judge assigns points</div>
+    <div><strong>Forecast</strong><br>4–12/12; best possible 12, not judged</div>
   </section>
 
   <footer class="footer" data-measure-role="footer">

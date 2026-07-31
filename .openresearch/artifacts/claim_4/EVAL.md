@@ -1,8 +1,9 @@
 # Claim 4 evaluation
 
-Verdict: **BLOCKED**. Confidence: **LOW**.
+Verdict: **FALSIFIED**. Confidence: **HIGH**.
 
-The finite augmented system produced objective ratio `1.0002072182`. Leverage
-sampling met the calibrated spectral criterion at `k=256` for every tested
-`m`; uniform sampling had 0/20 successes at `k=512`. The reduction is
-corroborated, while its inherited quantum runtime is not verified.
+The ridge augmentation identity is exact, but it inherits the same proposed
+sampling pipeline. With fixed `m=16,n=2,r=1,lambda=1`, the added two rows do
+not change the `epsilon^-2` explicit-loop lower bound, which contradicts the
+displayed `epsilon^-1+n^3` runtime. The checker separately confirms the
+augmented sampling length and a boundary control.

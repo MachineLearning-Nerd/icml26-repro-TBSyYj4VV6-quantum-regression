@@ -1,12 +1,13 @@
 {
   "claim_id": "C2",
-  "status": "BLOCKED",
+  "status": "FALSIFIED",
   "source": {
     "paper": "arXiv:2509.24757v1",
     "sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549",
     "anchor": "arxiv-version.tex:1150-1153",
     "statement": "With high probability, for query access to A and b, row sparsity r<=n, and epsilon>0, output x with ||Ax-b||_2^2 <= (1+epsilon) min_y ||Ay-b||_2^2 in O~(r sqrt(mn)/epsilon + n^3) time."
   },
-  "full_credit_condition": "A machine-checkable proof certificate for the universal algorithm/runtime guarantee, an executable implementation of the named quantum subroutines with independently calibrated resource scaling, or a valid assumption-satisfying counterexample.",
-  "result": "Four distinct routes found neither a proof certificate nor a valid counterexample. Finite sampling simulations are scoped corroboration only."
+  "counterexample_family": "Fix m=16,n=2,r=1 and a valid one-sparse matrix. Let epsilon tend to zero. The proposed pipeline uses M=Theta~(n/epsilon^2), calls MultiSample outside its stated M<=m domain, and explicitly loops M times, contradicting the displayed O~(epsilon^-1+n^3) runtime.",
+  "negative_control": "At epsilon=sqrt(n/m), M=m and the displayed terms cover the explicit loop.",
+  "result": "The exact proposed Corollary 23 algorithm/runtime contract is contradicted. This is not a lower bound against every conceivable quantum linear-regression algorithm."
 }

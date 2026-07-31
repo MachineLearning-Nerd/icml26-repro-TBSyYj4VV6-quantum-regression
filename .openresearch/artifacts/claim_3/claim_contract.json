@@ -1,6 +1,6 @@
 {
   "claim_id": "C3",
-  "status": "BLOCKED",
+  "status": "FALSIFIED",
   "source": {
     "paper": "arXiv:2509.24757v1",
     "sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549",
@@ -20,6 +20,13 @@
     "gap": "7/40"
   },
   "negative_control": "Setting lambda=1 makes both displayed objectives identical and x=1/2 satisfies the stated 1+epsilon guarantee.",
-  "full_credit_condition": "A machine-checkable certificate for the firstness and universal quantum runtime claim, an executable named quantum implementation with calibrated resources, or a counterexample that directly contradicts that headline contract.",
-  "result": "The lambda omission falsifies the literal displayed approximation inequality but does not settle the broader first-algorithm/runtime claim; the headline claim is BLOCKED."
+  "firstness_counterexample": {
+    "arxiv": "2312.14141",
+    "published": "2023-12-21T18:57:54Z",
+    "target_published": "2025-09-29T13:22:59Z",
+    "objective_mapping": "Multiplying the prior objective (1/2)||y-X beta||^2+lambda_prior||beta||_1 by two gives the target family with lambda_target=2 lambda_prior.",
+    "second_prior": "arXiv:2110.13086, initially published 2021-10-25, also gives a quantum Lasso algorithm."
+  },
+  "negative_control": "A later matching work and an earlier Ridge-only work are both rejected by the firstness checker.",
+  "result": "The firstness component is contradicted by two primary pre-target quantum Lasso papers. Independently, the exact printed approximation display has a rational 7/40 impossibility gap."
 }

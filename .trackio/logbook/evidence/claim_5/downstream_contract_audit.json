@@ -1,0 +1,141 @@
+{
+  "assumption_satisfying_family": {
+    "A": "eight copies each of e1 and e2",
+    "assumptions_satisfied": true,
+    "b": "zero vector",
+    "epsilon_domain_in_corollary": "epsilon > 0",
+    "epsilon_q": "2^-q for integer q >= 2",
+    "loss": "gamma_1 (Huber)",
+    "m": 16,
+    "n": 2,
+    "p": 1,
+    "r": 1
+  },
+  "asymptotic_certificate": {
+    "M_over_m_lower_form": "c*n*exp(2q)/(m*q^K)",
+    "eventual_M_gt_m": true,
+    "growth_proof": "for q>=2K, log(a_(q+1)/a_q) >= 2-K/q >= 3/2; therefore a_q is unbounded",
+    "runtime_power_contradiction": false,
+    "soft_theta_lower_form": "M >= c*n/(epsilon^2*log(1/epsilon)^K) eventually, for fixed c>0 and finite K",
+    "substitution": "epsilon_q=exp(-q)"
+  },
+  "claim_id": "C5",
+  "exact_proposed_algorithm_chain": "gamma_1/Huber properness -> explicit application of Theorem 10 and QGLMSparsify -> classical sparse Huber solver",
+  "finding": {
+    "additional_basis": "The corollary says epsilon>0 without the necessary epsilon=Omega(sqrt(n/m)) domain; its proposed framework is not defined by the cited MultiSample guarantee on this family.",
+    "corollary_quantifies_over_counterexample_family": true,
+    "exact_claim_contract_contradicted": true,
+    "proposed_pipeline_calls_subroutine_outside_stated_domain": true,
+    "runtime_power_contradiction": false
+  },
+  "negative_control": {
+    "M_le_advertised_terms": true,
+    "M_le_m": true,
+    "M_normalized": 16,
+    "counterexample_triggered": false,
+    "epsilon": 0.3535533905932738,
+    "vector_length": 16
+  },
+  "normalized_witness_cells": [
+    {
+      "M_le_m": false,
+      "M_normalized": 32,
+      "epsilon": 0.25,
+      "explicit_M_loop_over_advertised_terms": 1.0448154998549657,
+      "q": 2,
+      "vector_length": 16
+    },
+    {
+      "M_le_m": false,
+      "M_normalized": 128,
+      "epsilon": 0.125,
+      "explicit_M_loop_over_advertised_terms": 2.4035376771573573,
+      "q": 3,
+      "vector_length": 16
+    },
+    {
+      "M_le_m": false,
+      "M_normalized": 512,
+      "epsilon": 0.0625,
+      "explicit_M_loop_over_advertised_terms": 5.197459401063186,
+      "q": 4,
+      "vector_length": 16
+    },
+    {
+      "M_le_m": false,
+      "M_normalized": 2048,
+      "epsilon": 0.03125,
+      "explicit_M_loop_over_advertised_terms": 10.834870355147157,
+      "q": 5,
+      "vector_length": 16
+    },
+    {
+      "M_le_m": false,
+      "M_normalized": 8192,
+      "epsilon": 0.015625,
+      "explicit_M_loop_over_advertised_terms": 22.138226678965108,
+      "q": 6,
+      "vector_length": 16
+    },
+    {
+      "M_le_m": false,
+      "M_normalized": 32768,
+      "epsilon": 0.0078125,
+      "explicit_M_loop_over_advertised_terms": 44.76029789949122,
+      "q": 7,
+      "vector_length": 16
+    },
+    {
+      "M_le_m": false,
+      "M_normalized": 131072,
+      "epsilon": 0.00390625,
+      "explicit_M_loop_over_advertised_terms": 90.01241495278362,
+      "q": 8,
+      "vector_length": 16
+    },
+    {
+      "M_le_m": false,
+      "M_normalized": 524288,
+      "epsilon": 0.001953125,
+      "explicit_M_loop_over_advertised_terms": 180.52071324749858,
+      "q": 9,
+      "vector_length": 16
+    },
+    {
+      "M_le_m": false,
+      "M_normalized": 2097152,
+      "epsilon": 0.0009765625,
+      "explicit_M_loop_over_advertised_terms": 361.5393615491193,
+      "q": 10,
+      "vector_length": 16
+    },
+    {
+      "M_le_m": false,
+      "M_normalized": 8388608,
+      "epsilon": 0.00048828125,
+      "explicit_M_loop_over_advertised_terms": 723.5776889637535,
+      "q": 11,
+      "vector_length": 16
+    },
+    {
+      "M_le_m": false,
+      "M_normalized": 33554432,
+      "epsilon": 0.000244140625,
+      "explicit_M_loop_over_advertised_terms": 1447.6548604439567,
+      "q": 12,
+      "vector_length": 16
+    }
+  ],
+  "scope": "Falsifies the algorithm and quantifiers proposed in this paper; it is not a lower bound against every conceivable quantum algorithm.",
+  "source_anchor": "gamma_p application lines 546-547; Corollary 12 lines 552-554",
+  "source_obligations": {
+    "QGLMSparsify_sample_count": "M = Theta~(n/epsilon^2), line 518",
+    "explicit_classical_loop": "for i=1,...,M, lines 528-531",
+    "invocation": "MultiSample(Z,M), line 524",
+    "paper_admits_needed_regime": "epsilon = Omega(sqrt(n/m)), lines 329 and 1153",
+    "subroutine_domain": "1 <= k <= vector_length, lines 1074-1076",
+    "vector_length_in_application": "m"
+  },
+  "source_sha256": "bd48105ab08395ba1edbdb3a407eee9f2e1a8464521d7d67dbe5b6e96edf2549",
+  "status": "FALSIFIED"
+}

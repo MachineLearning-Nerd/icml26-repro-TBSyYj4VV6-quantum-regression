@@ -11,13 +11,13 @@ The unweighted right minimand is `(x-1)^2+|x|`. For `x>=0`, completing the
 square gives `(x-1/2)^2+3/4`; for `x<0` it exceeds 1. Its global minimum is
 `3/4`, so the stated right bound is `(11/10)(3/4)=33/40<1`.
 
-The main verifier and a separately implemented piecewise checker use exact
+The display verifier and a separately implemented piecewise checker use exact
 `Fraction` arithmetic and exit nonzero unless the contradiction and
 `lambda=1` control both hold.
 
-This is route 2 of a four-route headline audit. Route 1 reconstructs the exact
-source statement and quantifiers. Route 3 audits the corrected proof chain
-and available implementation evidence. Route 4 attempts to falsify the
-repaired headline runtime and records that no oracle-model lower bound or
-other assumption-satisfying counterexample was established. Machine-readable
-results are in `raw/routes.json`.
+For firstness, the verifier compares primary arXiv publication timestamps,
+checks that arXiv:2312.14141 writes the penalized squared-loss/L1 objective,
+maps its `lambda` family exactly to the target family, and checks that it
+actually supplies quantum algorithms and classical Lasso outputs. A second
+pre-target quantum Lasso paper, arXiv:2110.13086, is checked independently.
+A later matching paper and an earlier Ridge-only paper are negative controls.
