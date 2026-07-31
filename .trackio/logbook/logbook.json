@@ -63,6 +63,12 @@
     "title": "Conclusion",
     "file": "pages/conclusion/page.md",
     "children": []
+   },
+   {
+    "slug": "repaired-claims",
+    "title": "Repaired claims — proven alternatives",
+    "file": "pages/repaired-claims/page.md",
+    "children": []
    }
   ]
  },
