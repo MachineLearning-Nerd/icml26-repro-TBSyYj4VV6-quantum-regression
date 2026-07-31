@@ -91,9 +91,9 @@ the current falsifications.
 
 Baseline, Claim 1, and Claim 3 were deterministic one-process local runs of
 five seconds each. The final scientific audit ran on
-[HF `cpu-upgrade`](https://huggingface.co/jobs/DineshAI/6a6c29ac23ed89c748ec903e):
+[HF `cpu-upgrade`](https://huggingface.co/jobs/DineshAI/6a6c2c4ab36a6516e96a3773):
 8 cores were estimated and the selected flavor provides 8 vCPU; the container
-reported 64 visible logical CPUs. Scientific runtime was 11.926 seconds, and
+reported 64 visible logical CPUs. Scientific runtime was 10.913 seconds, and
 the full job lasted 26 seconds. No GPU was used.
 
 The paper’s central results are complexity theorems, not empirical

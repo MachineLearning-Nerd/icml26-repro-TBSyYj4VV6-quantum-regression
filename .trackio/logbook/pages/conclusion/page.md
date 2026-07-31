@@ -32,7 +32,7 @@ uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src
 ```
 
 The public assets are the
-[Hugging Face logbook](https://huggingface.co/spaces/DineshAI/TBSyYj4VV6),
+[Hugging Face logbook](https://huggingface.co/spaces/DineshAI/repro-accelerating-regression-tasks-with-quantum-algorithms),
 [accepted HF Job](https://huggingface.co/jobs/DineshAI/6a6b9048b36a6516e96a3042),
 [verdict dataset](https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts),
 and [GitHub repository](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression).

@@ -57,10 +57,8 @@ pages/claim-4/page.md
 pages/claim-5/page.md
 pages/claim-6/page.md
 pages/conclusion/page.md
-pages/current-claim-3/page.md
 pages/executive-summary/page.md
 pages/index.md
-pages/release-report/page.md
 poster_embed.html
 reports/quantum-regression/images/claim1-scaling.svg
 reports/quantum-regression/images/finite-objectives.svg

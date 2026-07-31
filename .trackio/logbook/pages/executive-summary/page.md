@@ -25,17 +25,18 @@ do not prove lower bounds against every possible repaired quantum algorithm.
 | --- | --- | --- |
 | Scope | Exact source contracts for Claims 1–6, independent symbolic checkers, assumption-satisfying counterexample families, and finite negative controls | Independently implement every stated quantum primitive and run end-to-end regression scaling experiments |
 | Hardware | Local CPU plus HF `cpu-upgrade` (nominal 8 vCPU; container reported 64 visible logical CPUs); no GPU or quantum hardware | Fault-tolerant quantum hardware with the paper's QRAM/oracle access model plus classical sparse solvers |
-| Compute time | Latest accepted job: 11.926 seconds scientific, 26 seconds wall clock | Not reported by the paper and not presently available |
+| Compute time | Latest accepted job: 10.913 seconds scientific, 26 seconds wall clock | Not reported by the paper and not presently available |
 | Cost | Approximately `$0.00022` for the latest job (estimated as 26 seconds × `$0.03/hour`) | Unknown; suitable fault-tolerant quantum hardware is unavailable |
 | Outcome | Claims 1–6 FALSIFIED at stated scope; Claims 1–4 HIGH confidence and Claims 5–6 MEDIUM confidence | Not attempted |
 
 Resources: [paper](https://arxiv.org/abs/2509.24757),
 [OpenReview](https://openreview.net/forum?id=TBSyYj4VV6),
+[release-validation HF Job](https://huggingface.co/jobs/DineshAI/6a6c2c4ab36a6516e96a3773),
 [six-claim HF Job](https://huggingface.co/jobs/DineshAI/6a6c29ac23ed89c748ec903e),
 [cumulative HF Job](https://huggingface.co/jobs/DineshAI/6a6b9048b36a6516e96a3042),
 [control HF Job](https://huggingface.co/jobs/DineshAI/6a6b8c7fb36a6516e96a2fed),
 [GitHub repository](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression),
-[published logbook](https://huggingface.co/spaces/DineshAI/TBSyYj4VV6), and
+[published logbook](https://huggingface.co/spaces/DineshAI/repro-accelerating-regression-tasks-with-quantum-algorithms), and
 [judge dataset](https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts).
 No Hub model or Bucket was used.
 
