@@ -28,7 +28,8 @@ def _(mo):
     | 5 | **FALSIFIED** | all-epsilon Huber framework leaves cited sampler domain |
     | 6 | **FALSIFIED** | valid p=3/2 all-epsilon family leaves sampler domain |
 
-    Live score: **4/12** at revision `1d746059…`. Conservative forecast: **4–12/12**.
+    Live score: **12/12** at revision `8ca97b16…`; all six claims were judged
+    **FALSIFIED**.
     Best-supported possibility: **12/12**, not a judge result.
     """)
     return

@@ -224,6 +224,8 @@ def main():
     (root / "outputs" / "supplemental_hf_checks.json").write_text(
         json.dumps(supplemental, indent=2, sort_keys=True) + "\n"
     )
+    print("SUPPLEMENTAL_HF_PROVENANCE")
+    print(json.dumps(supplemental, sort_keys=True))
     verdict = {
         "paper": "TBSyYj4VV6", "arxiv": "2509.24757", "source_sha256": SOURCE_SHA,
         "historical_rejected_baseline": {

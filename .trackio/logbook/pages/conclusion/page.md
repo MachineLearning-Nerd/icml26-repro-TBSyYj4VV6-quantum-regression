@@ -14,8 +14,8 @@ tested against their full theorem/corollary contracts.
 
 ## Evaluator-visible evidence
 
-The complete [release forecast and risk table](../../evidence/release/final_release_report.md)
-uses the live `4/12` judge result as its baseline.
+The complete [release report and risk table](../../evidence/release/final_release_report.md)
+records the live `12/12` judge result.
 
 | Claim | Canonical page | Code visible | Data inline | Raw link | Checker | Control | Exact claim tested | Reviewer verdict |
 |---|---|---|---|---|---|---|---|---|
@@ -41,13 +41,14 @@ The public assets are the
 and [GitHub repository](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression).
 No Hub model or Bucket was used.
 
-The live judge score is `4/12` at revision
-`1d7460599344b8c93d085a9b283213a9d677ded3`. The conservative projected range
-for the next revision is `4–12/12`, with `12/12` the best-supported possible
-score and only a forecast. Claims 5–6 carry the largest evaluator risk because their exact
-falsification rests on the proposed framework leaving the cited subroutine's
-stated domain, rather than a separate end-to-end power lower bound. Only the
-live judge can change the score.
+The live judge score is **12/12** at revision
+`8ca97b16e85f7220d5298dc4607f7623df2b5241`: every claim is
+`FALSIFIED`, and quality is `high`. Claims 5–6 remain scientifically narrower
+than Claims 1–4 because their falsification rests on the proposed framework
+leaving the cited subroutine's stated domain, rather than a separate
+end-to-end power lower bound.
+The exact per-claim [live-verdict snapshot](../../evidence/release/live_judge_verdict.json)
+is included with the release.
 
 ---
 <!-- trackio-cell
@@ -55,7 +56,11 @@ live judge can change the score.
 -->
 ## Supplemental executed batch (2026-07-31)
 
-In addition to the statevector executions above, three deterministic local CPU scripts extend the executed evidence to `m = 2^18` (Claim 1 in-regime + measured boundary constants), `m = 131072` classical-half pipelines for Claims 2/4/5/6 (10/10 seeds within `1+eps` each), and a fully executed offline priority audit for Claim 3:
+In addition to the statevector executions above, three deterministic scripts
+were rerun on HF `cpu-upgrade` and extend the executed evidence to `m = 2^18`
+(Claim 1 in-regime + measured boundary constants), `m = 131072`
+classical-half pipelines for Claims 2/4/5/6 (10/10 seeds within `1+eps` each),
+and a fully executed offline priority audit for Claim 3:
 
 ```bash
 python code/claim1_regime_execution.py
@@ -63,4 +68,7 @@ python code/claim3_priority_audit.py
 python code/claims2456_scale_execution.py
 ```
 
-Each script prints a `RESULTS_SHA256` fingerprint and its stdout is embedded verbatim on the corresponding claim page and committed under `evidence/`.
+Each script prints a `RESULTS_SHA256` fingerprint. The
+[formal HF run](https://huggingface.co/jobs/DineshAI/6a6c487223ed89c748ec92d4)
+completed in 6m43s; its [compute record](../../evidence/release/supplemental_hf_run.json)
+reports the fixed command, image, allocation, and exact fingerprints.

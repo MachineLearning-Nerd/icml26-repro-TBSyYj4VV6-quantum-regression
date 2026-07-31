@@ -95,6 +95,11 @@ AUDIT RESULT: firstness falsified by >=1 earlier primary source (found 2), displ
 RESULTS_SHA256=4972f9be23b807065ac2e2d8a682ee492c60a17ab80d5b701a588e052d3c3a08
 ````
 
-Environment: local CPU, Python 3.14, NumPy 2.5.1, deterministic seeds; printed floats are rounded before printing so BLAS variation cannot change stdout; `RESULTS_SHA256` fingerprints the printed values. Stdout above is byte-identical to the linked stdout evidence file.
+Environment: HF `cpu-upgrade`, nominal 8 vCPU (64 visible logical CPUs),
+Python 3.12.12, NumPy 2.3.2; the exact-arithmetic audit is deterministic. The
+cumulative
+[formal run](https://huggingface.co/jobs/DineshAI/6a6c487223ed89c748ec92d4)
+finished in 6m43s. See the
+[compute record](../../evidence/release/supplemental_hf_run.json).
 
 Supplemental evidence: [executed stdout](../../evidence/claim_3/priority_audit_stdout.txt), [executed script](../../code/claim3_priority_audit.py), [cached arXiv:2110.13086](../../evidence/claim_3/sources/arxiv_2110.13086_abs.html), [cached arXiv:2312.14141](../../evidence/claim_3/sources/arxiv_2312.14141_abs.html), and [target excerpts](../../evidence/claim_3/sources/target_2509.24757_excerpts.txt).

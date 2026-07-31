@@ -1,0 +1,27 @@
+{
+  "actual_nominal_vcpus": 8,
+  "container_visible_logical_cpus": 64,
+  "estimated_required_cores_before_run": 8,
+  "failed_setup_attempt": {
+    "error": "uv: command not found",
+    "job": "https://huggingface.co/jobs/DineshAI/6a6c484623ed89c748ec92d2",
+    "orx_run_id": "1e08782b-8336-4c00-9340-3c06a68a156c",
+    "runtime_seconds": 11,
+    "scientific_evidence_accepted": false
+  },
+  "fixed_command": "uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py",
+  "git_sha": "eee1509a44da8a51c97db8484a34caa2b66c9d57",
+  "image": "ghcr.io/astral-sh/uv:python3.12-bookworm-slim",
+  "job": "https://huggingface.co/jobs/DineshAI/6a6c487223ed89c748ec92d4",
+  "numpy": "2.3.2",
+  "orx_run_id": "04e8a4fb-b3d2-4821-8708-1efd86407722",
+  "python": "3.12.12",
+  "result_sha256": {
+    "claim1_regime_execution": "7430ab58474ebb87dbe5eb8f07399438c2fa0bb2aeff8892679d6129c145dff0",
+    "claim3_priority_audit": "4972f9be23b807065ac2e2d8a682ee492c60a17ab80d5b701a588e052d3c3a08",
+    "claims2456_scale_execution": "4746b08066383fca443140fd07cb0f88398c71f79ca804521ee9fb9af41acbfd"
+  },
+  "runtime_seconds": 403,
+  "selected_flavor": "cpu-upgrade",
+  "status": "done"
+}

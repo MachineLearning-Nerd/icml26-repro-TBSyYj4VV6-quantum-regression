@@ -26,12 +26,12 @@ epsilon while explicitly invoking a sampler whose cited guarantee requires
 primary quantum Lasso papers from 2021 and 2023, before the target’s 2025
 publication; its printed corollary also has the exact gap `1 > 33/40`.
 
-The current live score is **4/12** at published revision
-`1d7460599344b8c93d085a9b283213a9d677ded3`. A conservative forecast for the
-next judge revision remains **4–12/12**, with **12/12 the best-supported
-possibility, not a judge result**. Claims 5–6 retain MEDIUM confidence because their
-falsification is a subroutine-domain contradiction rather than a separate
-end-to-end power lower bound. All formal runs are CPU-only.
+The current live score is **12/12** at published revision
+`8ca97b16e85f7220d5298dc4607f7623df2b5241`; the judge marked all six
+claims `FALSIFIED` and rated reproduction quality `high`. Claims 5–6 retain
+MEDIUM scientific confidence because their falsification is a
+subroutine-domain contradiction rather than a separate end-to-end power lower
+bound. All formal runs are CPU-only.
 
 Read the [illustrated report](reports/quantum-regression/report.md), open the
 [self-contained marimo notebook](notebooks/quantum_regression_reproduction.py),
@@ -55,6 +55,7 @@ experiments:
 | [`orx/direct-per-claim-verifier-source-links`](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression/tree/orx/direct-per-claim-verifier-source-links) | Expose verifier and independent-checker source on every canonical claim page | `uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py` | Full cumulative gate passed; Claims 1–6 FALSIFIED | [HF `cpu-upgrade`](https://huggingface.co/jobs/DineshAI/6a6c31d723ed89c748ec90e1), nominal 8 vCPU; 64 visible logical CPUs, 12.163s scientific, 27s job |
 | [`orx/statevector-quantum-pipeline-and-prior-lars`](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression/tree/orx/statevector-quantum-pipeline-and-prior-lars) | Execute the cited state-preparation circuit, regression sampling, and pre-target quantum LARS | `uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py` | Statevector checks and controls passed; non-toy `M=4m` target calls rejected | [HF `cpu-upgrade`](https://huggingface.co/jobs/DineshAI/6a6c3c8523ed89c748ec91ce), nominal 8 vCPU; 64 visible logical CPUs, 9.487s combined scientific runtime |
 | [`orx/evaluator-visible-statevector-evidence`](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression/tree/orx/evaluator-visible-statevector-evidence) | Package quantum source, raw data, checkers, controls, report, notebook, and release gates | `uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py` | Full cumulative release gate passed | [HF `cpu-upgrade`](https://huggingface.co/jobs/DineshAI/6a6c4071b36a6516e96a3834), nominal 8 vCPU; 64 visible logical CPUs, 9.837s scientific, 21s job |
+| [`orx/hf-validate-supplemental-scale-evidence`](https://github.com/MachineLearning-Nerd/icml26-repro-TBSyYj4VV6-quantum-regression/tree/orx/hf-validate-supplemental-scale-evidence) | Validate the 131k–262k-row supplemental audits under the fixed command | `uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py` | All three supplemental fingerprints and the full release gate passed | [HF `cpu-upgrade`](https://huggingface.co/jobs/DineshAI/6a6c487223ed89c748ec92d4), nominal 8 vCPU; 64 visible logical CPUs, 6m43s job |
 
 The fixed command is:
 

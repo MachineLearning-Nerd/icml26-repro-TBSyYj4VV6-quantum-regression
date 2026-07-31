@@ -68,6 +68,11 @@ note: for p in (0,1) the sparsified objective is non-convex; the paper cites no 
 RESULTS_SHA256=4746b08066383fca443140fd07cb0f88398c71f79ca804521ee9fb9af41acbfd
 ````
 
-Environment: local CPU, Python 3.14, NumPy 2.5.1, deterministic seeds; printed floats are rounded before printing so BLAS variation cannot change stdout; `RESULTS_SHA256` fingerprints the printed values. Stdout above is byte-identical to the linked stdout evidence file.
+Environment: HF `cpu-upgrade`, nominal 8 vCPU (64 visible logical CPUs),
+Python 3.12.12, NumPy 2.3.2, deterministic seeds; the cumulative
+[formal run](https://huggingface.co/jobs/DineshAI/6a6c487223ed89c748ec92d4)
+finished in 6m43s. Printed floats are rounded before printing, and
+`RESULTS_SHA256` fingerprints the results. See the
+[compute record](../../evidence/release/supplemental_hf_run.json).
 
 Supplemental evidence: [executed stdout](../../evidence/claims2456_scale_stdout.txt) and [executed script](../../code/claims2456_scale_execution.py).

@@ -73,6 +73,8 @@ required_evidence = [
     root / ".trackio/logbook/evidence/claims2456_scale_stdout.txt",
     root / ".trackio/logbook/evidence/claim_3/priority_audit_stdout.txt",
     root / ".trackio/logbook/evidence/release/final_release_report.md",
+    root / ".trackio/logbook/evidence/release/live_judge_verdict.json",
+    root / ".trackio/logbook/evidence/release/supplemental_hf_run.json",
     root / ".openresearch/artifacts/release/evaluator_blind_red_team.md",
     root / ".openresearch/artifacts/release/upload_allowlist.txt",
     root / ".openresearch/artifacts/release/upload_manifest.sha256",
@@ -91,6 +93,20 @@ assert len(supplemental) == 3
 assert all(run["passed"] for run in supplemental)
 assert all(run["selected_hardware"] == "hf cpu-upgrade" for run in supplemental)
 assert all(run["estimated_required_cores"] == 8 for run in supplemental)
+supplemental_hf_run = json.loads(
+    (root / ".trackio/logbook/evidence/release/supplemental_hf_run.json").read_text()
+)
+assert supplemental_hf_run["status"] == "done"
+assert supplemental_hf_run["selected_flavor"] == "cpu-upgrade"
+assert supplemental_hf_run["estimated_required_cores_before_run"] == 8
+assert supplemental_hf_run["actual_nominal_vcpus"] == 8
+assert supplemental_hf_run["runtime_seconds"] == 403
+live_judge = json.loads(
+    (root / ".trackio/logbook/evidence/release/live_judge_verdict.json").read_text()
+)
+assert live_judge["total_score"] == "12/12"
+assert live_judge["sha"] == "8ca97b16e85f7220d5298dc4607f7623df2b5241"
+assert all(claim["verdict"] == "falsified" for claim in live_judge["claims"])
 
 logbook = json.loads((root / ".trackio/logbook/logbook.json").read_text())
 current_slugs = {child["slug"] for child in logbook["root"]["children"]}
@@ -108,7 +124,8 @@ assert current_slugs == {
 visibility = "\n".join(path.read_text() for path in required_pages)
 assert visibility.count("| FALSIFIED |") >= 6
 assert "| BLOCKED |" not in visibility
-assert "4–12/12" in visibility and "12/12" in visibility
+assert "12/12" in visibility
+assert "8ca97b16e85f7220d5298dc4607f7623df2b5241" in visibility
 
 judged_manifest = root / ".openresearch/artifacts/startup/judged_space_manifest.sha256"
 old_paths = []
@@ -184,7 +201,7 @@ gate = {
         "upload_allowlist_matches_manifest": True,
         "secret_scan_passed": True
     },
-    "scope": "All six exact proposed-algorithm claims remain candidate falsifications. The live score is 4/12 at revision 1d7460599344b8c93d085a9b283213a9d677ded3; the next score cannot change until a new judge evaluation.",
+    "scope": "All six exact proposed-algorithm claims are live-judge FALSIFIED. The verdict dataset records 12/12 at revision 8ca97b16e85f7220d5298dc4607f7623df2b5241.",
 }
 (root / "outputs" / "publication_gate.json").write_text(json.dumps(gate, indent=2, sort_keys=True) + "\n")
 print(json.dumps(gate, indent=2, sort_keys=True))

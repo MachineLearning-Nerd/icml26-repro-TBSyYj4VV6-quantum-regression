@@ -78,6 +78,8 @@ evidence/claim_6/routes.json
 evidence/claim_6/runtime_cpu.json
 evidence/claims2456_scale_stdout.txt
 evidence/release/final_release_report.md
+evidence/release/live_judge_verdict.json
+evidence/release/supplemental_hf_run.json
 logbook.json
 notebooks/quantum_regression_reproduction.py
 pages/claim-1/page.md

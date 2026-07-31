@@ -3,7 +3,7 @@ instance: m=131072 n=32 eps=0.25 lambda=0.5 p=1.5 seeds=0..9
 Claim 2 (Corollary 23, least squares):
   least-squares: reduced size k=7098 (m/k=18x), max objective ratio=1.007288, coverage ratio<=1+eps: 10/10
 Claim 4 (Corollary 25, ridge via augmentation):
-  augmentation identity max relative error = 1.88e-16
+  augmentation identity max relative error = 1.75e-16
   ridge: reduced size k=7098 (m/k=18x), max objective ratio=1.007287, coverage ratio<=1+eps: 10/10
 Claim 5 (Corollary 12 at p=1, Huber):
   gamma_1 == Huber(delta=1) max abs deviation on grid = 0.0

@@ -1,0 +1,41 @@
+{
+  "claims": [
+    {
+      "claim": 1,
+      "points": 2,
+      "verdict": "falsified"
+    },
+    {
+      "claim": 2,
+      "points": 2,
+      "verdict": "falsified"
+    },
+    {
+      "claim": 3,
+      "points": 2,
+      "verdict": "falsified"
+    },
+    {
+      "claim": 4,
+      "points": 2,
+      "verdict": "falsified"
+    },
+    {
+      "claim": 5,
+      "points": 2,
+      "verdict": "falsified"
+    },
+    {
+      "claim": 6,
+      "points": 2,
+      "verdict": "falsified"
+    }
+  ],
+  "judged_at": "2026-07-31T06:57:29+00:00",
+  "quality": "high",
+  "retrieved_at": "2026-07-31T07:10:00+00:00",
+  "sha": "8ca97b16e85f7220d5298dc4607f7623df2b5241",
+  "source": "https://huggingface.co/datasets/ICML-2026-agent-repro/verdicts",
+  "space_id": "DineshAI/repro-accelerating-regression-tasks-with-quantum-algorithms",
+  "total_score": "12/12"
+}

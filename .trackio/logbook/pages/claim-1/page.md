@@ -109,6 +109,11 @@ negative control: eps=eps*=0.063729 gives M=262144 <= m=262144: True
 RESULTS_SHA256=7430ab58474ebb87dbe5eb8f07399438c2fa0bb2aeff8892679d6129c145dff0
 ````
 
-Environment: local CPU, Python 3.14, NumPy 2.5.1, deterministic seeds; printed floats are rounded before printing so BLAS variation cannot change stdout; `RESULTS_SHA256` fingerprints the printed values. Stdout above is byte-identical to the linked stdout evidence file.
+Environment: HF `cpu-upgrade`, nominal 8 vCPU (64 visible logical CPUs),
+Python 3.12.12, NumPy 2.3.2, deterministic seeds; the cumulative
+[formal run](https://huggingface.co/jobs/DineshAI/6a6c487223ed89c748ec92d4)
+finished in 6m43s. Printed floats are rounded before printing, and
+`RESULTS_SHA256` fingerprints the results. See the
+[compute record](../../evidence/release/supplemental_hf_run.json).
 
 Supplemental evidence: [executed stdout](../../evidence/claim_1/regime_execution_stdout.txt) and [executed script](../../code/claim1_regime_execution.py).
