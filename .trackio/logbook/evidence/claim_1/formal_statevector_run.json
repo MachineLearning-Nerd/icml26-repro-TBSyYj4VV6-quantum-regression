@@ -4,7 +4,7 @@
   "fixed_command": "uv sync --frozen && uv run python repro/src/verify.py && uv run python repro/src/publication_gate.py",
   "git_sha": "862268e8b1a122f6044d7440cce19e37892c9b2a",
   "gpu_count": 0,
-  "hf_job": "DineshAI/6a6c3c8523ed89c748ec91ce",
+  "job": "DineshAI/6a6c3c8523ed89c748ec91ce",
   "nominal_cpu_allocation_vcpus": 8,
   "run_id": "c827a21a-d44a-4616-ac18-85b7064c7290",
   "scientific_runtime_seconds": {
