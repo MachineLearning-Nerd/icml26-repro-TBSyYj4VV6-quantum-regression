@@ -6,6 +6,8 @@ Corollary 26 is at lines 1164–1168 of the pinned arXiv source. It assumes
 minimand contains `||x||_1` without `lambda`.
 
 The preceding prose describes the intended standard Lasso reduction with
-lambda. That likely makes the display an editorial error, but the evaluator
-claim cites Corollary 26 and the exact displayed universal statement is what
-this contract tests. A corrected corollary is a different claim.
+lambda. That likely makes the display an editorial error. The requested
+headline claim also asserts firstness and a quantum runtime, so a
+counterexample to this display cannot be promoted to a falsification of the
+whole headline contract. A corrected corollary is a different statement whose
+runtime still requires independent verification.

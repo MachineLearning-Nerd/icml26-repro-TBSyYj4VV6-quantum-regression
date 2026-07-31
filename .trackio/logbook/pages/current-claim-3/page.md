@@ -1,13 +1,14 @@
 # Current verification — Claim 3
 
-**Reviewer verdict: FALSIFIED.**
+**Reviewer verdict: BLOCKED. Confidence: LOW.**
 
-> Exact claim tested: Corollary 26 states, for query access to `A,b`,
-> `r≤n`, every `lambda>0`, and every `epsilon>0`, that the output obeys
+> Exact headline claim tested: the paper gives the first quantum Lasso
+> algorithm in `O~(r sqrt(mn)/epsilon + poly(n,1/epsilon))` time, versus
+> `O~(mn^2+n^3)` classically (Corollary 26).
 
 `||Ax-b||_2^2 + lambda||x||_1 <= (1+epsilon) min_x (||Ax-b||_2^2 + ||x||_1)`.
 
-## Assumptions and exact output
+## Scoped literal-display counterexample
 
 The right minimand omits lambda. On `A=[1]`, `b=[1]`, `lambda=100`, and
 `epsilon=1/10`, the left objective is at least 1 for every real `x`; the
@@ -18,8 +19,9 @@ The result uses exact rational arithmetic. An independent piecewise checker
 confirms both global minima. The `lambda=1` control restores the same objective
 on both sides and passes at `x=1/2`.
 
-Source: pinned arXiv lines 1164–1168. The missing lambda is likely a typo; this
-falsifies the exact published corollary, not the obvious corrected statement.
+Source: pinned arXiv lines 1164–1168. The missing lambda is likely a typo.
+It contradicts the literal displayed guarantee but does not establish or
+refute the full first-algorithm and runtime claim.
 
 Download: [claim contract](../../evidence/claim_3/claim_contract.json),
 [exact raw counterexample](../../evidence/claim_3/counterexample.json),
@@ -41,8 +43,9 @@ single-process CPU, 5 seconds. Environment: Python `3.12.*`,
 [pyproject](../../code/pyproject.toml), [uv lock](../../code/uv.lock), and
 [CPU record](../../evidence/claim_3/runtime_cpu.json).
 
-## Limit
+## Headline result
 
-This falsifies the literal displayed inequality. The preceding prose suggests
-that omitting lambda on the right is an editorial error; a corrected corollary
-is a different claim.
+No executable named quantum implementation, machine-checkable proof
+certificate, or exhaustive prior-art certificate was available. The literal
+display counterexample is retained as a scoped subfinding. The headline claim
+is therefore BLOCKED.

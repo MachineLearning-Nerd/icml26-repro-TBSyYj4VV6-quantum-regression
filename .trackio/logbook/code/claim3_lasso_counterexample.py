@@ -39,6 +39,7 @@ def build_counterexample() -> dict:
         "finding": {
             "all_outputs_violate_corollary": gap > 0,
             "literal_corollary_falsified": gap > 0,
+            "headline_claim_resolved": False,
         },
         "negative_control": {
             "lambda": 1,
@@ -47,6 +48,51 @@ def build_counterexample() -> dict:
             "right_bound": str(right_bound),
             "passes": control_passes,
         },
+    }
+
+
+def headline_routes() -> dict:
+    return {
+        "claim_id": "C3",
+        "headline_status": "BLOCKED",
+        "routes_completed": 4,
+        "routes": [
+            {
+                "route": 1,
+                "method": "Exact source and quantifier audit",
+                "result": (
+                    "Corollary 26 states a high-probability Lasso runtime of "
+                    "O~(r*sqrt(mn)/epsilon+n^3/epsilon^2), while its displayed "
+                    "right minimand omits lambda."
+                ),
+                "resolution": "The display is defective; firstness and runtime remain unresolved.",
+            },
+            {
+                "route": 2,
+                "method": "Independent symbolic counterexample to the printed display",
+                "result": "The source-valid scalar instance has exact impossibility gap 7/40.",
+                "resolution": "Falsifies only the literal approximation display.",
+            },
+            {
+                "route": 3,
+                "method": "Proof-chain and implementation audit",
+                "result": (
+                    "The preceding reduction includes lambda, but no executable implementation "
+                    "of the named quantum pipeline or machine-checkable runtime certificate is provided."
+                ),
+                "resolution": "The repaired algorithm/runtime claim cannot be verified on available CPU compute.",
+            },
+            {
+                "route": 4,
+                "method": "Mandatory falsification route for the headline runtime claim",
+                "result": (
+                    "The lambda counterexample disappears when the intended lambda-weighted minimand "
+                    "is restored; no oracle-model lower bound or other assumption-satisfying "
+                    "counterexample to the repaired runtime was established."
+                ),
+                "resolution": "Headline claim remains BLOCKED, not FALSIFIED.",
+            },
+        ],
     }
 
 
@@ -59,6 +105,9 @@ def write_counterexample(root: Path) -> dict:
     raw.mkdir(parents=True, exist_ok=True)
     raw.joinpath("counterexample.json").write_text(
         json.dumps(result, indent=2, sort_keys=True) + "\n"
+    )
+    raw.joinpath("routes.json").write_text(
+        json.dumps(headline_routes(), indent=2, sort_keys=True) + "\n"
     )
     print("C3_LITERAL_COUNTEREXAMPLE")
     print(json.dumps(result, sort_keys=True))

@@ -2,8 +2,14 @@
   "assumptions_satisfied": true,
   "claim_id": "C3",
   "counterexample": {
-    "A": [[1]],
-    "b": [1],
+    "A": [
+      [
+        1
+      ]
+    ],
+    "b": [
+      1
+    ],
     "epsilon": "1/10",
     "lambda": 100,
     "m": 1,
@@ -15,18 +21,19 @@
     "left_global_minimum": "1",
     "left_minimizer": "0",
     "right_bound": "33/40",
-    "right_minimand_minimum": "3/4",
-    "right_minimand_minimizer": "1/2"
+    "right_minimand_minimizer": "1/2",
+    "right_minimand_minimum": "3/4"
   },
   "finding": {
     "all_outputs_violate_corollary": true,
+    "headline_claim_resolved": false,
     "literal_corollary_falsified": true
   },
   "negative_control": {
     "lambda": 1,
-    "output_x": "1/2",
     "left_value": "3/4",
-    "right_bound": "33/40",
-    "passes": true
+    "output_x": "1/2",
+    "passes": true,
+    "right_bound": "33/40"
   }
 }

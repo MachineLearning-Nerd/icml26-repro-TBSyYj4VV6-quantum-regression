@@ -1,8 +1,12 @@
 {
   "checker": "claim3_independent_checker.py",
+  "four_routes_completed": true,
+  "headline_status": "BLOCKED",
   "left_piecewise_lower_bound_confirmed": true,
-  "right_completion_of_square_confirmed": true,
-  "strict_impossibility_gap": "7/40",
+  "literal_display_falsified": true,
   "negative_control_passed": true,
-  "passed": true
+  "passed": true,
+  "right_completion_of_square_confirmed": true,
+  "scope_not_inflated": true,
+  "strict_impossibility_gap": "7/40"
 }

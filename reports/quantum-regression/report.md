@@ -19,12 +19,14 @@ cannot reconcile with Theorem 10’s displayed `epsilon^-1` runtime.
 
 ![Claim 1 scaling](images/claim1-scaling.svg)
 
-Claim 3 has a separate exact defect. Printed Corollary 26 compares a
+Claim 3 has a separate exact display-level defect. Printed Corollary 26 compares a
 lambda-weighted Lasso objective to an unweighted minimand. With `A=[1]`,
 `b=[1]`, `lambda=100`, and `epsilon=0.1`, every output has left side at least
 `1`, while the allowed right side is `33/40`. Exact rational arithmetic gives
 a strict impossibility gap of `7/40`. Setting `lambda=1` is the negative
-control and restores a satisfiable inequality.
+control and restores a satisfiable inequality. Because the claim under review
+also asserts firstness and a quantum runtime, this editorial counterexample
+does not settle the full headline claim.
 
 ## What was implemented
 
@@ -72,7 +74,7 @@ runtime claims.
 |---|---|---|---|
 | 1 | QGLMSparsify in `O~(…+r√mn/epsilon)` | Sampler precondition fails for 11 source-valid epsilon cells; explicit loop has the wrong epsilon power | FALSIFIED |
 | 2 | Linear regression in `O~(r√mn/epsilon+n³)` | Finite ratio `1.000004`; no quantum-runtime certificate or counterexample | BLOCKED |
-| 3 | Lasso Corollary 26 | Exact minimum `1` exceeds bound `33/40` | FALSIFIED |
+| 3 | First quantum Lasso algorithm and runtime | Printed display has exact gap `1 > 33/40`; firstness and repaired runtime remain uncertified | BLOCKED |
 | 4 | Ridge inherits linear quantum time | Finite ratio `1.000207`; inherited runtime unresolved | BLOCKED |
 | 5 | Huber via gamma loss | Finite ratio `1.002026`; named quantum runtime unresolved | BLOCKED |
 | 6 | ell-p for every `p∈(0,2]` | Finite p=0.5 ratio `1.002983`; cited solver application states p>1 | BLOCKED |
@@ -91,8 +93,8 @@ certificate. The finite checks are deliberately not promoted to full credit.
 
 ## Assessment
 
-The strongest supported forecast is 4/12 from the two exact falsifications;
-the conservative range is 0–4/12 because only the live evaluator assigns
+The strongest supported forecast is 2/12 from Claim 1’s exact falsification;
+the conservative range is 0–2/12 because only the live evaluator assigns
 points. The live score remains 0/12 until that evaluation occurs.
 
 Branches:

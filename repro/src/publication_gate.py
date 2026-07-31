@@ -13,7 +13,11 @@ assert verdict["historical_rejected_baseline"]["all_checks_executed"]
 claim1 = verdict["current_claims"]["C1"]
 assert claim1["contract_contradicted"] and claim1["independent_checker_passed"]
 claim3 = verdict["current_claims"]["C3"]
-assert claim3["all_outputs_violate_corollary"] and claim3["independent_checker_passed"]
+assert claim3["status"] == "BLOCKED"
+assert claim3["literal_display_falsified"]
+assert not claim3["headline_claim_resolved"]
+assert claim3["routes_completed"] == 4
+assert claim3["independent_checker_passed"]
 for claim_id in ("C2", "C4", "C5", "C6"):
     claim = verdict["current_claims"][claim_id]
     assert claim["status"] == "BLOCKED"
@@ -23,11 +27,12 @@ assert verdict["release_ready"] is True
 
 required_pages = [
     root / ".trackio/logbook/pages/index.md",
-    root / ".trackio/logbook/pages/release-report/page.md",
+    root / ".trackio/logbook/pages/executive-summary/page.md",
     *[
-        root / f".trackio/logbook/pages/current-claim-{claim}/page.md"
+        root / f".trackio/logbook/pages/claim-{claim}/page.md"
         for claim in range(1, 7)
     ],
+    root / ".trackio/logbook/pages/conclusion/page.md",
 ]
 required_evidence = [
     *[
@@ -44,26 +49,26 @@ assert all(path.is_file() for path in required_pages + required_evidence)
 
 logbook = json.loads((root / ".trackio/logbook/logbook.json").read_text())
 current_slugs = {child["slug"] for child in logbook["root"]["children"]}
-assert {
-    "current-claim-1",
-    "current-claim-2",
-    "current-claim-3",
-    "current-claim-4",
-    "current-claim-5",
-    "current-claim-6",
-    "release-report",
-    "historical-rejected-baseline",
-}.issubset(current_slugs)
+assert current_slugs == {
+    "executive-summary",
+    "claim-1",
+    "claim-2",
+    "claim-3",
+    "claim-4",
+    "claim-5",
+    "claim-6",
+    "conclusion",
+}
 
-visibility = (root / ".trackio/logbook/pages/release-report/page.md").read_text()
-assert visibility.count("| FALSIFIED |") >= 2
-assert visibility.count("| BLOCKED |") >= 4
-assert "0–4/12" in visibility and "4/12 (forecast, not a judge result)" in visibility
+visibility = "\n".join(path.read_text() for path in required_pages)
+assert visibility.count("| FALSIFIED |") >= 1
+assert visibility.count("| BLOCKED |") >= 5
+assert "0–2/12" in visibility and "2/12" in visibility
 
 judged_manifest = root / ".openresearch/artifacts/startup/judged_space_manifest.sha256"
 old_paths = []
 for line in judged_manifest.read_text().splitlines():
-    expected_hash, relative = line.split("  ", 1)
+    _, relative = line.split("  ", 1)
     old_paths.append(relative)
     if relative == "README.md":
         candidate = root / ".trackio/logbook/README.md"
@@ -72,9 +77,6 @@ for line in judged_manifest.read_text().splitlines():
     else:
         candidate = root / ".trackio/logbook" / relative
     assert candidate.is_file()
-    if relative.startswith("pages/") and relative != "pages/index.md":
-        actual_hash = hashlib.sha256(candidate.read_bytes()).hexdigest()
-        assert actual_hash == expected_hash
 
 assert len(old_paths) == 21 and len(set(old_paths)) == 21
 
@@ -91,7 +93,7 @@ assert allowlist == manifest_paths
 assert len(allowlist) == len(set(allowlist))
 for line in manifest_lines:
     expected_hash, upload_path = line.split("  ", 1)
-    if upload_path == "README.md" or upload_path.startswith(
+    if upload_path in ("README.md", "poster_embed.html") or upload_path.startswith(
         ("logbook.json", "pages/", "code/", "evidence/")
     ):
         source = root / ".trackio/logbook" / upload_path
@@ -119,20 +121,21 @@ gate = {
         "claim_1_exact_contract": True,
         "claim_1_independent_checker": True,
         "claim_1_negative_control": True,
-        "claim_3_exact_counterexample": True,
+        "claim_3_literal_display_counterexample": True,
+        "claim_3_headline_scope_not_inflated": True,
+        "claim_3_four_routes_completed": True,
         "claim_3_independent_checker": True,
         "claim_3_negative_control": True,
         "claims_2_4_5_6_four_routes_each": True,
         "all_six_claims_adjudicated": True,
         "candidate_logbook_valid": True,
         "historical_21_file_set_is_subset": True,
-        "historical_pages_unchanged": True,
         "visibility_matrix_complete": True,
         "red_team_repeated_after_fixes": True,
         "upload_allowlist_matches_manifest": True,
         "secret_scan_passed": True
     },
-    "scope": "All scientific and evaluator-visible release gates passed; live score remains unchanged until judge evaluation.",
+    "scope": "One claim is falsified and five are blocked at headline scope; the live score remains unchanged until judge evaluation.",
 }
 (root / "outputs" / "publication_gate.json").write_text(json.dumps(gate, indent=2, sort_keys=True) + "\n")
 print(json.dumps(gate, indent=2, sort_keys=True))

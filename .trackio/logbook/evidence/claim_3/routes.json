@@ -1,0 +1,31 @@
+{
+  "claim_id": "C3",
+  "headline_status": "BLOCKED",
+  "routes": [
+    {
+      "method": "Exact source and quantifier audit",
+      "resolution": "The display is defective; firstness and runtime remain unresolved.",
+      "result": "Corollary 26 states a high-probability Lasso runtime of O~(r*sqrt(mn)/epsilon+n^3/epsilon^2), while its displayed right minimand omits lambda.",
+      "route": 1
+    },
+    {
+      "method": "Independent symbolic counterexample to the printed display",
+      "resolution": "Falsifies only the literal approximation display.",
+      "result": "The source-valid scalar instance has exact impossibility gap 7/40.",
+      "route": 2
+    },
+    {
+      "method": "Proof-chain and implementation audit",
+      "resolution": "The repaired algorithm/runtime claim cannot be verified on available CPU compute.",
+      "result": "The preceding reduction includes lambda, but no executable implementation of the named quantum pipeline or machine-checkable runtime certificate is provided.",
+      "route": 3
+    },
+    {
+      "method": "Mandatory falsification route for the headline runtime claim",
+      "resolution": "Headline claim remains BLOCKED, not FALSIFIED.",
+      "result": "The lambda counterexample disappears when the intended lambda-weighted minimand is restored; no oracle-model lower bound or other assumption-satisfying counterexample to the repaired runtime was established.",
+      "route": 4
+    }
+  ],
+  "routes_completed": 4
+}

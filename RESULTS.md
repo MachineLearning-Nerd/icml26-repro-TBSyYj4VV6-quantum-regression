@@ -2,8 +2,11 @@
 
 Claims 1 and 3 are **FALSIFIED**. See the current evaluations for
 [Claim 1](.openresearch/artifacts/claim_1/EVAL.md) and
-[Claim 3](.openresearch/artifacts/claim_3/EVAL.md). Claims 2, 4, 5, and 6
-remain under audit, and the release gate is closed.
+[Claim 3](.openresearch/artifacts/claim_3/EVAL.md). Claims 2, 4, 5, and 6 are
+**BLOCKED** after four materially different routes each. The evidence was
+published to the existing Hugging Face Space at
+`851c05f89e1c8340ea539db391da196a4d57a90e` and is awaiting the live judge.
+The score remains 0/12 until that evaluation.
 
 ## Historical rejected baseline
 

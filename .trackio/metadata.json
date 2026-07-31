@@ -1,9 +1,12 @@
 {
-  "space_id": null,
+  "space_id": "DineshAI/TBSyYj4VV6",
   "emoji": "🎯",
   "created_at": "2026-07-29T12:46:34+00:00",
   "paper_arxiv_id": "2509.24757",
   "paper_orid": "TBSyYj4VV6",
+  "paper": {
+    "arxiv_id": "2509.24757"
+  },
   "tags": [
     "icml2026-repro",
     "paper-TBSyYj4VV6"

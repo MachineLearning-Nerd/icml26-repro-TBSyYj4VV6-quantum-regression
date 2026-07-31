@@ -158,8 +158,10 @@ def main():
                 "independent_checker_passed": independent["passed"],
             },
             "C3": {
-                "status": "FALSIFIED",
-                "all_outputs_violate_corollary": claim3["finding"]["all_outputs_violate_corollary"],
+                "status": "BLOCKED",
+                "literal_display_falsified": claim3["finding"]["literal_corollary_falsified"],
+                "headline_claim_resolved": claim3["finding"]["headline_claim_resolved"],
+                "routes_completed": 4,
                 "independent_checker_passed": claim3_independent["passed"],
             },
             **{
@@ -172,7 +174,7 @@ def main():
             },
         },
         "release_ready": True,
-        "scope": "All six claims adjudicated: two exact falsifications and four blocked universal runtime claims.",
+        "scope": "All six claims adjudicated: one exact falsification and five blocked headline claims; Claim 3 retains a scoped display-level counterexample.",
     }
     out = root / "outputs" / "verdict.json"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -182,6 +184,7 @@ def main():
         "C1_contract_contradicted": claim1["finding"]["exact_named_algorithm_contract_contradicted"],
         "C1_independent_checker": independent["passed"],
         "C3_literal_corollary_falsified": claim3["finding"]["literal_corollary_falsified"],
+        "C3_headline_status_blocked": not claim3["finding"]["headline_claim_resolved"],
         "C3_independent_checker": claim3_independent["passed"],
         "remaining_four_route_checker": remaining_check["passed"],
         "release_ready": True,
@@ -193,6 +196,7 @@ def main():
         summary["C1_contract_contradicted"],
         summary["C1_independent_checker"],
         summary["C3_literal_corollary_falsified"],
+        summary["C3_headline_status_blocked"],
         summary["C3_independent_checker"],
         summary["remaining_four_route_checker"],
     )):

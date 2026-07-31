@@ -1,8 +1,7 @@
 {
-  "epsilon": "1/10",
   "lambda": 1,
-  "output_x": "1/2",
   "left_value": "3/4",
-  "right_bound": "33/40",
-  "passes": true
+  "output_x": "1/2",
+  "passes": true,
+  "right_bound": "33/40"
 }
