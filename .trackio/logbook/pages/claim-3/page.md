@@ -32,6 +32,7 @@ Evidence: [headline contract](../../evidence/claim_3/claim_contract.json),
 [primary-source firstness counterexample](../../evidence/claim_3/firstness_counterexample.json),
 [literal-display counterexample](../../evidence/claim_3/counterexample.json),
 [independent checker](../../evidence/claim_3/independent_checker.json),
+[checker code](../../code/claim3_independent_checker.py),
 [negative control](../../evidence/claim_3/negative_control.json),
 [CPU record](../../evidence/claim_3/runtime_cpu.json), and
 [counterexample code](../../code/claim3_lasso_counterexample.py).

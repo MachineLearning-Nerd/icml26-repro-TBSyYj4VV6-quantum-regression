@@ -31,6 +31,7 @@ Representative raw results:
 Evidence: [contract](../../evidence/claim_1/claim_contract.json),
 [11-cell raw audit](../../evidence/claim_1/runtime_audit.json),
 [independent checker](../../evidence/claim_1/independent_checker.json),
+[checker code](../../code/claim1_independent_checker.py),
 [negative control](../../evidence/claim_1/negative_control.json),
 [CPU record](../../evidence/claim_1/runtime_cpu.json), and
 [verifier](../../code/claim1_runtime_audit.py).

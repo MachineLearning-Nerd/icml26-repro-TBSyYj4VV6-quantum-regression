@@ -22,8 +22,10 @@ lower bound.
 Evidence: [contract](../../evidence/claim_5/claim_contract.json),
 [raw contract audit](../../evidence/claim_5/downstream_contract_audit.json),
 [independent checker](../../evidence/claim_5/independent_checker.json),
-[negative control](../../evidence/claim_5/negative_control.json), and
-[CPU record](../../evidence/claim_5/runtime_cpu.json).
+[checker code](../../code/downstream_contract_checker.py),
+[negative control](../../evidence/claim_5/negative_control.json),
+[CPU record](../../evidence/claim_5/runtime_cpu.json), and
+[verifier](../../code/downstream_contract_audit.py).
 
 This does not rule out a repaired Huber algorithm with the omitted epsilon
 restriction.

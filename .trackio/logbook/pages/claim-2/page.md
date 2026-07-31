@@ -30,6 +30,7 @@ contradiction is triggered.
 Evidence: [contract](../../evidence/claim_2/claim_contract.json),
 [raw contract audit](../../evidence/claim_2/downstream_contract_audit.json),
 [independent checker](../../evidence/claim_2/independent_checker.json),
+[checker code](../../code/downstream_contract_checker.py),
 [negative control](../../evidence/claim_2/negative_control.json),
 [CPU record](../../evidence/claim_2/runtime_cpu.json), and
 [verifier](../../code/downstream_contract_audit.py).
