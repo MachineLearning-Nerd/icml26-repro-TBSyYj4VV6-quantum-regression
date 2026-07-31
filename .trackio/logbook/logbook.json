@@ -2,7 +2,7 @@
  "schema_version": 2,
  "title": "Reproduction: Accelerating Regression Tasks with Quantum Algorithms",
  "emoji": "🎯",
- "space_id": "DineshAI/repro-accelerating-regression-tasks-with-quantum-algorithms",
+ "space_id": "DineshAI/TBSyYj4VV6",
  "paper": {
   "arxiv_id": "2509.24757"
  },
@@ -10,7 +10,7 @@
   "icml2026-repro",
   "paper-TBSyYj4VV6"
  ],
- "updated_at": "2026-07-31T09:20:00+00:00",
+ "updated_at": "2026-07-31T10:10:00+00:00",
  "root": {
   "slug": "index",
   "title": "Reproduction: Accelerating Regression Tasks with Quantum Algorithms",
@@ -68,6 +68,12 @@
     "slug": "repaired-claims",
     "title": "Repaired claims — proven alternatives",
     "file": "pages/repaired-claims/page.md",
+    "children": []
+   },
+   {
+    "slug": "human-in-the-loop",
+    "title": "Human-in-the-loop record",
+    "file": "pages/human-in-the-loop/page.md",
     "children": []
    }
   ]
