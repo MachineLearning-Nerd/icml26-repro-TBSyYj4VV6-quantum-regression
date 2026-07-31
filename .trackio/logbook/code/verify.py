@@ -148,6 +148,9 @@ def main():
     run_remaining_routes()
     run_quantum_statevector_audit()
     quantum_statevector = check_quantum_statevector(root)
+    (root / "outputs" / "quantum_statevector_checker.json").write_text(
+        json.dumps(quantum_statevector, indent=2, sort_keys=True) + "\n"
+    )
     remaining = json.loads((root / "outputs" / "remaining_claim_routes.json").read_text())
     remaining_check = check_remaining(root)
     downstream = write_audits(root)
