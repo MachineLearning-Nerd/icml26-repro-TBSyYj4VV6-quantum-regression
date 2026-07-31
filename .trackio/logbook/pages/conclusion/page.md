@@ -72,3 +72,14 @@ Each script prints a `RESULTS_SHA256` fingerprint. The
 [formal HF run](https://huggingface.co/jobs/DineshAI/6a6c487223ed89c748ec92d4)
 completed in 6m43s; its [compute record](../../evidence/release/supplemental_hf_run.json)
 reports the fixed command, image, allocation, and exact fingerprints.
+
+## Repaired-claims appendix
+
+The concurrent
+[repaired-claims appendix](https://huggingface.co/spaces/DineshAI/repro-accelerating-regression-tasks-with-quantum-algorithms/blob/main/pages/repaired-claims/page.md)
+states narrower alternatives R1–R6 and links its exact-arithmetic checker. It
+is supplemental analysis, not a seventh claim page, so the canonical logbook
+retains the required fixed order. The cumulative verifier and release gate
+were rerun in the
+[final HF `cpu-upgrade` Job](https://huggingface.co/jobs/DineshAI/6a6c4e9eb36a6516e96a392a)
+in 6m42s.
