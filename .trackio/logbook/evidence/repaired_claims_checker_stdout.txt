@@ -1,0 +1,14 @@
+Repaired-claims exact proof checker (arXiv:2509.24757)
+  [PASS] Lemma A: regime equivalences are exact iffs (4000 cells)
+  [PASS] Lemma B: out-of-regime O(m) fallback fits the bound
+  [PASS] Lemma C: identity weights give a 0-error sparsifier (symbolic substitution)
+  [PASS] Lemma D: ridge augmentation identity EXACT (300 rational instances)
+  [PASS] Lemma E: gamma_1 == Huber(1) exact incl. boundary x=+-1
+    subadditivity worst margin = 0.000e+00 (must be <= 0)
+  [PASS] Lemma F: ell_p is (1, p/2, 1)-proper (homogeneity exact; Lipschitz GRID 100k pts)
+  [PASS] Lemma G: |t|^p convex for p>=1 (exact p=1,2; grid p=1.5); EXACT non-convexity witness at p=1/2
+  [PASS] Lemma H: min(mr, r*sqrt(mn)/eps) branch condition is exactly eps vs sqrt(n/m) (4000 cells)
+  [PASS] Lemma I: corrected Lasso display exact-consistent; old 7/40 counterexample no longer applies
+lemmas passed: 9/9
+classification of non-checkable components: the quantum subroutine costs (Hamoudi Th.1 sqrt(KN); Apers-Gribling Th.3.2 r*sqrt(mn)/eps; Li et al. Lem.3.1 sqrt(m)/eps) are QUANTUM-DEP: peer-reviewed, used black-box, not executable on CPU, therefore not CPU-falsifiable; only their output laws are CPU-testable.
+RESULTS_SHA256=7ec3d7b0d7f20085c6a51336fe5915cf3c786c4b643529130289ce220577ce7c
